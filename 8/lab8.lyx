@@ -1,0 +1,637 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{indentfirst}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Лабораторная работа №8
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+Множества FIRST для РБНФ
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Скоробогатов С.Ю.
+\end_layout
+
+\begin_layout Date
+20 августа 2013
+\end_layout
+
+\begin_layout Section
+Цель работы
+\end_layout
+
+\begin_layout Standard
+Целью данной работы является изучение алгоритма построения множеств FIRST
+ для расширенной форме Бэкусы-Наура.
+\end_layout
+
+\begin_layout Section
+Исходные данные
+\end_layout
+
+\begin_layout Standard
+В данной лабораторной работе требуется разработать программу, которая по
+ описанию грамматики, записанному на входном языке в РБНФ, строит множества
+ FIRST для всех нетерминалов грамматика.
+\end_layout
+
+\begin_layout Standard
+В качестве 
+\emph on
+входного языка
+\emph default
+ должен выступать язык представления правил грамматики, варианты лексики
+ и синтаксиса которого можно восстановить по примерам из таблицы 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Варианты-рабочего-языка"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Варианты-рабочего-языка"
+
+\end_inset
+
+Варианты входного языка в примерах описаний грамматик
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0.5cm">
+<column alignment="left" valignment="top" width="42line%">
+<column alignment="center" valignment="top" width="0.5cm">
+<column alignment="left" valignment="top" width="42line%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+non-terminal E, T, F;
+\end_layout
+
+\begin_layout Plain Layout
+
+terminal '+', '-', '*', '/', 
+\end_layout
+
+\begin_layout Plain Layout
+
+  '(', ')', n;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+E ::= T ( ('+' | '-') T )*;
+\end_layout
+
+\begin_layout Plain Layout
+
+T ::= F ( ('*' | '/') F )*;
+\end_layout
+
+\begin_layout Plain Layout
+
+F ::= n | '-' F | '(' E ')';
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$NTERM T F
+\end_layout
+
+\begin_layout Plain Layout
+
+$TERM  "+"  "-"  "*"  "/"
+\end_layout
+
+\begin_layout Plain Layout
+
+$TERM  "("  ")"  "n"
+\end_layout
+
+\begin_layout Plain Layout
+
+$RULE  E = T { ("+" | "-") T }
+\end_layout
+
+\begin_layout Plain Layout
+
+$RULE  T = F { ("*" | "/") F }
+\end_layout
+
+\begin_layout Plain Layout
+
+$RULE  F = "n" | "-" F | "(" E ")"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+(E) = (T) [ [
+\backslash
++|-] (T) ]*.
+\end_layout
+
+\begin_layout Plain Layout
+
+(T) = (F) [ [
+\backslash
+*|/] ]*.
+\end_layout
+
+\begin_layout Plain Layout
+
+(F) = n | -(F) | 
+\backslash
+( (E) 
+\backslash
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+E  ( T {("+","-") T} )
+\end_layout
+
+\begin_layout Plain Layout
+
+T  ( F {("*","/") F} )
+\end_layout
+
+\begin_layout Plain Layout
+
+F  ( "n", "-" F, 
+\end_layout
+
+\begin_layout Plain Layout
+
+     "(" E ")" )
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+tokens <plus>, <minus>, 
+\end_layout
+
+\begin_layout Plain Layout
+
+       <star>, <slash>,
+\end_layout
+
+\begin_layout Plain Layout
+
+       <lparen>, <rparen>, <n>.
+\end_layout
+
+\begin_layout Plain Layout
+
+<E> is <T> repeat(
+\end_layout
+
+\begin_layout Plain Layout
+
+             alt(
+\end_layout
+
+\begin_layout Plain Layout
+
+               <plus>, <minus>
+\end_layout
+
+\begin_layout Plain Layout
+
+             ) <T>
+\end_layout
+
+\begin_layout Plain Layout
+
+           ).
+\end_layout
+
+\begin_layout Plain Layout
+
+<T> is <F> repeat(
+\end_layout
+
+\begin_layout Plain Layout
+
+             alt(
+\end_layout
+
+\begin_layout Plain Layout
+
+               <star>, <slash>
+\end_layout
+
+\begin_layout Plain Layout
+
+             ) <F>
+\end_layout
+
+\begin_layout Plain Layout
+
+           ).
+\end_layout
+
+\begin_layout Plain Layout
+
+<F> is alt(
+\end_layout
+
+\begin_layout Plain Layout
+
+         <n>,
+\end_layout
+
+\begin_layout Plain Layout
+
+         <minus> <F>, 
+\end_layout
+
+\begin_layout Plain Layout
+
+         <lparen> <E> <rparen>
+\end_layout
+
+\begin_layout Plain Layout
+
+       ).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+[ E  : T [ ["+" : "-"] T ]* ]
+\end_layout
+
+\begin_layout Plain Layout
+
+[ T  : F [ ["*" : "/"] F ]* ]
+\end_layout
+
+\begin_layout Plain Layout
+
+[ F  : "n"
+\end_layout
+
+\begin_layout Plain Layout
+
+     : "-" F
+\end_layout
+
+\begin_layout Plain Layout
+
+     : "(" E ")" 
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Задание
+\end_layout
+
+\begin_layout Standard
+Выполнение данной лабораторной работы состоит из следующих этапов:
+\end_layout
+
+\begin_layout Enumerate
+Составление описаний лексической структуры и грамматики входного языка на
+ основе примера из таблицы
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Варианты-рабочего-языка"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Разработка лексического анализатора для входного языка.
+\end_layout
+
+\begin_layout Enumerate
+Разработка синтаксического анализатора для входного языка методом рекурсивного
+ спуска.
+\end_layout
+
+\begin_layout Enumerate
+Реализация алгоритма вычисления множества FIRST для всех нетерминальных
+ символов грамматики.
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Standard
+Отметим, что парсер входного языка должен выдавать сообщения об обнаруженных
+ ошибках, включающие координаты ошибки.
+ Восстановление при ошибках реализовывать не нужно.
+\end_layout
+
+\begin_layout Standard
+В качестве языков реализации разрешается использовать C++, Java, Go, Ruby
+ или Python.
+\end_layout
+
+\end_body
+\end_document

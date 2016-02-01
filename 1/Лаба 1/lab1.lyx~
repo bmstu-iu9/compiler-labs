@@ -1,0 +1,799 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Лабораторная работа №1
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+Раскрутка самоприменимого компилятора
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+8 февраля 2014
+\end_layout
+
+\begin_layout Author
+Коновалов А.
+\begin_inset space \thinspace{}
+\end_inset
+
+В.
+\end_layout
+
+\begin_layout Section
+Цель работы
+\end_layout
+
+\begin_layout Standard
+Целью данной работы является ознакомление с раскруткой самоприменимых компилятор
+ов на примере модельного компилятора.
+\end_layout
+
+\begin_layout Section
+Исходные данные
+\end_layout
+
+\begin_layout Standard
+В качестве модельного выберем компилятор BeRo Tiny Pascal, разработанный
+ Benjamin Ros\SpecialChar \-
+seaux 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+
+\end_inset
+
+.
+ Входным языком компилятора является язык Pascal, совместимый с диалектом
+ Delphi, а
+\begin_inset space ~
+\end_inset
+
+целевым языком --- исполнимый код Win32.
+\end_layout
+
+\begin_layout Standard
+Исходный текст компилятора составлен на языке Pascal, совместимом с диалектом
+ Delphi.
+ Тем самым, компилятор является самоприменимым.
+\end_layout
+
+\begin_layout Standard
+Исходные данные для выполнения лабораторной работы в операционной системе
+ Windows представлены следующим набором файлов:
+\end_layout
+
+\begin_layout Description
+btpc.pas --- исходный текст компилятора BeRo Tiny Pascal;
+\end_layout
+
+\begin_layout Description
+btpc.exe --- бинарная версия компилятора, полученная путём раскрутки;
+\end_layout
+
+\begin_layout Description
+hello.pas --- программа, предназначенная для проверки работоспособности компилято
+ра.
+\end_layout
+
+\begin_layout Section
+Использование компилятора
+\end_layout
+
+\begin_layout Standard
+Компилятор берёт исходный текст со стандартного ввода и в случае успешной
+ компиляции записывает порождённый двоичный код в стандартный вывод.
+ Тем самым, для компиляции программы hellp.pas нужно выполнить команду:
+\end_layout
+
+\begin_layout LyX-Code
+btpc <hello.pas >hello.exe
+\end_layout
+
+\begin_layout Standard
+При наличии синтаксической ошибки в коде компилятор в стандартный вывод
+ записывает вместо двоичного кода сообщение об ошибке.
+ Признаком того, что компиляция прошла неудачно является малый размер целевого
+ файла (в данном примере hello.exe) --- менее 100 байт.
+ Для того, чтобы посмотреть размер файла, можно выполнить команду dir.
+ Для просмотра сообщения об ошибке нужно выполнить команду:
+\end_layout
+
+\begin_layout LyX-Code
+type hello.exe
+\end_layout
+
+\begin_layout Standard
+Для выполнения одного шага раскрутки используется команда
+\end_layout
+
+\begin_layout LyX-Code
+btpc <btpc.pas >btpc_new.exe
+\end_layout
+
+\begin_layout Standard
+После её выполнения можно убедиться, что файлы btpc.exe и btpc_new.exe идентичны
+ при помощи команды
+\end_layout
+
+\begin_layout LyX-Code
+fc /b btpc.exe btpc_new.exe
+\end_layout
+
+\begin_layout Section
+Задание
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement p
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Варианты-изменений-входного"
+
+\end_inset
+
+Варианты изменений входного языка компиляторов P5 и BeRo Tiny Pascal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="90line%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Обеспечить возможность использования символа подчёркивания в
+\begin_inset space ~
+\end_inset
+
+идентификаторах.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+P5:
+\series default
+ не разрешать комментариям, начинающимся с 
+\begin_inset Quotes fld
+\end_inset
+
+(*
+\begin_inset Quotes frd
+\end_inset
+
+, заканчиваться на 
+\begin_inset Quotes fld
+\end_inset
+
+}
+\begin_inset Quotes frd
+\end_inset
+
+, а
+\begin_inset space ~
+\end_inset
+
+комметариям, начинающимся с 
+\begin_inset Quotes fld
+\end_inset
+
+{
+\begin_inset Quotes frd
+\end_inset
+
+, заканчиваться на 
+\begin_inset Quotes fld
+\end_inset
+
+*)
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+BeRo Tiny Pascal:
+\series default
+ Разрешать комментариям, начинающимся с 
+\begin_inset Quotes fld
+\end_inset
+
+(*
+\begin_inset Quotes frd
+\end_inset
+
+, заканчиваться на 
+\begin_inset Quotes fld
+\end_inset
+
+}
+\begin_inset Quotes frd
+\end_inset
+
+, а
+\begin_inset space ~
+\end_inset
+
+комметариям, начинающимся с 
+\begin_inset Quotes fld
+\end_inset
+
+{
+\begin_inset Quotes frd
+\end_inset
+
+, заканчиваться на 
+\begin_inset Quotes fld
+\end_inset
+
+*)
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+P5:
+\series default
+ Сделать так, чтобы можно было использовать идентификаторы любой длины,
+ но
+\begin_inset space ~
+\end_inset
+
+при этом символы идентификатора, начиная с одиннадцатого, не учитывались.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+BeRo Tiny Pascal:
+\series default
+ Выводить сообщение об ошибке при превышении длины идентификатора 40
+\begin_inset space ~
+\end_inset
+
+символов.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Добавить однострочный комментарий, начинающийся с символа 
+\begin_inset Quotes fld
+\end_inset
+
+?
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+ суффикс строки программы, расположенный после символа 
+\begin_inset Quotes fld
+\end_inset
+
+?
+\begin_inset Quotes frd
+\end_inset
+
+, должен считаться комментарием.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Сделать так, чтобы целочисленные константы, выходящие за границы допустимого
+ интервала, считались равными нулю.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Заменить запись оператора присваивания на 
+\begin_inset Quotes fld
+\end_inset
+
+::=
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Заменить запись операции 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+<>
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ на 
+\begin_inset Quotes fld
+\end_inset
+
+!=
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Сделать так, чтобы символы в строке программы, расположенные справа от 80-ой
+ позиции, не учитывались.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Разрешить использовать знак 
+\begin_inset Quotes fld
+\end_inset
+
+..
+\begin_inset Quotes frd
+\end_inset
+
+ вместо ключевого слова 
+\begin_inset Quotes fld
+\end_inset
+
+to
+\begin_inset Quotes frd
+\end_inset
+
+ при записи цикла for.
+ При этом использование слова 
+\begin_inset Quotes fld
+\end_inset
+
+to
+\begin_inset Quotes frd
+\end_inset
+
+ не запрещается.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Добавить в строковые литералы Escape-последовательности 
+\begin_inset Quotes fld
+\end_inset
+
+
+\backslash
+b
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\backslash
+t
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\backslash
+
+\backslash
+
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Выполнение лабораторной работы заключается в осуществлении одного шага раскрутки
+ самоприменимого компилятора BeRo Tiny Pascal и состоит из нескольких этапов:
+\end_layout
+
+\begin_layout Enumerate
+добавление во входной язык компилятора 
+\series bold
+btpc
+\series default
+ новых возможностей (см.
+ таблицу 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Варианты-изменений-входного"
+
+\end_inset
+
+) путём редактирования его исходного текста, в результате чего должен получиться
+ файл 
+\series bold
+btpc2.pas
+\series default
+ (следует сначала скопировать 
+\series bold
+btpc.pas
+\series default
+ в 
+\series bold
+btpc2.pas
+\series default
+, а потом вносить в него правки);
+\end_layout
+
+\begin_layout Enumerate
+компиляция 
+\series bold
+btpc2.pas
+\series default
+, в результате которой должен получиться файл 
+\series bold
+btpc2.exe
+\series default
+;
+\end_layout
+
+\begin_layout Enumerate
+проверка работоспособности 
+\series bold
+btpc2.exe
+\series default
+ на небольшой программе, в которой обязательно должны использоваться новые
+ возможности языка;
+\end_layout
+
+\begin_layout Enumerate
+внесение изменений в 
+\series bold
+btpc2.pas
+\series default
+, связанных с использованием новых возможностей языка, и сохранение новой
+ версии исходного текста компилятора в файле 
+\series bold
+btpc3.pas
+\series default
+;
+\end_layout
+
+\begin_layout Enumerate
+завершение шага раскрутки путём компиляции 
+\series bold
+btpc3.pas
+\series default
+ с помощью полученного на этапе 2 файла 
+\series bold
+btpc2.exe
+\series default
+.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://bero.0ok.de/blog/projects/berotinypascal/BeRoTinyPascal.zip
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
