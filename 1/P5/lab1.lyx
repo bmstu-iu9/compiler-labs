@@ -90,15 +90,11 @@
 \end_layout
 
 \begin_layout Date
-8 февраля 2014
+20 августа 2013
 \end_layout
 
 \begin_layout Author
-Коновалов А.
-\begin_inset space \thinspace{}
-\end_inset
-
-В.
+Скоробогатов С.Ю.
 \end_layout
 
 \begin_layout Section
@@ -115,9 +111,9 @@
 \end_layout
 
 \begin_layout Standard
-В качестве модельного выберем компилятор BeRo Tiny Pascal, разработанный
- Benjamin Ros\SpecialChar \-
-seaux 
+В качестве модельного выберем компилятор P5 языка Pascal, разработанный
+ С.
+ Муром 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "key-1"
@@ -125,80 +121,115 @@ key "key-1"
 \end_inset
 
 .
- Входным языком компилятора является язык Pascal, совместимый с диалектом
- Delphi, а
-\begin_inset space ~
-\end_inset
-
-целевым языком --- исполнимый код Win32.
+ Входным языком компилятора является язык Pascal, соответствующий стандарту
+ ISO 7185, а целевым языком -- псевдокод, который может быть исполнен специальны
+м интерпретатором.
 \end_layout
 
 \begin_layout Standard
-Исходный текст компилятора составлен на языке Pascal, совместимом с диалектом
- Delphi.
+Исходный текст компилятора P5 составлен на языке Pascal и удовлетворяет
+ стандарту ISO 7185.
  Тем самым, компилятор является самоприменимым.
 \end_layout
 
 \begin_layout Standard
 Исходные данные для выполнения лабораторной работы в операционной системе
- Windows представлены следующим набором файлов:
+ Linux представлены следующим набором файлов:
 \end_layout
 
 \begin_layout Description
-btpc.pas --- исходный текст компилятора BeRo Tiny Pascal;
+pcom.pas -- исходный текст компилятора P5;
 \end_layout
 
 \begin_layout Description
-btpc.exe --- бинарная версия компилятора, полученная путём раскрутки;
+pcom -- бинарная версия компилятора P5, полученная путём компиляции исходного
+ текста компилятора с помощью gpc (GNU Pascal Compiler);
 \end_layout
 
 \begin_layout Description
-hello.pas --- программа, предназначенная для проверки работоспособности компилято
-ра.
+pint -- интерпретатор псевдокода, предназначенный для выполнения программ;
+\end_layout
+
+\begin_layout Description
+iso7185.pdf -- текст стандарта ISO 7185:1990 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Description
+hello.pas -- программа, предназначенная для проверки работоспособности компилятор
+а.
 \end_layout
 
 \begin_layout Section
-Использование компилятора
+Использование pcom и pint
 \end_layout
 
 \begin_layout Standard
-Компилятор берёт исходный текст со стандартного ввода и в случае успешной
- компиляции записывает порождённый двоичный код в стандартный вывод.
- Тем самым, для компиляции программы hellp.pas нужно выполнить команду:
+Бинарная версия компилятора P5 берёт исходный текст компилируемой программы
+ из стандартного потока ввода и записывает порождаемый псевдокод в файл
+ с именем prr.
+ Тем самым, для компиляции программы hello.pas нужно выполнить команду
 \end_layout
 
 \begin_layout LyX-Code
-btpc <hello.pas >hello.exe
+./pcom <hello.pas
 \end_layout
 
 \begin_layout Standard
-При наличии синтаксической ошибки в коде компилятор в стандартный вывод
- записывает вместо двоичного кода сообщение об ошибке.
- Признаком того, что компиляция прошла неудачно является малый размер целевого
- файла (в данном примере hello.exe) --- менее 100 байт.
- Для того, чтобы посмотреть размер файла, можно выполнить команду dir.
- Для просмотра сообщения об ошибке нужно выполнить команду:
+Интерпретатор pint считывыет псевдокод из файла с именем prd, поэтому перед
+ его запуском требуется переименовать файл prr в prd:
 \end_layout
 
 \begin_layout LyX-Code
-type hello.exe
+mv prr prd
+\end_layout
+
+\begin_layout LyX-Code
+./pint
 \end_layout
 
 \begin_layout Standard
-Для выполнения одного шага раскрутки используется команда
+Бинарную версию компилятора P5 можно применить к его исходному тексту:
 \end_layout
 
 \begin_layout LyX-Code
-btpc <btpc.pas >btpc_new.exe
+./pcom <pcom.pas
 \end_layout
 
 \begin_layout Standard
-После её выполнения можно убедиться, что файлы btpc.exe и btpc_new.exe идентичны
- при помощи команды
+После этого для компиляции программы hello.pas можно использовать компилятор
+ P5, представленный в псевдокоде.
+ Для этого нужно запустить компилятор с помощью pint:
 \end_layout
 
 \begin_layout LyX-Code
-fc /b btpc.exe btpc_new.exe
+mv prr prd
+\end_layout
+
+\begin_layout LyX-Code
+./pint <hello.pas
+\end_layout
+
+\begin_layout Standard
+Более того, можно ещё раз откомпилировать pcom.pas с помощью компилятора
+ P5, представленного в псевдокоде.
+ Для этого нам потребуется выполнить команду
+\end_layout
+
+\begin_layout LyX-Code
+./pint <pcom.pas
+\end_layout
+
+\begin_layout Standard
+Отметим, что последняя команда работает достаточно длительное время.
+ После её выполнения можно убедиться, что файлы prd и prr совпадают с точностью
+ до пробельных символов.
 \end_layout
 
 \begin_layout Section
@@ -207,7 +238,6 @@ fc /b btpc.exe btpc_new.exe
 
 \begin_layout Standard
 \begin_inset Float table
-placement p
 wide false
 sideways false
 status open
@@ -232,7 +262,7 @@ name "tab:Варианты-изменений-входного"
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="11" columns="2">
+<lyxtabular version="3" rows="14" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="90line%">
@@ -578,8 +608,27 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-Сделать так, чтобы символы в строке программы, расположенные справа от 80-й
- позиции, не учитывались.
+
+\series bold
+P5:
+\series default
+ Сделать так, чтобы символы в строке программы, расположенные справа от
+\begin_inset space ~
+\end_inset
+
+80-й позиции, не учитывались.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+BeRo Tiny Pascal:
+\series default
+ Сделать так, чтобы символы в строке программы, расположенные справа от
+\begin_inset space ~
+\end_inset
+
+120-й позиции, не учитывались.
 \end_layout
 
 \end_inset
@@ -631,7 +680,7 @@ to
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -640,7 +689,7 @@ to
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -684,6 +733,87 @@ t
 \end_inset
 </cell>
 </row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Добавить в
+\begin_inset space ~
+\end_inset
+
+язык шестнадцатиричные константы вида 0x12ABcd.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Добавить синонимы ~, & и
+\begin_inset space ~
+\end_inset
+
+| для операторов not, and и
+\begin_inset space ~
+\end_inset
+
+or соответственно.
+ При этом операторы not, and и
+\begin_inset space ~
+\end_inset
+
+or остаются допустимыми.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Сделать идентификаторы чувствительными к
+\begin_inset space ~
+\end_inset
+
+регистру.
+\end_layout
+
+\end_inset
+</cell>
+</row>
 </lyxtabular>
 
 \end_inset
@@ -691,22 +821,14 @@ t
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 Выполнение лабораторной работы заключается в осуществлении одного шага раскрутки
- самоприменимого компилятора BeRo Tiny Pascal и состоит из нескольких этапов:
+ самоприменимого компилятора P5 и состоит из нескольких этапов:
 \end_layout
 
 \begin_layout Enumerate
-добавление во входной язык компилятора 
-\series bold
-btpc
-\series default
- новых возможностей (см.
+добавление во входной язык компилятора P5 новых возможностей (см.
  таблицу 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -715,65 +837,27 @@ reference "tab:Варианты-изменений-входного"
 \end_inset
 
 ) путём редактирования его исходного текста, в результате чего должен получиться
- файл 
-\series bold
-btpc2.pas
-\series default
- (следует сначала скопировать 
-\series bold
-btpc.pas
-\series default
- в 
-\series bold
-btpc2.pas
-\series default
-, а потом вносить в него правки);
+ файл pcom2.pas;
 \end_layout
 
 \begin_layout Enumerate
-компиляция 
-\series bold
-btpc2.pas
-\series default
-, в результате которой должен получиться файл 
-\series bold
-btpc2.exe
-\series default
-;
+компиляция pcom2.pas, которая может осуществляться как бинарной версией компилято
+ра, так и версией, представленной в псевдокоде (бинарная -- быстрее);
 \end_layout
 
 \begin_layout Enumerate
-проверка работоспособности 
-\series bold
-btpc2.exe
-\series default
- на небольшой программе, в которой обязательно должны использоваться новые
- возможности языка;
+проверка работоспособности pcom2.pas на небольшой программе, в которой обязательн
+о должны использоваться новые возможности языка;
 \end_layout
 
 \begin_layout Enumerate
-внесение изменений в 
-\series bold
-btpc2.pas
-\series default
-, связанных с использованием новых возможностей языка, и сохранение новой
- версии исходного текста компилятора в файле 
-\series bold
-btpc3.pas
-\series default
-;
+внесение изменений в pcom2.pas, связанных с использованием новых возможностей
+ языка, и сохранение новой версии исходного текста компилятора в файле pcom3.pas;
 \end_layout
 
 \begin_layout Enumerate
-завершение шага раскрутки путём компиляции 
-\series bold
-btpc3.pas
-\series default
- с помощью полученного на этапе 2 файла 
-\series bold
-btpc2.exe
-\series default
-.
+завершение шага раскрутки путём компиляции pcom3.pas с помощью полученного
+ на этапе 2 псевдокода компилятора.
 \end_layout
 
 \begin_layout Bibliography
@@ -783,18 +867,30 @@ key "key-1"
 
 \end_inset
 
-
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-http://bero.0ok.de/blog/projects/berotinypascal/BeRoTinyPascal.zip
+Scott A.
+ Moore.
+ 
+\emph on
+The P5 compiler
+\emph default
+.
+ -- URL: http://www.moorecad.com/standardpascal/p5.html.
 \end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
 
 \end_inset
 
+
+\emph on
+ISO 7185:1990: Information technology -- Programming languages -- Pascal
+\emph default
 .
+ -- Geneva, Switzerland: International Organization for Standardization,
+ 1990.
 \end_layout
 
 \end_body

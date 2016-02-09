@@ -232,7 +232,7 @@ name "tab:Варианты-изменений-входного"
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="11" columns="2">
+<lyxtabular version="3" rows="14" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="90line%">
@@ -578,8 +578,27 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-Сделать так, чтобы символы в строке программы, расположенные справа от 80-ой
- позиции, не учитывались.
+
+\series bold
+P5:
+\series default
+ Сделать так, чтобы символы в строке программы, расположенные справа от
+\begin_inset space ~
+\end_inset
+
+80-й позиции, не учитывались.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+BeRo Tiny Pascal:
+\series default
+ Сделать так, чтобы символы в строке программы, расположенные справа от
+\begin_inset space ~
+\end_inset
+
+120-й позиции, не учитывались.
 \end_layout
 
 \end_inset
@@ -631,7 +650,7 @@ to
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -640,11 +659,13 @@ to
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Добавить в строковые литералы Escape-последовательности 
+Добавить в строковые литералы Escape-последовательности «
+\backslash
+a», 
 \begin_inset Quotes fld
 \end_inset
 
@@ -677,6 +698,87 @@ t
 \end_inset
 
 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Добавить в
+\begin_inset space ~
+\end_inset
+
+язык шестнадцатиричные константы вида 0x12ABcd.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Добавить синонимы ~, & и
+\begin_inset space ~
+\end_inset
+
+| для операторов not, and и
+\begin_inset space ~
+\end_inset
+
+or соответственно.
+ При этом операторы not, and и
+\begin_inset space ~
+\end_inset
+
+or остаются допустимыми.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Сделать идентификаторы чувствительными к
+\begin_inset space ~
+\end_inset
+
+регистру.
 \end_layout
 
 \end_inset
