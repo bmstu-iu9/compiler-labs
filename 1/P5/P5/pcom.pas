@@ -230,7 +230,7 @@
 * operations using one file reference. Finally, files were tied to the type    *
 * ending 'a', because files are now full variable references.                  *
 *                                                                              *
-*******************************************************************************}
+*******************************************************************************)
 
 program pascalcompiler(input,output,prr);
 
@@ -348,7 +348,7 @@ const
    minorver   = 0; { minor version number }
 
 type                                                        (*describing:*)
-                                                            (*************)
+                                                            (*************}
 
      {marktype= ^integer;}
                                                             (*basic symbols*)
@@ -373,8 +373,8 @@ type                                                        (*describing:*)
                  next:  strvsp { next }
                end;
 
-                                                            (*constants*)
-                                                            (***********)
+                                                            {*constants*)
+                                                            {***********)
      setty = set of setlow..sethigh;
      cstclass = (reel,pset,strg);
      csp = ^ constant;
@@ -449,8 +449,8 @@ type                                                        (*describing:*)
      disprange = 0..displimit;
      where = (blck,crec,vrec,rec);
 
-                                                            (*expressions*)
-                                                            (*************)
+                                                            (*expressions*}
+                                                            (*************}
      attrkind = (cst,varbl,expr);
      vaccess = (drct,indrct,inxd);
 
