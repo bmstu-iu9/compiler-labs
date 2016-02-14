@@ -1378,7 +1378,7 @@ var
                     until chartp[ch] <>  number
                 end;
               if lcase(ch) = 'e' then
-                begin k := k+1; if k <= digmax then digit[k] := ch;
+                begin k := k+1; if k <= DIGMAX then digit[k] := ch;
                   nextch;
                   if (ch = '+') or (ch ='-') then
                     begin k := k+1; if k <= digmax then digit[k] := ch;
@@ -1481,7 +1481,7 @@ var
              until iscmte or (ch = ')') or eof(input);
              if not iscmte then nextch; goto 1
            end
-         else if ch = '.' then begin sy := lbrack; nextch end
+         else if ch = '.' then begin sy := LbRaCk; nextch end
          else sy := lparent; 
          op := noop
        end;

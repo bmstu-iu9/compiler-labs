@@ -985,7 +985,7 @@ BEGIN
    R:=1;
    IF CurSym=SymTO THEN BEGIN
     Expect(SymTO);
-   END ELSE IF CurSym=SymDOWNTO THEN BEGIN
+   END ELSE IF CurSym=sYMdownto THEN BEGIN
     Expect(SymDOWNTO);
     R:=-1;
    END ELSE BEGIN
@@ -1053,7 +1053,7 @@ BEGIN
   REPEAT
    GetSymbol;
    Statement;
-  UNTIL CurSym<>TokSemi;
+  UNTIL CurSym<>tOKsEMI;
   Expect(SymUNTIL);
   Expression(T);
   MustBe(TypeBOOL,T);
@@ -1075,7 +1075,7 @@ PROCEDURE Block(L:INTEGER); FORWARD;
 PROCEDURE Constant(VAR C,T:INTEGER);
 VAR I,S:INTEGER;
 BEGIN
- IF (CurSym=TokStrC) AND (CurStrLen=1) THEN BEGIN
+ IF (CurSym=tOKsTRc) AND (CurStrLen=1) THEN BEGIN
   C:=ORD(CurStr[1]);
   T:=TypeCHAR;
  END ELSE BEGIN
