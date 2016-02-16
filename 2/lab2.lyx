@@ -926,7 +926,7 @@ name "tab:Дополнительные-возможности"
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="14" columns="2">
+<lyxtabular version="3" rows="20" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="90line%">
@@ -1325,7 +1325,7 @@ status open
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1334,13 +1334,426 @@ status open
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Каждое вхождение строкового литерала в текст программы должно быть заменено
  идентификатором константы, добавленной в начало программы и имеющей соответству
 ющее значение (при этом значения добавляемых констант не должны дублироваться)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Заменить константы, задаваемые чере
+з 
+\lang russian
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+iota
+\end_layout
+
+\end_inset
+
+
+ на
+\begin_inset space ~
+\end_inset
+
+явно заданные значения.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Заменить в
+\begin_inset space ~
+\end_inset
+
+программе все десятичные числа на
+\begin_inset space ~
+\end_inset
+
+шестнадцатиричные.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Подсчитать число присваиваний в
+\begin_inset space ~
+\end_inset
+
+программе.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Любая неанонимная функция должна в
+\begin_inset space ~
+\end_inset
+
+начале выполнения и
+\begin_inset space ~
+\end_inset
+
+перед возвратом (оператором 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+return
+\end_layout
+
+\end_inset
+
+ или при достижении конца блока) выводить слово 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+"Starts "
+\end_layout
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+"Ends "
+\end_layout
+
+\end_inset
+
+, соответственно, своё имя и
+\begin_inset space ~
+\end_inset
+
+время, прошедшее с
+\begin_inset space ~
+\end_inset
+
+начала выполнения программы (см.
+\begin_inset space ~
+\end_inset
+
+функции 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+time.Now()
+\end_layout
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+time.Since()
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Заменить вхождения глобальной переменной 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+LINE
+\end_layout
+
+\end_inset
+
+ на
+\begin_inset space ~
+\end_inset
+
+номер текущей строки, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+FILE
+\end_layout
+
+\end_inset
+
+ — на
+\begin_inset space ~
+\end_inset
+
+имя текущего файла.
+ В
+\begin_inset space ~
+\end_inset
+
+исходной программе эти переменные должны быть объявлены в
+\begin_inset space ~
+\end_inset
+
+глобальной области видимости с
+\begin_inset space ~
+\end_inset
+
+типами 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+int
+\end_layout
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+string
+\end_layout
+
+\end_inset
+
+, соответственно (в
+\begin_inset space ~
+\end_inset
+
+противном случае следует выдать ошибку).
+ В
+\begin_inset space ~
+\end_inset
+
+новой программе они должны отсутствовать.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Заменить вхождения глобальной переменной 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+FUNCNAME
+\end_layout
+
+\end_inset
+
+ на
+\begin_inset space ~
+\end_inset
+
+имя неанонимной функции, в
+\begin_inset space ~
+\end_inset
+
+которой переменная упоминается, либо на
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+"(global)"
+\end_layout
+
+\end_inset
+
+, если переменная упоминается в
+\begin_inset space ~
+\end_inset
+
+глобальном контексте.
+ В
+\begin_inset space ~
+\end_inset
+
+исходной программе переменная 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+FUNCNAME
+\end_layout
+
+\end_inset
+
+ должна быть объявлена в
+\begin_inset space ~
+\end_inset
+
+глобальной области видимости типа 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+string
+\end_layout
+
+\end_inset
+
+, в
+\begin_inset space ~
+\end_inset
+
+новой программе она должна отсутстовать.
 \end_layout
 
 \end_inset
