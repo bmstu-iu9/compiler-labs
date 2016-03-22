@@ -97,15 +97,11 @@
 \end_layout
 
 \begin_layout Author
-Скоробогатов С.Ю.,
-\end_layout
-
-\begin_layout Author
-Коновалов А.В.
+Скоробогатов С.Ю., Коновалов А.В.
 \end_layout
 
 \begin_layout Date
-20 августа 2013
+16 марта 2016
 \end_layout
 
 \begin_layout Section
@@ -2382,7 +2378,11 @@ forward
 \end_inset
 
 буквы.
- Знаки операций: либо последовательности знаков 
+ Знаки операций: либо последовательности, состоящие из
+\begin_inset space ~
+\end_inset
+
+знаков 
 \begin_inset listings
 inline true
 status open
@@ -2733,13 +2733,10 @@ status open
 \begin_inset space ~
 \end_inset
 
-заканчиваются 
-на
+заканчиваются на
 \begin_inset space ~
 \end_inset
 
-
-\lang russian
 
 \begin_inset listings
 inline true
@@ -3025,10 +3022,7 @@ NIHIL
 \end_inset
 
 регистру.
- Принцип вычитания (
-числа вида 
-\lang russian
-
+ Принцип вычитания (числа вида 
 \begin_inset listings
 inline true
 status open
