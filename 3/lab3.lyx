@@ -473,6 +473,35 @@ NUMBER (1, 11): 100
 \end_layout
 
 \begin_layout Standard
+Идентификаторы и
+\begin_inset space ~
+\end_inset
+
+числовые литералы не
+\begin_inset space ~
+\end_inset
+
+могут содержать внутри себя пробельных символов, если в
+\begin_inset space ~
+\end_inset
+
+задании явно не
+\begin_inset space ~
+\end_inset
+
+указано иного (варианты 4 и
+\begin_inset space ~
+\end_inset
+
+14).
+ Комментарии, строковые и
+\begin_inset space ~
+\end_inset
+
+символьные литералы могут содержать внутри себя пробельные символы.
+\end_layout
+
+\begin_layout Standard
 Входной файл может содержать ошибки, при обнаружении которых лексический
  анализатор должен выдавать сообщение с указанием координаты:
 \end_layout

@@ -109,7 +109,7 @@
 \end_layout
 
 \begin_layout Date
-05 апреля 2016
+5 апреля 2016
 \end_layout
 
 \begin_layout Section
@@ -133,7 +133,11 @@
 \begin_layout Standard
 Порождённый лексический анализатор должен загружать входной поток из файла
  (кодировка -- ASCII) и выводить в стандартный поток вывода описания распознанны
-х лексем в формате
+х лексем в
+\begin_inset space ~
+\end_inset
+
+формате
 \end_layout
 
 \begin_layout LyX-Code
@@ -169,7 +173,44 @@ STRING (1, 11)-(1, 16): qwerty
 \begin_layout Standard
 Лексемы во входном файле могут разделяться пробельными символами (пробел,
  горизонтальная табуляция, маркеры окончания строки), а могут быть записаны
- слитно (если это не приводит к противоречиям).
+ слитно (если это не
+\begin_inset space ~
+\end_inset
+
+приводит к
+\begin_inset space ~
+\end_inset
+
+противоречиям).
+\end_layout
+
+\begin_layout Standard
+Идентификаторы и
+\begin_inset space ~
+\end_inset
+
+числовые литералы не
+\begin_inset space ~
+\end_inset
+
+могут содержать внутри себя пробельных символов, если в
+\begin_inset space ~
+\end_inset
+
+задании явно не
+\begin_inset space ~
+\end_inset
+
+указано иного (варианты 4 и
+\begin_inset space ~
+\end_inset
+
+14).
+ Комментарии, строковые и
+\begin_inset space ~
+\end_inset
+
+символьные литералы могут содержать внутри себя пробельные символы.
 \end_layout
 
 \begin_layout Standard
