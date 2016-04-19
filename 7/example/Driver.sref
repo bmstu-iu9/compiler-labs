@@ -1,0 +1,64 @@
+﻿//FROM LibraryEx
+$EXTERN Fetch;
+
+//FROM Error
+$EXTERN ReportError-BadExpand, ReportError-BadToken;
+
+$ENTRY Parse {
+  s.Table s.Axiom e.Tokens =
+    <DoParse
+      // Таблица
+      s.Table
+      // Стек
+      ((#AXIOM #AXIOM) #NT s.Axiom #T #EOF)
+      // Поток токенов
+      (e.Tokens)
+    >;
+}
+
+DoParse {
+  s.Table e.Stack ((e.Scanned) #NT s.NonTerminal e.Rule)
+  ((s.Token t.Fragment e.Attrib) e.Tokens) =
+    <Fetch
+      <<s.Table s.NonTerminal> s.Token> {
+        #ERROR =
+          <ReportError-BadExpand s.NonTerminal s.Token t.Fragment e.Attrib>;
+
+        s.AltTag e.SubRule =
+          <DoParse
+            s.Table
+            e.Stack
+            ((e.Scanned) e.Rule)
+            ((s.NonTerminal s.AltTag) e.SubRule)
+            (e.Tokens)
+          >;
+      }
+    >;
+
+  s.Table e.Stack ((e.Scanned) #T s.Terminal e.Rule)
+  ((s.Terminal t.Fragment e.Attrib) e.Tokens) =
+    <DoParse
+      s.Table
+      e.Stack
+      ((e.Scanned (s.Terminal t.Fragment e.Attrib)) e.Rule)
+      (e.Tokens)
+    >;
+
+  s.Table e.Stack ((e.Scanned) #T s.ExpectedTerminal e.Rule)
+  ((s.BadTerminal t.Fragment e.Attrib) e.Tokens) =
+    <ReportError-BadToken s.ExpectedTerminal s.BadTerminal t.Fragment e.Attrib>;
+
+  s.Table
+  e.Stack
+  ((e.Scanned) e.Rule)
+  ((s.NonTerminal s.AltTag e.Symbols))
+  (e.Tokens) =
+    <DoParse
+      s.Table
+      e.Stack
+      ((e.Scanned (s.NonTerminal s.AltTag e.Symbols)) e.Rule)
+      (e.Tokens)
+    >;
+
+  s.Table (t.TopLevelNonTerm) (/* кончились токены */) = t.TopLevelNonTerm;
+}

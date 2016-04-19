@@ -1,0 +1,85 @@
+﻿$ENTRY Table {
+  #Program = {
+    #KwTerminal = <Program 1>;
+    #KwNonTerminal = <Program 1>;
+    #KwAxiom = <Program 1>;
+    #Head = <Program 1>;
+    #EmptyHead = #ERROR;
+    #Terminal = #ERROR;
+    #NonTerminal = #ERROR;
+    #EOF = <Program 2>;
+  };
+
+  #Element = {
+    #KwTerminal = 1 #TerminalDefinition;
+    #KwNonTerminal = 2 #NonTerminalDefinition;
+    #KwAxiom = 3 #AxiomDefinition;
+    #Head = 4 #Rule;
+    #EmptyHead = #ERROR;
+    #Terminal = #ERROR;
+    #NonTerminal = #ERROR;
+    #EOF = #ERROR;
+  };
+
+  #TerminalsDefinition = {
+  };
+
+  #Terminals = {
+  };
+
+  #NonTerminalsDefinition = {
+  };
+
+  #NonTerminals = {
+  };
+
+  #AxiomDefinition = {
+  };
+
+  #Rule = {
+  };
+
+  #Chain = {
+  };
+
+  #Alternatives = {
+  };
+}
+
+Program {
+  1 = 1 #Element #Program;
+  2 = 2 /* пусто */
+}
+
+                           KwTerminal            KwNonTerminal               
+
+TerminalDefinition         KwTerminal Terminals  ERROR                       
+Termianls                  ϵ                     ϵ                           
+NonTerminalDefinition      ERROR                 KwNonTerminal NonTerminals  
+NonTerminals               ϵ                     ϵ                           
+AxiomDefinition            ERROR                 ERROR                       
+Rule                       ERROR                 ERROR                       
+Chain                      ϵ                     ϵ                           
+Alternatives               ϵ                     ϵ                           
+
+                           KwAxiom              Head                     EmptyHead                     
+                                                                                                       
+TerminalDefinition         ERROR                ERROR                    ERROR                         
+Termianls                  ϵ                    ϵ                        ERROR                         
+NonTerminalDefinition      ERROR                ERROR                    ERROR                         
+NonTerminals               ϵ                    ϵ                        ERROR                         
+AxiomDefinition            KwAxiom NonTerminal  ERROR                    ERROR                         
+Rule                       ERROR                Head Chain Alternatives  ERROR                         
+Chain                      ϵ                    ϵ                        ϵ                             
+Alternatives               ϵ                    ϵ                        EmptyHead Chain Alternatives  
+
+                           Terminal            NonTerminal               $    
+                                                                              
+TerminalDefinition         ERROR               ERROR                     ERROR
+Termianls                  Terminal Terminals  ERROR                     ϵ    
+NonTerminalDefinition      ERROR               ERROR                     ERROR
+NonTerminals               ERROR               NonTerminal NonTerminals  ϵ    
+AxiomDefinition            ERROR               ERROR                     ERROR
+Rule                       ERROR               ERROR                     ERROR
+Chain                      Terminal Chain      NonTerminal Chain         ϵ    
+Alternatives               ERROR               ERROR                     ϵ    
