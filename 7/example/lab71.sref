@@ -1,0 +1,49 @@
+//FROM LibraryEx
+$EXTERN ArgList, Map;
+
+//FROM Library
+$EXTERN WriteLine, StrFromInt;
+
+//FROM Lexer
+$EXTERN Lexer;
+
+$ENTRY Go {
+  = <Main <ArgList>>;
+}
+
+Main {
+  (e.ProgName) (e.Source) e.Other =
+    <Map
+      {
+        (s.Domain t.Fragment) =
+          <WriteLine <Domain s.Domain> ' ' <Fragment t.Fragment>>;
+
+        (s.Domain t.Fragment e.Info) =
+          <WriteLine <Domain s.Domain> ' ' <Fragment t.Fragment> ': ' e.Info>;
+      }
+      <Lexer e.Source>
+    >;
+
+  (e.ProgName) =
+    <WriteLine 'usage: ' e.ProgName ' source.txt'>;
+}
+
+Domain {
+  #KwTerminal = '<TERMINAL>';
+  #KwNonTerminal = '<NONTERMINAL>';
+  #KwAxiom = '<AXIOM>';
+  #Head = 'Head';
+  #EmptyHead = '<>';
+  #Terminal = 'Terminal';
+  #NonTerminal = 'Non terminal';
+  #Error = 'SYNTAX ERROR';
+  #EOF = 'End of file';
+}
+
+Fragment {
+  (t.Begin t.End) = <Pos t.Begin> ' - ' <Pos t.End>;
+}
+
+Pos {
+  (s.Line s.Col) = '(' <StrFromInt s.Line> ', ' <StrFromInt s.Col> ')';
+}
