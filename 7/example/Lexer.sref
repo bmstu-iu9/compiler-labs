@@ -25,7 +25,7 @@ $ENTRY Lexer {
         )
         DelAccumulator
         (Map {
-          (#Spaces t.Fragment e.Spaces) = /* игнорируем */;
+          (#Spaces t.Fragment e.Spaces) = /* РёРіРЅРѕСЂРёСЂСѓРµРј */;
 
           (#Keyword t.Fragment '<TERMINAL>') = (#KwTerminal t.Fragment);
           (#Keyword t.Fragment '<NONTERMINAL>') = (#KwNonTerminal t.Fragment);
