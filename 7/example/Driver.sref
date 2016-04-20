@@ -4,13 +4,16 @@ $EXTERN Fetch;
 //FROM Error
 $EXTERN ReportError-BadExpand, ReportError-BadToken;
 
+//FROM Position
+$EXTERN ConcatFragments;
+
 $ENTRY Parse {
   s.Table s.Axiom e.Tokens =
     <DoParse
       // Таблица
       s.Table
       // Стек
-      ((#AXIOM #AXIOM) #NT s.Axiom #T #EOF)
+      ((#AXIOM 0) #NT s.Axiom #T #EOF)
       // Поток токенов
       (e.Tokens)
     >;
@@ -30,7 +33,7 @@ DoParse {
             e.Stack
             ((e.Scanned) e.Rule)
             ((s.NonTerminal s.AltTag) e.SubRule)
-            (e.Tokens)
+            ((s.Token t.Fragment e.Attrib) e.Tokens)
           >;
       }
     >;
@@ -40,7 +43,7 @@ DoParse {
     <DoParse
       s.Table
       e.Stack
-      ((e.Scanned (s.Terminal t.Fragment e.Attrib)) e.Rule)
+      ((e.Scanned (s.Terminal t.Fragment #T e.Attrib)) e.Rule)
       (e.Tokens)
     >;
 
@@ -56,9 +59,46 @@ DoParse {
     <DoParse
       s.Table
       e.Stack
-      ((e.Scanned (s.NonTerminal s.AltTag e.Symbols)) e.Rule)
+      ((e.Scanned (s.NonTerminal <SetPosition s.AltTag e.Symbols>)) e.Rule)
       (e.Tokens)
     >;
 
-  s.Table (t.TopLevelNonTerm) (/* кончились токены */) = t.TopLevelNonTerm;
+  s.Table ((#AXIOM 0 t.TopLevelSymbol t.EOF)) (/* кончились токены */) =
+    t.TopLevelSymbol;
+}
+
+SetPosition {
+  s.AltTag /* пусто */ = #NoPosition #NT s.AltTag;
+
+  s.AltTag e.Symbols = <SetPosition-Left s.AltTag () e.Symbols>;
+}
+
+SetPosition-Left {
+  s.AltTag (e.Scanned) (s.Type #NoPosition s.Kind e.Info) e.Symbols =
+    <SetPosition-Left
+      s.AltTag (e.Scanned (s.Type #NoPosition s.Kind e.Info)) e.Symbols
+    >;
+
+  s.AltTag (e.Scanned) /* пусто */ =
+    #NoPosition #NT s.AltTag e.Scanned;
+
+  s.AltTag (e.Scanned) (s.Type t.Fragment s.Kind e.Info) e.Symbols =
+    <SetPosition-Right
+      s.AltTag t.Fragment
+      e.Scanned (s.Type t.Fragment s.Kind e.Info) e.Symbols ()
+    >;
+}
+
+SetPosition-Right {
+  s.AltTag t.LeftPosition
+  e.Symbols (s.Type #NoPosition s.Kind e.Info) (e.Scanned) =
+    <SetPosition-Right
+      s.AltTag t.LeftPosition
+      e.Symbols ((s.Type #NoPosition s.Kind e.Info) e.Scanned)
+    >;
+
+  s.AltTag t.LeftPosition
+  e.Symbols (s.Type t.RightPosition s.Kind e.Info) (e.Scanned) =
+    <ConcatFragments t.LeftPosition t.RightPosition>
+    #NT s.AltTag e.Symbols (s.Type t.RightPosition s.Kind e.Info) e.Scanned;
 }

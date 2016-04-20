@@ -7,25 +7,43 @@ $EXTERN WriteLine, StrFromInt;
 //FROM Lexer
 $EXTERN Lexer;
 
+//FROM Driver
+$EXTERN Parse;
+
+//FROM Table
+$EXTERN Table;
+
+//FROM Position
+$EXTERN StrFromFragment;
+
 $ENTRY Go {
   = <Main <ArgList>>;
 }
 
 Main {
-  (e.ProgName) (e.Source) e.Other =
+  (e.ProgName) ('--tokens') (e.Source) e.Other =
     <Map
       {
-        (s.Domain t.Fragment) =
-          <WriteLine <Domain s.Domain> ' ' <Fragment t.Fragment>>;
-
-        (s.Domain t.Fragment e.Info) =
-          <WriteLine <Domain s.Domain> ' ' <Fragment t.Fragment> ': ' e.Info>;
+        t.Token = <WriteLine <StrFromToken t.Token>>;
       }
       <Lexer e.Source>
     >;
 
+  (e.ProgName) (e.Source) e.Other =
+    <PrintTree
+      <Parse Table #Program <Lexer e.Source>>
+    >;
+
   (e.ProgName) =
-    <WriteLine 'usage: ' e.ProgName ' source.txt'>;
+    <WriteLine 'usage: ' e.ProgName ' [--tokens] source.txt'>;
+}
+
+StrFromToken {
+  (s.Domain t.Fragment) =
+    <Domain s.Domain> ' ' <StrFromFragment t.Fragment>;
+
+  (s.Domain t.Fragment e.Info) =
+    <Domain s.Domain> ' ' <StrFromFragment t.Fragment> ': ' e.Info;
 }
 
 Domain {
@@ -38,12 +56,25 @@ Domain {
   #NonTerminal = 'Non terminal';
   #Error = 'SYNTAX ERROR';
   #EOF = 'End of file';
+  s.Other = '(' s.Other ')';
 }
 
-Fragment {
-  (t.Begin t.End) = <Pos t.Begin> ' - ' <Pos t.End>;
+PrintTree {
+  t.TopLevelNode = <DoPrintTree () t.TopLevelNode>;
 }
 
-Pos {
-  (s.Line s.Col) = '(' <StrFromInt s.Line> ', ' <StrFromInt s.Col> ')';
+DoPrintTree {
+  (e.Indent) (s.Tag t.Fragment #T e.Info) =
+    <WriteLine e.Indent <StrFromToken (s.Tag t.Fragment e.Info)>>;
+
+  (e.Indent) (s.Tag t.Fragment #NT s.AltTag e.Symbols) =
+    <WriteLine
+      e.Indent <StrFromToken (s.Tag t.Fragment <StrFromInt s.AltTag>)>
+    >
+    <Map
+      {
+        t.Symbol = <DoPrintTree (e.Indent '  ') t.Symbol>;
+      }
+      e.Symbols
+    >;
 }

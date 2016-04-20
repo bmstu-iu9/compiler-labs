@@ -1,6 +1,9 @@
 //FROM LibraryEx
 $EXTERN Fetch, LoadFile, Seq, Map, MapReduce, DelAccumulator, Inc;
 
+//FROM Position
+$EXTERN ConcatFragments;
+
 $ENTRY Lexer {
   e.FileName =
     <Fetch
@@ -53,6 +56,7 @@ $ENTRY Lexer {
           (#BAD-KEYWORD t.Fragment e.Text) = (#Error t.Fragment 'bad keyword');
           (#BAD-TERM t.Fragment e.Text) = (#Error t.Fragment 'unclosed quote');
         })
+        ConcatErrors
       >
     >;
 }
@@ -66,6 +70,18 @@ IncText {
       }
       t.Pos e.Text
     >;
+}
+
+ConcatErrors {
+  e.Tokens
+  (#Error t.Frag1 e.Message1) (#Error t.Frag2 e.Message2)
+  e.TokensAndErrors =
+    e.Tokens
+    (#Error <ConcatFragments t.Frag1 t.Frag2> e.Message1)
+    // Второе сообщение об ошибке считаем наведённым
+    <ConcatErrors e.TokensAndErrors>;
+
+  e.Tokens = e.Tokens;
 }
 
 /*GEN:TOKENS

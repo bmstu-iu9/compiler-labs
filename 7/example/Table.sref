@@ -11,75 +11,127 @@
   };
 
   #Element = {
-    #KwTerminal = 1 #TerminalDefinition;
-    #KwNonTerminal = 2 #NonTerminalDefinition;
-    #KwAxiom = 3 #AxiomDefinition;
-    #Head = 4 #Rule;
+    #KwTerminal = 1 #NT #TerminalDefinition;
+    #KwNonTerminal = 2 #NT #NonTerminalDefinition;
+    #KwAxiom = 3 #NT #AxiomDefinition;
+    #Head = 4 #NT #Rule;
     #EmptyHead = #ERROR;
     #Terminal = #ERROR;
     #NonTerminal = #ERROR;
     #EOF = #ERROR;
   };
 
-  #TerminalsDefinition = {
+  #TerminalDefinition = {
+    #KwTerminal = 1 #T #KwTerminal #NT #Terminals;
+    #KwNonTerminal = #ERROR;
+    #KwAxiom = #ERROR;
+    #Head = #ERROR;
+    #EmptyHead = #ERROR;
+    #Terminal = #ERROR;
+    #NonTerminal = #ERROR;
+    #EOF = #ERROR;
   };
 
   #Terminals = {
+    #KwTerminal = <Terminals 1>;
+    #KwNonTerminal = <Terminals 1>;
+    #KwAxiom = <Terminals 1>;
+    #Head = <Terminals 1>;
+    #EmptyHead = #ERROR;
+    #Terminal = <Terminals 2>;
+    #NonTerminal = #ERROR;
+    #EOF = <Terminals 1>;
   };
 
-  #NonTerminalsDefinition = {
+  #NonTerminalDefinition = {
+    #KwTerminal = #ERROR;
+    #KwNonTerminal = 1 #T #KwNonTerminal #NT #NonTerminals;
+    #KwAxiom = #ERROR;
+    #Head = #ERROR;
+    #EmptyHead = #ERROR;
+    #Terminal = #ERROR;
+    #NonTerminal = #ERROR;
+    #EOF = #ERROR;
   };
 
   #NonTerminals = {
+    #KwTerminal = <NonTerminals 1>;
+    #KwNonTerminal = <NonTerminals 1>;
+    #KwAxiom = <NonTerminals 1>;
+    #Head = <NonTerminals 1>;
+    #EmptyHead = #ERROR;
+    #Terminal = #ERROR;
+    #NonTerminal = <NonTerminals 2>;
+    #EOF = <NonTerminals 1>;
   };
 
   #AxiomDefinition = {
+    #KwTerminal = #ERROR;
+    #KwNonTerminal = #ERROR;
+    #KwAxiom = 1 #T #KwAxiom #T #NonTerminal;
+    #Head = #ERROR;
+    #EmptyHead = #ERROR;
+    #Terminal = #ERROR;
+    #NonTerminal = #ERROR;
+    #EOF = #ERROR;
   };
 
   #Rule = {
+    #KwTerminal = #ERROR;
+    #KwNonTerminal = #ERROR;
+    #KwAxiom = #ERROR;
+    #Head = 1 #T #Head #NT #Chain #NT #Alternatives;
+    #EmptyHead = #ERROR;
+    #Terminal = #ERROR;
+    #NonTerminal = #ERROR;
+    #EOF = #ERROR;
   };
 
   #Chain = {
+    #KwTerminal = <Chain 1>;
+    #KwNonTerminal = <Chain 1>;
+    #KwAxiom = <Chain 1>;
+    #Head = <Chain 1>;
+    #EmptyHead = <Chain 1>;
+    #Terminal = <Chain 2>;
+    #NonTerminal = <Chain 3>;
+    #EOF = <Chain 1>;
   };
 
   #Alternatives = {
+    #KwTerminal = <Alternatives 1>;
+    #KwNonTerminal = <Alternatives 1>;
+    #KwAxiom = <Alternatives 1>;
+    #Head = <Alternatives 1>;
+    #EmptyHead = <Alternatives 2>;
+    #Terminal = #ERROR;
+    #NonTerminal = #ERROR;
+    #EOF = <Alternatives 1>;
   };
 }
 
 Program {
-  1 = 1 #Element #Program;
-  2 = 2 /* пусто */
+  1 = 1 #NT #Element #NT #Program;
+  2 = 2 /* пусто */;
 }
 
-                           KwTerminal            KwNonTerminal               
+Terminals {
+  1 = 1 /* пусто */;
+  2 = 2 #T #Terminal #NT #Terminals;
+}
 
-TerminalDefinition         KwTerminal Terminals  ERROR                       
-Termianls                  ϵ                     ϵ                           
-NonTerminalDefinition      ERROR                 KwNonTerminal NonTerminals  
-NonTerminals               ϵ                     ϵ                           
-AxiomDefinition            ERROR                 ERROR                       
-Rule                       ERROR                 ERROR                       
-Chain                      ϵ                     ϵ                           
-Alternatives               ϵ                     ϵ                           
+NonTerminals {
+  1 = 1 /* пусто */;
+  2 = 2 #T #NonTerminal #NT #NonTerminals;
+}
 
-                           KwAxiom              Head                     EmptyHead                     
-                                                                                                       
-TerminalDefinition         ERROR                ERROR                    ERROR                         
-Termianls                  ϵ                    ϵ                        ERROR                         
-NonTerminalDefinition      ERROR                ERROR                    ERROR                         
-NonTerminals               ϵ                    ϵ                        ERROR                         
-AxiomDefinition            KwAxiom NonTerminal  ERROR                    ERROR                         
-Rule                       ERROR                Head Chain Alternatives  ERROR                         
-Chain                      ϵ                    ϵ                        ϵ                             
-Alternatives               ϵ                    ϵ                        EmptyHead Chain Alternatives  
+Chain {
+  1 = 1 /* пусто */;
+  2 = 2 #T #Terminal #NT #Chain;
+  3 = 3 #T #NonTerminal #NT #Chain;
+}
 
-                           Terminal            NonTerminal               $    
-                                                                              
-TerminalDefinition         ERROR               ERROR                     ERROR
-Termianls                  Terminal Terminals  ERROR                     ϵ    
-NonTerminalDefinition      ERROR               ERROR                     ERROR
-NonTerminals               ERROR               NonTerminal NonTerminals  ϵ    
-AxiomDefinition            ERROR               ERROR                     ERROR
-Rule                       ERROR               ERROR                     ERROR
-Chain                      Terminal Chain      NonTerminal Chain         ϵ    
-Alternatives               ERROR               ERROR                     ϵ    
+Alternatives {
+  1 = 1 /* пусто */;
+  2 = 2 #T #EmptyHead #NT #Chain #NT #Alternatives;
+}
