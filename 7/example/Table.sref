@@ -135,3 +135,16 @@ Alternatives {
   1 = 1 /* пусто */;
   2 = 2 #T #EmptyHead #NT #Chain #NT #Alternatives;
 }
+
+$ENTRY NonTermNames {
+  #Program = 'Program';
+  #Element = 'Element';
+  #TerminalDefinition = 'TerminalDefinition';
+  #Terminals = 'Terminals';
+  #NonTerminalDefinition = 'NonTerminalDefinition';
+  #NonTerminals = 'NonTerminals';
+  #AxiomDefinition = 'AxiomDefinition';
+  #Rule = 'Rule';
+  #Chain = 'Chain';
+  #Alternatives = 'Alternatives';
+}

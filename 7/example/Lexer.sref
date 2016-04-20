@@ -2,7 +2,7 @@
 $EXTERN Fetch, LoadFile, Seq, Map, MapReduce, DelAccumulator, Inc;
 
 //FROM Position
-$EXTERN ConcatFragments;
+$EXTERN ConcatFragments, StrFromFragment;
 
 $ENTRY Lexer {
   e.FileName =
@@ -82,6 +82,26 @@ ConcatErrors {
     <ConcatErrors e.TokensAndErrors>;
 
   e.Tokens = e.Tokens;
+}
+
+$ENTRY StrFromToken {
+  (s.Domain t.Fragment) =
+    <Domain s.Domain> ' ' <StrFromFragment t.Fragment>;
+
+  (s.Domain t.Fragment e.Info) =
+    <Domain s.Domain> ' ' <StrFromFragment t.Fragment> ': ' e.Info;
+}
+
+Domain {
+  #KwTerminal = '<TERMINAL>';
+  #KwNonTerminal = '<NONTERMINAL>';
+  #KwAxiom = '<AXIOM>';
+  #Head = 'Head';
+  #EmptyHead = '<>';
+  #Terminal = 'Terminal';
+  #NonTerminal = 'Non terminal';
+  #Error = 'SYNTAX ERROR';
+  #EOF = 'End of file';
 }
 
 /*GEN:TOKENS

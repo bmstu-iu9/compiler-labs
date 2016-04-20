@@ -5,13 +5,13 @@ $EXTERN ArgList, Map;
 $EXTERN WriteLine, StrFromInt;
 
 //FROM Lexer
-$EXTERN Lexer;
+$EXTERN Lexer, StrFromToken;
 
 //FROM Driver
 $EXTERN Parse;
 
 //FROM Table
-$EXTERN Table;
+$EXTERN Table, NonTermNames;
 
 //FROM Position
 $EXTERN StrFromFragment;
@@ -38,38 +38,18 @@ Main {
     <WriteLine 'usage: ' e.ProgName ' [--tokens] source.txt'>;
 }
 
-StrFromToken {
-  (s.Domain t.Fragment) =
-    <Domain s.Domain> ' ' <StrFromFragment t.Fragment>;
-
-  (s.Domain t.Fragment e.Info) =
-    <Domain s.Domain> ' ' <StrFromFragment t.Fragment> ': ' e.Info;
-}
-
-Domain {
-  #KwTerminal = '<TERMINAL>';
-  #KwNonTerminal = '<NONTERMINAL>';
-  #KwAxiom = '<AXIOM>';
-  #Head = 'Head';
-  #EmptyHead = '<>';
-  #Terminal = 'Terminal';
-  #NonTerminal = 'Non terminal';
-  #Error = 'SYNTAX ERROR';
-  #EOF = 'End of file';
-  s.Other = '(' s.Other ')';
-}
-
 PrintTree {
   t.TopLevelNode = <DoPrintTree () t.TopLevelNode>;
 }
 
 DoPrintTree {
   (e.Indent) (s.Tag t.Fragment #T e.Info) =
-    <WriteLine e.Indent <StrFromToken (s.Tag t.Fragment e.Info)>>;
+    <WriteLine e.Indent '* ' <StrFromToken (s.Tag t.Fragment e.Info)>>;
 
   (e.Indent) (s.Tag t.Fragment #NT s.AltTag e.Symbols) =
     <WriteLine
-      e.Indent <StrFromToken (s.Tag t.Fragment <StrFromInt s.AltTag>)>
+      e.Indent '* ' <NonTermNames s.Tag> ' '
+      <StrFromFragment t.Fragment> ', ALT#' <StrFromInt s.AltTag>
     >
     <Map
       {
