@@ -1,0 +1,400 @@
+//FROM LibraryEx
+$EXTERN Fetch, LoadFile, Seq, Map, MapReduce, DelAccumulator, Inc;
+
+//FROM Position
+$EXTERN ConcatFragments, StrFromFragment;
+
+$ENTRY Lexer {
+  e.FileName =
+    <Fetch
+      <LoadFile e.FileName>
+      <Seq
+        (Map {
+          (e.Line) = e.Line '\n';
+        })
+        (Root ())
+        (MapReduce
+          {
+            t.StartPos (s.Tag e.Text) =
+              <Fetch
+                <IncText t.StartPos e.Text>
+                {
+                  t.EndPos =
+                    t.EndPos (s.Tag (t.StartPos t.EndPos) e.Text);
+                }
+              >;
+          }
+          (1 1)
+        )
+        DelAccumulator
+        (Map {
+          (#Spaces t.Fragment e.Spaces) = /* игнорируем */;
+
+          (#Keyword t.Fragment '<TERMINAL>') = (#KwTerminal t.Fragment);
+          (#Keyword t.Fragment '<NONTERMINAL>') = (#KwNonTerminal t.Fragment);
+          (#Keyword t.Fragment '<AXIOM>') = (#KwAxiom t.Fragment);
+          (#Keyword t.Fragment '<' e.Other '>') =
+            (#Error t.Fragment 'bad keyword <' e.Other '>');
+
+          (#Head t.Fragment '<' e.NonTerminal '>') =
+            (#Head t.Fragment e.NonTerminal);
+          (#EmptyHead t.Fragment '<>') = (#EmptyHead t.Fragment);
+
+          (#Terminal t.Fragment s.Letter) = (#Terminal t.Fragment s.Letter);
+          (#Terminal t.Fragment '''') = (#Terminal t.Fragment '');
+          (#Terminal t.Fragment '' s.Char '') = (#Terminal t.Fragment s.Char);
+
+          (#NonTerminal t.Fragment e.NonTerminal) =
+            (#NonTerminal t.Fragment e.NonTerminal);
+
+          (#EOF t.Fragment) = (#EOF t.Fragment);
+
+          (#UNEXPECTED t.Fragment s.Char) =
+            (#Error t.Fragment 'unexpected char ''' s.Char '');
+
+          (#BAD-HEAD t.Fragment e.Text) = (#Error t.Fragment 'bad rule head');
+          (#BAD-KEYWORD t.Fragment e.Text) = (#Error t.Fragment 'bad keyword');
+          (#BAD-TERM t.Fragment e.Text) = (#Error t.Fragment 'unclosed quote');
+        })
+        ConcatErrors
+      >
+    >;
+}
+
+IncText {
+  t.Pos e.Text =
+    <MapReduce
+      {
+        (s.Line s.Col) '\n' = (<Inc s.Line> 1);
+        (s.Line s.Col) s.Other = (s.Line <Inc s.Col>);
+      }
+      t.Pos e.Text
+    >;
+}
+
+ConcatErrors {
+  e.Tokens
+  (#Error t.Frag1 e.Message1) (#Error t.Frag2 e.Message2)
+  e.TokensAndErrors =
+    e.Tokens
+    (#Error <ConcatFragments t.Frag1 t.Frag2> e.Message1)
+    // Второе сообщение об ошибке считаем наведённым
+    <ConcatErrors e.TokensAndErrors>;
+
+  e.Tokens = e.Tokens;
+}
+
+$ENTRY StrFromToken {
+  (s.Domain t.Fragment) =
+    <Domain s.Domain> ' ' <StrFromFragment t.Fragment>;
+
+  (s.Domain t.Fragment e.Info) =
+    <Domain s.Domain> ' ' <StrFromFragment t.Fragment> ': ' e.Info;
+}
+
+Domain {
+  #KwTerminal = '<TERMINAL>';
+  #KwNonTerminal = '<NONTERMINAL>';
+  #KwAxiom = '<AXIOM>';
+  #Head = 'Head';
+  #EmptyHead = '<>';
+  #Terminal = 'Terminal';
+  #NonTerminal = 'Non terminal';
+  #Error = 'SYNTAX ERROR';
+  #EOF = 'End of file';
+}
+
+/*GEN:TOKENS
+  :UpLetter: = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.
+  :LoLetter: = 'abcdefghijklmnopqrstuvwxyz'.
+  :Digit: = '0123456789'.
+  :Space: = ' \t\r\n'.
+
+  :Other: = :Any:.
+
+  Root =
+    :Space:                               Spaces              |
+    '<'                                   KeywordOrHead       |
+    :UpLetter:                            StartNonterm        |
+    :LoLetter:    !#Terminal              Root                |
+    '\''                                  StartQuotedTerm     |
+                  !#EOF                                       |
+    :Other:       !#UNEXPECTED            Root                .
+
+  Spaces =
+    :Space:                               Spaces              |
+                  !#Spaces                Root                .
+
+  KeywordOrHead =
+    :UpLetter:                            KeywordOrHeadTail   |
+    '>'           !#EmptyHead             Root                |
+                  !#BAD-HEAD              Root                .
+
+  KeywordOrHeadTail =
+    :Digit:                               HeadEnd             |
+    :UpLetter:                            KeywordTail         |
+    '>'           !#Head                  Root                |
+                  !#BAD-HEAD              Root                .
+
+  HeadEnd =
+    '>'           !#Head                  Root                |
+                  !#BAD-HEAD              Root                .
+
+  KeywordTail =
+    :UpLetter:                            KeywordTail         |
+    '>'           !#Keyword               Root                |
+                  !#BAD-KEYWORD           Root                .
+
+  StartNonterm =
+    :Digit:       !#NonTerminal           Root                |
+                  !#NonTerminal           Root                .
+
+  StartQuotedTerm =
+    '\n'          !#BAD-TERM              Root                |
+    '\''          !#Terminal              Root                |
+                  !#BAD-TERM                                  |
+    :Any:                                 EndQuotedTerm       .
+
+  EndQuotedTerm =
+    '\''          !#Terminal              Root                |
+                  !#BAD-TERM              Root                .
+GEN:END*/
+
+Root {
+  (e.Accum) ' ' e.Text = <Spaces (e.Accum ' ') e.Text>;
+  (e.Accum) '\t' e.Text = <Spaces (e.Accum '\t') e.Text>;
+  (e.Accum) '\r' e.Text = <Spaces (e.Accum '\r') e.Text>;
+  (e.Accum) '\n' e.Text = <Spaces (e.Accum '\n') e.Text>;
+  (e.Accum) '<' e.Text = <KeywordOrHead (e.Accum '<') e.Text>;
+  (e.Accum) 'A' e.Text = <StartNonterm (e.Accum 'A') e.Text>;
+  (e.Accum) 'B' e.Text = <StartNonterm (e.Accum 'B') e.Text>;
+  (e.Accum) 'C' e.Text = <StartNonterm (e.Accum 'C') e.Text>;
+  (e.Accum) 'D' e.Text = <StartNonterm (e.Accum 'D') e.Text>;
+  (e.Accum) 'E' e.Text = <StartNonterm (e.Accum 'E') e.Text>;
+  (e.Accum) 'F' e.Text = <StartNonterm (e.Accum 'F') e.Text>;
+  (e.Accum) 'G' e.Text = <StartNonterm (e.Accum 'G') e.Text>;
+  (e.Accum) 'H' e.Text = <StartNonterm (e.Accum 'H') e.Text>;
+  (e.Accum) 'I' e.Text = <StartNonterm (e.Accum 'I') e.Text>;
+  (e.Accum) 'J' e.Text = <StartNonterm (e.Accum 'J') e.Text>;
+  (e.Accum) 'K' e.Text = <StartNonterm (e.Accum 'K') e.Text>;
+  (e.Accum) 'L' e.Text = <StartNonterm (e.Accum 'L') e.Text>;
+  (e.Accum) 'M' e.Text = <StartNonterm (e.Accum 'M') e.Text>;
+  (e.Accum) 'N' e.Text = <StartNonterm (e.Accum 'N') e.Text>;
+  (e.Accum) 'O' e.Text = <StartNonterm (e.Accum 'O') e.Text>;
+  (e.Accum) 'P' e.Text = <StartNonterm (e.Accum 'P') e.Text>;
+  (e.Accum) 'Q' e.Text = <StartNonterm (e.Accum 'Q') e.Text>;
+  (e.Accum) 'R' e.Text = <StartNonterm (e.Accum 'R') e.Text>;
+  (e.Accum) 'S' e.Text = <StartNonterm (e.Accum 'S') e.Text>;
+  (e.Accum) 'T' e.Text = <StartNonterm (e.Accum 'T') e.Text>;
+  (e.Accum) 'U' e.Text = <StartNonterm (e.Accum 'U') e.Text>;
+  (e.Accum) 'V' e.Text = <StartNonterm (e.Accum 'V') e.Text>;
+  (e.Accum) 'W' e.Text = <StartNonterm (e.Accum 'W') e.Text>;
+  (e.Accum) 'X' e.Text = <StartNonterm (e.Accum 'X') e.Text>;
+  (e.Accum) 'Y' e.Text = <StartNonterm (e.Accum 'Y') e.Text>;
+  (e.Accum) 'Z' e.Text = <StartNonterm (e.Accum 'Z') e.Text>;
+  (e.Accum) 'a' e.Text = (#Terminal e.Accum 'a') <Root () e.Text>;
+  (e.Accum) 'b' e.Text = (#Terminal e.Accum 'b') <Root () e.Text>;
+  (e.Accum) 'c' e.Text = (#Terminal e.Accum 'c') <Root () e.Text>;
+  (e.Accum) 'd' e.Text = (#Terminal e.Accum 'd') <Root () e.Text>;
+  (e.Accum) 'e' e.Text = (#Terminal e.Accum 'e') <Root () e.Text>;
+  (e.Accum) 'f' e.Text = (#Terminal e.Accum 'f') <Root () e.Text>;
+  (e.Accum) 'g' e.Text = (#Terminal e.Accum 'g') <Root () e.Text>;
+  (e.Accum) 'h' e.Text = (#Terminal e.Accum 'h') <Root () e.Text>;
+  (e.Accum) 'i' e.Text = (#Terminal e.Accum 'i') <Root () e.Text>;
+  (e.Accum) 'j' e.Text = (#Terminal e.Accum 'j') <Root () e.Text>;
+  (e.Accum) 'k' e.Text = (#Terminal e.Accum 'k') <Root () e.Text>;
+  (e.Accum) 'l' e.Text = (#Terminal e.Accum 'l') <Root () e.Text>;
+  (e.Accum) 'm' e.Text = (#Terminal e.Accum 'm') <Root () e.Text>;
+  (e.Accum) 'n' e.Text = (#Terminal e.Accum 'n') <Root () e.Text>;
+  (e.Accum) 'o' e.Text = (#Terminal e.Accum 'o') <Root () e.Text>;
+  (e.Accum) 'p' e.Text = (#Terminal e.Accum 'p') <Root () e.Text>;
+  (e.Accum) 'q' e.Text = (#Terminal e.Accum 'q') <Root () e.Text>;
+  (e.Accum) 'r' e.Text = (#Terminal e.Accum 'r') <Root () e.Text>;
+  (e.Accum) 's' e.Text = (#Terminal e.Accum 's') <Root () e.Text>;
+  (e.Accum) 't' e.Text = (#Terminal e.Accum 't') <Root () e.Text>;
+  (e.Accum) 'u' e.Text = (#Terminal e.Accum 'u') <Root () e.Text>;
+  (e.Accum) 'v' e.Text = (#Terminal e.Accum 'v') <Root () e.Text>;
+  (e.Accum) 'w' e.Text = (#Terminal e.Accum 'w') <Root () e.Text>;
+  (e.Accum) 'x' e.Text = (#Terminal e.Accum 'x') <Root () e.Text>;
+  (e.Accum) 'y' e.Text = (#Terminal e.Accum 'y') <Root () e.Text>;
+  (e.Accum) 'z' e.Text = (#Terminal e.Accum 'z') <Root () e.Text>;
+  (e.Accum) '\'' e.Text = <StartQuotedTerm (e.Accum '\'') e.Text>;
+  (e.Accum) =  (#EOF e.Accum);
+  (e.Accum) s.Any e.Text = (#UNEXPECTED e.Accum s.Any) <Root () e.Text>;
+  (e.Accum) s.Unexpected e.Text =
+    (#TokenUnexpected s.Unexpected) <Root () e.Text>;
+  (e.Accum) = (#TokenAccum e.Accum) (#TokenUnexpectedEOF);
+}
+
+Spaces {
+  (e.Accum) ' ' e.Text = <Spaces (e.Accum ' ') e.Text>;
+  (e.Accum) '\t' e.Text = <Spaces (e.Accum '\t') e.Text>;
+  (e.Accum) '\r' e.Text = <Spaces (e.Accum '\r') e.Text>;
+  (e.Accum) '\n' e.Text = <Spaces (e.Accum '\n') e.Text>;
+  (e.Accum) e.Text =
+    (#Spaces e.Accum) <Root () e.Text>;
+  (e.Accum) s.Unexpected e.Text =
+    (#TokenUnexpected s.Unexpected) <Root () e.Text>;
+  (e.Accum) = (#TokenAccum e.Accum) (#TokenUnexpectedEOF);
+}
+
+KeywordOrHead {
+  (e.Accum) 'A' e.Text = <KeywordOrHeadTail (e.Accum 'A') e.Text>;
+  (e.Accum) 'B' e.Text = <KeywordOrHeadTail (e.Accum 'B') e.Text>;
+  (e.Accum) 'C' e.Text = <KeywordOrHeadTail (e.Accum 'C') e.Text>;
+  (e.Accum) 'D' e.Text = <KeywordOrHeadTail (e.Accum 'D') e.Text>;
+  (e.Accum) 'E' e.Text = <KeywordOrHeadTail (e.Accum 'E') e.Text>;
+  (e.Accum) 'F' e.Text = <KeywordOrHeadTail (e.Accum 'F') e.Text>;
+  (e.Accum) 'G' e.Text = <KeywordOrHeadTail (e.Accum 'G') e.Text>;
+  (e.Accum) 'H' e.Text = <KeywordOrHeadTail (e.Accum 'H') e.Text>;
+  (e.Accum) 'I' e.Text = <KeywordOrHeadTail (e.Accum 'I') e.Text>;
+  (e.Accum) 'J' e.Text = <KeywordOrHeadTail (e.Accum 'J') e.Text>;
+  (e.Accum) 'K' e.Text = <KeywordOrHeadTail (e.Accum 'K') e.Text>;
+  (e.Accum) 'L' e.Text = <KeywordOrHeadTail (e.Accum 'L') e.Text>;
+  (e.Accum) 'M' e.Text = <KeywordOrHeadTail (e.Accum 'M') e.Text>;
+  (e.Accum) 'N' e.Text = <KeywordOrHeadTail (e.Accum 'N') e.Text>;
+  (e.Accum) 'O' e.Text = <KeywordOrHeadTail (e.Accum 'O') e.Text>;
+  (e.Accum) 'P' e.Text = <KeywordOrHeadTail (e.Accum 'P') e.Text>;
+  (e.Accum) 'Q' e.Text = <KeywordOrHeadTail (e.Accum 'Q') e.Text>;
+  (e.Accum) 'R' e.Text = <KeywordOrHeadTail (e.Accum 'R') e.Text>;
+  (e.Accum) 'S' e.Text = <KeywordOrHeadTail (e.Accum 'S') e.Text>;
+  (e.Accum) 'T' e.Text = <KeywordOrHeadTail (e.Accum 'T') e.Text>;
+  (e.Accum) 'U' e.Text = <KeywordOrHeadTail (e.Accum 'U') e.Text>;
+  (e.Accum) 'V' e.Text = <KeywordOrHeadTail (e.Accum 'V') e.Text>;
+  (e.Accum) 'W' e.Text = <KeywordOrHeadTail (e.Accum 'W') e.Text>;
+  (e.Accum) 'X' e.Text = <KeywordOrHeadTail (e.Accum 'X') e.Text>;
+  (e.Accum) 'Y' e.Text = <KeywordOrHeadTail (e.Accum 'Y') e.Text>;
+  (e.Accum) 'Z' e.Text = <KeywordOrHeadTail (e.Accum 'Z') e.Text>;
+  (e.Accum) '>' e.Text = (#EmptyHead e.Accum '>') <Root () e.Text>;
+  (e.Accum) e.Text =
+    (#BAD-HEAD e.Accum) <Root () e.Text>;
+  (e.Accum) s.Unexpected e.Text =
+    (#TokenUnexpected s.Unexpected) <Root () e.Text>;
+  (e.Accum) = (#TokenAccum e.Accum) (#TokenUnexpectedEOF);
+}
+
+StartNonterm {
+  (e.Accum) '0' e.Text = (#NonTerminal e.Accum '0') <Root () e.Text>;
+  (e.Accum) '1' e.Text = (#NonTerminal e.Accum '1') <Root () e.Text>;
+  (e.Accum) '2' e.Text = (#NonTerminal e.Accum '2') <Root () e.Text>;
+  (e.Accum) '3' e.Text = (#NonTerminal e.Accum '3') <Root () e.Text>;
+  (e.Accum) '4' e.Text = (#NonTerminal e.Accum '4') <Root () e.Text>;
+  (e.Accum) '5' e.Text = (#NonTerminal e.Accum '5') <Root () e.Text>;
+  (e.Accum) '6' e.Text = (#NonTerminal e.Accum '6') <Root () e.Text>;
+  (e.Accum) '7' e.Text = (#NonTerminal e.Accum '7') <Root () e.Text>;
+  (e.Accum) '8' e.Text = (#NonTerminal e.Accum '8') <Root () e.Text>;
+  (e.Accum) '9' e.Text = (#NonTerminal e.Accum '9') <Root () e.Text>;
+  (e.Accum) e.Text =
+    (#NonTerminal e.Accum) <Root () e.Text>;
+  (e.Accum) s.Unexpected e.Text =
+    (#TokenUnexpected s.Unexpected) <Root () e.Text>;
+  (e.Accum) = (#TokenAccum e.Accum) (#TokenUnexpectedEOF);
+}
+
+StartQuotedTerm {
+  (e.Accum) '\n' e.Text = (#BAD-TERM e.Accum '\n') <Root () e.Text>;
+  (e.Accum) '\'' e.Text = (#Terminal e.Accum '\'') <Root () e.Text>;
+  (e.Accum) =  (#BAD-TERM e.Accum);
+  (e.Accum) s.Any e.Text = <EndQuotedTerm (e.Accum s.Any) e.Text>;
+  (e.Accum) s.Unexpected e.Text =
+    (#TokenUnexpected s.Unexpected) <Root () e.Text>;
+  (e.Accum) = (#TokenAccum e.Accum) (#TokenUnexpectedEOF);
+}
+
+KeywordOrHeadTail {
+  (e.Accum) '0' e.Text = <HeadEnd (e.Accum '0') e.Text>;
+  (e.Accum) '1' e.Text = <HeadEnd (e.Accum '1') e.Text>;
+  (e.Accum) '2' e.Text = <HeadEnd (e.Accum '2') e.Text>;
+  (e.Accum) '3' e.Text = <HeadEnd (e.Accum '3') e.Text>;
+  (e.Accum) '4' e.Text = <HeadEnd (e.Accum '4') e.Text>;
+  (e.Accum) '5' e.Text = <HeadEnd (e.Accum '5') e.Text>;
+  (e.Accum) '6' e.Text = <HeadEnd (e.Accum '6') e.Text>;
+  (e.Accum) '7' e.Text = <HeadEnd (e.Accum '7') e.Text>;
+  (e.Accum) '8' e.Text = <HeadEnd (e.Accum '8') e.Text>;
+  (e.Accum) '9' e.Text = <HeadEnd (e.Accum '9') e.Text>;
+  (e.Accum) 'A' e.Text = <KeywordTail (e.Accum 'A') e.Text>;
+  (e.Accum) 'B' e.Text = <KeywordTail (e.Accum 'B') e.Text>;
+  (e.Accum) 'C' e.Text = <KeywordTail (e.Accum 'C') e.Text>;
+  (e.Accum) 'D' e.Text = <KeywordTail (e.Accum 'D') e.Text>;
+  (e.Accum) 'E' e.Text = <KeywordTail (e.Accum 'E') e.Text>;
+  (e.Accum) 'F' e.Text = <KeywordTail (e.Accum 'F') e.Text>;
+  (e.Accum) 'G' e.Text = <KeywordTail (e.Accum 'G') e.Text>;
+  (e.Accum) 'H' e.Text = <KeywordTail (e.Accum 'H') e.Text>;
+  (e.Accum) 'I' e.Text = <KeywordTail (e.Accum 'I') e.Text>;
+  (e.Accum) 'J' e.Text = <KeywordTail (e.Accum 'J') e.Text>;
+  (e.Accum) 'K' e.Text = <KeywordTail (e.Accum 'K') e.Text>;
+  (e.Accum) 'L' e.Text = <KeywordTail (e.Accum 'L') e.Text>;
+  (e.Accum) 'M' e.Text = <KeywordTail (e.Accum 'M') e.Text>;
+  (e.Accum) 'N' e.Text = <KeywordTail (e.Accum 'N') e.Text>;
+  (e.Accum) 'O' e.Text = <KeywordTail (e.Accum 'O') e.Text>;
+  (e.Accum) 'P' e.Text = <KeywordTail (e.Accum 'P') e.Text>;
+  (e.Accum) 'Q' e.Text = <KeywordTail (e.Accum 'Q') e.Text>;
+  (e.Accum) 'R' e.Text = <KeywordTail (e.Accum 'R') e.Text>;
+  (e.Accum) 'S' e.Text = <KeywordTail (e.Accum 'S') e.Text>;
+  (e.Accum) 'T' e.Text = <KeywordTail (e.Accum 'T') e.Text>;
+  (e.Accum) 'U' e.Text = <KeywordTail (e.Accum 'U') e.Text>;
+  (e.Accum) 'V' e.Text = <KeywordTail (e.Accum 'V') e.Text>;
+  (e.Accum) 'W' e.Text = <KeywordTail (e.Accum 'W') e.Text>;
+  (e.Accum) 'X' e.Text = <KeywordTail (e.Accum 'X') e.Text>;
+  (e.Accum) 'Y' e.Text = <KeywordTail (e.Accum 'Y') e.Text>;
+  (e.Accum) 'Z' e.Text = <KeywordTail (e.Accum 'Z') e.Text>;
+  (e.Accum) '>' e.Text = (#Head e.Accum '>') <Root () e.Text>;
+  (e.Accum) e.Text =
+    (#BAD-HEAD e.Accum) <Root () e.Text>;
+  (e.Accum) s.Unexpected e.Text =
+    (#TokenUnexpected s.Unexpected) <Root () e.Text>;
+  (e.Accum) = (#TokenAccum e.Accum) (#TokenUnexpectedEOF);
+}
+
+EndQuotedTerm {
+  (e.Accum) '\'' e.Text = (#Terminal e.Accum '\'') <Root () e.Text>;
+  (e.Accum) e.Text =
+    (#BAD-TERM e.Accum) <Root () e.Text>;
+  (e.Accum) s.Unexpected e.Text =
+    (#TokenUnexpected s.Unexpected) <Root () e.Text>;
+  (e.Accum) = (#TokenAccum e.Accum) (#TokenUnexpectedEOF);
+}
+
+HeadEnd {
+  (e.Accum) '>' e.Text = (#Head e.Accum '>') <Root () e.Text>;
+  (e.Accum) e.Text =
+    (#BAD-HEAD e.Accum) <Root () e.Text>;
+  (e.Accum) s.Unexpected e.Text =
+    (#TokenUnexpected s.Unexpected) <Root () e.Text>;
+  (e.Accum) = (#TokenAccum e.Accum) (#TokenUnexpectedEOF);
+}
+
+KeywordTail {
+  (e.Accum) 'A' e.Text = <KeywordTail (e.Accum 'A') e.Text>;
+  (e.Accum) 'B' e.Text = <KeywordTail (e.Accum 'B') e.Text>;
+  (e.Accum) 'C' e.Text = <KeywordTail (e.Accum 'C') e.Text>;
+  (e.Accum) 'D' e.Text = <KeywordTail (e.Accum 'D') e.Text>;
+  (e.Accum) 'E' e.Text = <KeywordTail (e.Accum 'E') e.Text>;
+  (e.Accum) 'F' e.Text = <KeywordTail (e.Accum 'F') e.Text>;
+  (e.Accum) 'G' e.Text = <KeywordTail (e.Accum 'G') e.Text>;
+  (e.Accum) 'H' e.Text = <KeywordTail (e.Accum 'H') e.Text>;
+  (e.Accum) 'I' e.Text = <KeywordTail (e.Accum 'I') e.Text>;
+  (e.Accum) 'J' e.Text = <KeywordTail (e.Accum 'J') e.Text>;
+  (e.Accum) 'K' e.Text = <KeywordTail (e.Accum 'K') e.Text>;
+  (e.Accum) 'L' e.Text = <KeywordTail (e.Accum 'L') e.Text>;
+  (e.Accum) 'M' e.Text = <KeywordTail (e.Accum 'M') e.Text>;
+  (e.Accum) 'N' e.Text = <KeywordTail (e.Accum 'N') e.Text>;
+  (e.Accum) 'O' e.Text = <KeywordTail (e.Accum 'O') e.Text>;
+  (e.Accum) 'P' e.Text = <KeywordTail (e.Accum 'P') e.Text>;
+  (e.Accum) 'Q' e.Text = <KeywordTail (e.Accum 'Q') e.Text>;
+  (e.Accum) 'R' e.Text = <KeywordTail (e.Accum 'R') e.Text>;
+  (e.Accum) 'S' e.Text = <KeywordTail (e.Accum 'S') e.Text>;
+  (e.Accum) 'T' e.Text = <KeywordTail (e.Accum 'T') e.Text>;
+  (e.Accum) 'U' e.Text = <KeywordTail (e.Accum 'U') e.Text>;
+  (e.Accum) 'V' e.Text = <KeywordTail (e.Accum 'V') e.Text>;
+  (e.Accum) 'W' e.Text = <KeywordTail (e.Accum 'W') e.Text>;
+  (e.Accum) 'X' e.Text = <KeywordTail (e.Accum 'X') e.Text>;
+  (e.Accum) 'Y' e.Text = <KeywordTail (e.Accum 'Y') e.Text>;
+  (e.Accum) 'Z' e.Text = <KeywordTail (e.Accum 'Z') e.Text>;
+  (e.Accum) '>' e.Text = (#Keyword e.Accum '>') <Root () e.Text>;
+  (e.Accum) e.Text =
+    (#BAD-KEYWORD e.Accum) <Root () e.Text>;
+  (e.Accum) s.Unexpected e.Text =
+    (#TokenUnexpected s.Unexpected) <Root () e.Text>;
+  (e.Accum) = (#TokenAccum e.Accum) (#TokenUnexpectedEOF);
+}

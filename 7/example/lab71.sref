@@ -1,0 +1,60 @@
+//FROM LibraryEx
+$EXTERN ArgList, Map;
+
+//FROM Library
+$EXTERN WriteLine, StrFromInt;
+
+//FROM Lexer
+$EXTERN Lexer, StrFromToken;
+
+//FROM Driver
+$EXTERN Parse;
+
+//FROM Table
+$EXTERN Table, NonTermNames;
+
+//FROM Position
+$EXTERN StrFromFragment;
+
+$ENTRY Go {
+  = <Main <ArgList>>;
+}
+
+Main {
+  (e.ProgName) ('--tokens') (e.Source) e.Other =
+    <Map
+      {
+        t.Token = <WriteLine <StrFromToken t.Token>>;
+      }
+      <Lexer e.Source>
+    >;
+
+  (e.ProgName) (e.Source) e.Other =
+    <PrintTree
+      <Parse Table #Program <Lexer e.Source>>
+    >;
+
+  (e.ProgName) =
+    <WriteLine 'usage: ' e.ProgName ' [--tokens] source.txt'>;
+}
+
+PrintTree {
+  t.TopLevelNode = <DoPrintTree () t.TopLevelNode>;
+}
+
+DoPrintTree {
+  (e.Indent) (s.Tag t.Fragment #T e.Info) =
+    <WriteLine e.Indent '* ' <StrFromToken (s.Tag t.Fragment e.Info)>>;
+
+  (e.Indent) (s.Tag t.Fragment #NT s.AltTag e.Symbols) =
+    <WriteLine
+      e.Indent '* ' <NonTermNames s.Tag> ' '
+      <StrFromFragment t.Fragment> ', ALT#' <StrFromInt s.AltTag>
+    >
+    <Map
+      {
+        t.Symbol = <DoPrintTree (e.Indent '  ') t.Symbol>;
+      }
+      e.Symbols
+    >;
+}

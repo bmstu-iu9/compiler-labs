@@ -1,0 +1,18 @@
+//FROM Library
+$EXTERN WriteLine, Exit;
+
+$ENTRY ReportError-BadExpand {
+  s.NonTerminal s.Token t.Fragment e.Attrib =
+    <WriteLine
+      'Non-terminal ' s.NonTerminal 'can''t start from ' s.Token
+    >
+    <Exit 1>;
+}
+
+$ENTRY ReportError-BadToken {
+  s.ExpectedToken s.ActualToken t.Fragment e.Attrib =
+    <WriteLine
+      'Expected ' s.ExpectedToken 'but got ' s.ActualToken
+    >
+    <Exit 1>;
+}
