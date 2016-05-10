@@ -93,11 +93,19 @@
 \end_layout
 
 \begin_layout Author
-Скоробогатов С.Ю.
+Скоробогатов С.
+\begin_inset space ~
+\end_inset
+
+Ю., Коновалов А.
+\begin_inset space ~
+\end_inset
+
+В.
 \end_layout
 
 \begin_layout Date
-20 августа 2013
+10 мая 2016
 \end_layout
 
 \begin_layout Section
@@ -118,7 +126,7 @@
 \emph on
 Форматтер исходных текстов
 \emph default
- -- это инструментальное средство, выполняющее вставку пробельных символов
+ --- это инструментальное средство, выполняющее вставку пробельных символов
  в исходные тескты программ, записанных на некотором языке, для улучшения
  удобочитаемости этих исходных текстов.
 \end_layout
@@ -133,8 +141,11 @@
 слабыми
 \emph default
 .
- Слабый форматтер, в отличие от сильного, не может вставлять в исходный
- текст программы переводы строки.
+ Слабый форматтер, в отличие от сильного, не
+\begin_inset space ~
+\end_inset
+
+может вставлять в исходный текст программы переводы строки.
 \end_layout
 
 \begin_layout Standard
@@ -425,7 +436,7 @@ switch
 \end_layout
 
 \begin_layout Enumerate
-объявление класса в языке Java (тела методов -- пустые);
+объявление класса в языке Java (тела методов --- пустые);
 \end_layout
 
 \begin_layout Enumerate
@@ -437,7 +448,35 @@ XML;
 \end_layout
 
 \begin_layout Enumerate
-JSON (язык создания объектов JavaScript).
+JSON (язык создания объектов JavaScript);
+\end_layout
+
+\begin_layout Enumerate
+определение функции в
+\begin_inset space ~
+\end_inset
+
+языке Sсheme;
+\end_layout
+
+\begin_layout Enumerate
+определение процедуры в
+\begin_inset space ~
+\end_inset
+
+языке Visual Basic;
+\end_layout
+
+\begin_layout Enumerate
+Bison (в
+\begin_inset space ~
+\end_inset
+
+семантических действиях могут быть присваивания, вызовы функций и
+\begin_inset space ~
+\end_inset
+
+вложенные фигурные скобки).
 \end_layout
 
 \begin_layout Standard
