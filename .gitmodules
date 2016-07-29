@@ -1,0 +1,3 @@
+[submodule "1/BeRo/Bero"]
+	path = 1/BeRo/Bero
+	url = https://github.com/bmstu-iu9/berotinypascal.git
