@@ -90,11 +90,19 @@
 \end_layout
 
 \begin_layout Date
-20 августа 2013
+29 июля 2016
 \end_layout
 
 \begin_layout Author
-Скоробогатов С.Ю.
+Скоробогатов С.
+\begin_inset space \thinspace{}
+\end_inset
+
+Ю., Коновалов А.
+\begin_inset space \thinspace{}
+\end_inset
+
+В.
 \end_layout
 
 \begin_layout Section
@@ -138,20 +146,20 @@ key "key-1"
 \end_layout
 
 \begin_layout Description
-pcom.pas -- исходный текст компилятора P5;
+pcom.pas --- исходный текст компилятора P5;
 \end_layout
 
 \begin_layout Description
-pcom -- бинарная версия компилятора P5, полученная путём компиляции исходного
+pcom --- бинарная версия компилятора P5, полученная путём компиляции исходного
  текста компилятора с помощью gpc (GNU Pascal Compiler);
 \end_layout
 
 \begin_layout Description
-pint -- интерпретатор псевдокода, предназначенный для выполнения программ;
+pint --- интерпретатор псевдокода, предназначенный для выполнения программ;
 \end_layout
 
 \begin_layout Description
-iso7185.pdf -- текст стандарта ISO 7185:1990 
+iso7185.pdf --- текст стандарта ISO 7185:1990 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "key-2"
@@ -162,8 +170,8 @@ key "key-2"
 \end_layout
 
 \begin_layout Description
-hello.pas -- программа, предназначенная для проверки работоспособности компилятор
-а.
+hello.pas --- программа, предназначенная для проверки работоспособности компилято
+ра.
 \end_layout
 
 \begin_layout Section
@@ -300,7 +308,20 @@ name "tab:Варианты-изменений-входного"
 \begin_inset Text
 
 \begin_layout Plain Layout
-Обеспечить возможность использования символа подчёркивания в
+Обеспечить возможность использования символа 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+ в
 \begin_inset space ~
 \end_inset
 
@@ -329,19 +350,29 @@ name "tab:Варианты-изменений-входного"
 P5:
 \series default
  не разрешать комментариям, начинающимся с 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 (*
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , заканчиваться на 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 }
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , а
@@ -349,19 +380,29 @@ P5:
 \end_inset
 
 комметариям, начинающимся с 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 {
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , заканчиваться на 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 *)
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 .
@@ -373,19 +414,29 @@ P5:
 BeRo Tiny Pascal:
 \series default
  Разрешать комментариям, начинающимся с 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 (*
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , заканчиваться на 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 }
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , а
@@ -393,19 +444,29 @@ BeRo Tiny Pascal:
 \end_inset
 
 комметариям, начинающимся с 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 {
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , заканчиваться на 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 *)
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 .
@@ -470,11 +531,16 @@ BeRo Tiny Pascal:
 
 \begin_layout Plain Layout
 Добавить однострочный комментарий, начинающийся с символа 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 ?
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 .
@@ -484,11 +550,16 @@ BeRo Tiny Pascal:
 
 е.
  суффикс строки программы, расположенный после символа 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 ?
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , должен считаться комментарием.
@@ -533,11 +604,16 @@ BeRo Tiny Pascal:
 
 \begin_layout Plain Layout
 Заменить запись оператора присваивания на 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 ::=
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 .
@@ -561,11 +637,8 @@ BeRo Tiny Pascal:
 
 \begin_layout Plain Layout
 Заменить запись операции 
-\begin_inset Quotes fld
-\end_inset
-
-
 \begin_inset listings
+lstparams "basicstyle={\ttfamily}"
 inline true
 status open
 
@@ -576,16 +649,17 @@ status open
 
 \end_inset
 
-
-\begin_inset Quotes frd
-\end_inset
-
  на 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 !=
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 .
@@ -649,28 +723,56 @@ BeRo Tiny Pascal:
 
 \begin_layout Plain Layout
 Разрешить использовать знак 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 ..
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
  вместо ключевого слова 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 to
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
- при записи цикла for.
+ при записи цикла 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+for
+\end_layout
+
+\end_inset
+
+.
  При этом использование слова 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 to
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
  не запрещается.
@@ -693,41 +795,69 @@ to
 \begin_inset Text
 
 \begin_layout Plain Layout
-Добавить в строковые литералы Escape-последовательности «
+Добавить в строковые литералы Escape-последовательности 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
-a», 
-\begin_inset Quotes fld
+a
+\end_layout
+
 \end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 
 \backslash
 b
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 
 \backslash
 t
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 
 \backslash
 
 \backslash
 
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -751,7 +881,20 @@ t
 \begin_inset space ~
 \end_inset
 
-язык шестнадцатиричные константы вида 0x12ABcd.
+язык шестнадцатиричные константы вида 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+0x12ABcd
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -771,20 +914,137 @@ t
 \begin_inset Text
 
 \begin_layout Plain Layout
-Добавить синонимы ~, & и
+Добавить синонимы 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+~
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+&
+\end_layout
+
+\end_inset
+
+ и
 \begin_inset space ~
 \end_inset
 
-| для операторов not, and и
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+|
+\end_layout
+
+\end_inset
+
+ для операторов 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+not
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+and
+\end_layout
+
+\end_inset
+
+ и
 \begin_inset space ~
 \end_inset
 
-or соответственно.
- При этом операторы not, and и
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+or
+\end_layout
+
+\end_inset
+
+ соответственно.
+ При этом операторы 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+not
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+and
+\end_layout
+
+\end_inset
+
+ и
 \begin_inset space ~
 \end_inset
 
-or остаются допустимыми.
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+or
+\end_layout
+
+\end_inset
+
+ остаются допустимыми.
 \end_layout
 
 \end_inset
@@ -837,27 +1097,106 @@ reference "tab:Варианты-изменений-входного"
 \end_inset
 
 ) путём редактирования его исходного текста, в результате чего должен получиться
- файл pcom2.pas;
+ файл 
+\series bold
+pcom2.pas
+\series default
+ (следует сначала скопировать 
+\series bold
+pcom.pas
+\series default
+ в 
+\series bold
+pcom2.pas
+\series default
+, а потом вносить в него правки);
 \end_layout
 
 \begin_layout Enumerate
-компиляция pcom2.pas, которая может осуществляться как бинарной версией компилято
-ра, так и версией, представленной в псевдокоде (бинарная -- быстрее);
+компиляция 
+\series bold
+pcom2.pas
+\series default
+, которая может осуществляться как бинарной версией компилятора, так и версией,
+ представленной в псевдокоде (бинарная --- быстрее);
 \end_layout
 
 \begin_layout Enumerate
-проверка работоспособности pcom2.pas на небольшой программе, в которой обязательн
-о должны использоваться новые возможности языка;
+проверка работоспособности 
+\series bold
+pcom2.pas
+\series default
+ на небольшой программе, в которой обязательно должны использоваться новые
+ возможности языка;
 \end_layout
 
 \begin_layout Enumerate
-внесение изменений в pcom2.pas, связанных с использованием новых возможностей
- языка, и сохранение новой версии исходного текста компилятора в файле pcom3.pas;
+внесение изменений в
+\begin_inset space ~
+\end_inset
+
+
+\series bold
+pcom2.pas
+\series default
+, связанных с использованием новых возможностей языка, и сохранение новой
+ версии исходного текста компилятора в файле 
+\series bold
+pcom3.pas
+\series default
+;
 \end_layout
 
 \begin_layout Enumerate
-завершение шага раскрутки путём компиляции pcom3.pas с помощью полученного
- на этапе 2 псевдокода компилятора.
+завершение шага раскрутки путём компиляции 
+\series bold
+pcom3.pas
+\series default
+ с помощью полученного на этапе 2 псевдокода компилятора;
+\end_layout
+
+\begin_layout Enumerate
+разница между файлами 
+\series bold
+pcom.pas
+\series default
+ и
+\begin_inset space ~
+\end_inset
+
+
+\series bold
+pcom2.pas
+\series default
+ (отображаемая командой 
+\family typewriter
+diff -u pcom.pas pcom2.pas
+\family default
+) должна демонстрировать изменения, внесённые в
+\begin_inset space ~
+\end_inset
+
+логику работы компилятора;
+\end_layout
+
+\begin_layout Enumerate
+разница между файлами 
+\series bold
+pcom2.pas
+\series default
+ и
+\begin_inset space ~
+\end_inset
+
+
+\series bold
+pcom3.pas
+\series default
+ (отображаемая командой 
+\family typewriter
+diff -u pcom2.pas pcom3.pas
+\family default
+) должна демонстрировать новые возможности языка.
 \end_layout
 
 \begin_layout Bibliography
@@ -874,7 +1213,18 @@ Scott A.
 The P5 compiler
 \emph default
 .
- -- URL: http://www.moorecad.com/standardpascal/p5.html.
+ -- URL: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.moorecad.com/standardpascal/p5.html
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Bibliography

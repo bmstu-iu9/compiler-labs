@@ -90,7 +90,7 @@
 \end_layout
 
 \begin_layout Date
-8 февраля 2014
+29 июля 2016
 \end_layout
 
 \begin_layout Author
@@ -125,8 +125,29 @@ key "key-1"
 \end_inset
 
 .
- Входным языком компилятора является язык Pascal, совместимый с диалектом
- Delphi, а
+ Входным языком компилятора является язык Pascal, совместимый с диалектами
+ Delphi
+\begin_inset space ~
+\end_inset
+
+7 и
+\begin_inset space ~
+\end_inset
+
+FreePascal 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+geq$
+\end_layout
+
+\end_inset
+
+ 3.0, а
 \begin_inset space ~
 \end_inset
 
@@ -134,8 +155,36 @@ key "key-1"
 \end_layout
 
 \begin_layout Standard
-Исходный текст компилятора составлен на языке Pascal, совместимом с диалектом
- Delphi.
+Исходный текст компилятора составлен на языке Pascal, совместимом с
+\begin_inset space ~
+\end_inset
+
+подмножеством диалектов Delphi
+\begin_inset space ~
+\end_inset
+
+7 и
+\begin_inset space ~
+\end_inset
+
+FreePascal 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+geq$
+\end_layout
+
+\end_inset
+
+ 3.0, при этом сам реализован на
+\begin_inset space ~
+\end_inset
+
+этом подмножестве.
  Тем самым, компилятор является самоприменимым.
 \end_layout
 
@@ -270,7 +319,20 @@ name "tab:Варианты-изменений-входного"
 \begin_inset Text
 
 \begin_layout Plain Layout
-Обеспечить возможность использования символа подчёркивания в
+Обеспечить возможность использования символа 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+ в
 \begin_inset space ~
 \end_inset
 
@@ -299,19 +361,29 @@ name "tab:Варианты-изменений-входного"
 P5:
 \series default
  не разрешать комментариям, начинающимся с 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 (*
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , заканчиваться на 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 }
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , а
@@ -319,19 +391,29 @@ P5:
 \end_inset
 
 комметариям, начинающимся с 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 {
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , заканчиваться на 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 *)
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 .
@@ -343,19 +425,29 @@ P5:
 BeRo Tiny Pascal:
 \series default
  Разрешать комментариям, начинающимся с 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 (*
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , заканчиваться на 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 }
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , а
@@ -363,19 +455,29 @@ BeRo Tiny Pascal:
 \end_inset
 
 комметариям, начинающимся с 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 {
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , заканчиваться на 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 *)
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 .
@@ -440,11 +542,16 @@ BeRo Tiny Pascal:
 
 \begin_layout Plain Layout
 Добавить однострочный комментарий, начинающийся с символа 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 ?
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 .
@@ -454,11 +561,16 @@ BeRo Tiny Pascal:
 
 е.
  суффикс строки программы, расположенный после символа 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 ?
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , должен считаться комментарием.
@@ -503,11 +615,16 @@ BeRo Tiny Pascal:
 
 \begin_layout Plain Layout
 Заменить запись оператора присваивания на 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 ::=
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 .
@@ -531,11 +648,8 @@ BeRo Tiny Pascal:
 
 \begin_layout Plain Layout
 Заменить запись операции 
-\begin_inset Quotes fld
-\end_inset
-
-
 \begin_inset listings
+lstparams "basicstyle={\ttfamily}"
 inline true
 status open
 
@@ -546,16 +660,17 @@ status open
 
 \end_inset
 
-
-\begin_inset Quotes frd
-\end_inset
-
  на 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 !=
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 .
@@ -619,28 +734,56 @@ BeRo Tiny Pascal:
 
 \begin_layout Plain Layout
 Разрешить использовать знак 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 ..
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
  вместо ключевого слова 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 to
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
- при записи цикла for.
+ при записи цикла 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+for
+\end_layout
+
+\end_inset
+
+.
  При этом использование слова 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 to
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
  не запрещается.
@@ -663,41 +806,69 @@ to
 \begin_inset Text
 
 \begin_layout Plain Layout
-Добавить в строковые литералы Escape-последовательности «
+Добавить в строковые литералы Escape-последовательности 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
-a», 
-\begin_inset Quotes fld
+a
+\end_layout
+
 \end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 
 \backslash
 b
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 
 \backslash
 t
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
 , 
-\begin_inset Quotes fld
-\end_inset
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
 
 
 \backslash
 
 \backslash
 
-\begin_inset Quotes frd
+\end_layout
+
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -721,7 +892,20 @@ t
 \begin_inset space ~
 \end_inset
 
-язык шестнадцатиричные константы вида 0x12ABcd.
+язык шестнадцатиричные константы вида 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+0x12ABcd
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -741,20 +925,137 @@ t
 \begin_inset Text
 
 \begin_layout Plain Layout
-Добавить синонимы ~, & и
+Добавить синонимы 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+~
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+&
+\end_layout
+
+\end_inset
+
+ и
 \begin_inset space ~
 \end_inset
 
-| для операторов not, and и
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+|
+\end_layout
+
+\end_inset
+
+ для операторов 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+not
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+and
+\end_layout
+
+\end_inset
+
+ и
 \begin_inset space ~
 \end_inset
 
-or соответственно.
- При этом операторы not, and и
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+or
+\end_layout
+
+\end_inset
+
+ соответственно.
+ При этом операторы 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+not
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+and
+\end_layout
+
+\end_inset
+
+ и
 \begin_inset space ~
 \end_inset
 
-or остаются допустимыми.
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+or
+\end_layout
+
+\end_inset
+
+ остаются допустимыми.
 \end_layout
 
 \end_inset
@@ -788,10 +1089,6 @@ or остаются допустимыми.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -873,7 +1170,51 @@ btpc3.pas
 \series bold
 btpc2.exe
 \series default
-.
+;
+\end_layout
+
+\begin_layout Enumerate
+разница между файлами 
+\series bold
+btpc.pas
+\series default
+ и
+\begin_inset space ~
+\end_inset
+
+
+\series bold
+btpc2.pas
+\series default
+ (отображаемая командой 
+\family typewriter
+fc btpc.pas btpc2.pas
+\family default
+) должна демонстрировать изменения, внесённые в
+\begin_inset space ~
+\end_inset
+
+логику работы компилятора;
+\end_layout
+
+\begin_layout Enumerate
+разница между файлами 
+\series bold
+btpc2.pas
+\series default
+ и
+\begin_inset space ~
+\end_inset
+
+
+\series bold
+btpc3.pas
+\series default
+ (отображаемая командой 
+\family typewriter
+fc btpc2.pas btpc3.pas
+\family default
+) должна демонстрировать новые возможности языка.
 \end_layout
 
 \begin_layout Bibliography
@@ -889,7 +1230,7 @@ status open
 
 \begin_layout Plain Layout
 
-http://bero.0ok.de/blog/projects/berotinypascal/BeRoTinyPascal.zip
+https://github.com/BeRo1985/berotinypascal
 \end_layout
 
 \end_inset
