@@ -323,7 +323,7 @@ const
    filebuffer =       4; { number of system defined files }
    maxaddr    =  maxint;
    maxsp      = 39;  { number of standard procedures/functions }
-   maxins     = 74;  { maximum number of instructions }
+   maxins     = 78;  { maximum number of instructions }
    maxids     = 250; { maximum characters in id string (basically, a full line) }
    maxstd     = 39;  { number of standard identifiers }
    maxres     = 35;  { number of reserved words }
@@ -811,7 +811,7 @@ var
   { find lower case of character }
   function lcase(c: char): char;
   begin
-    if c in ['A'..'Z'] then c := chr(ord(c)-ord('A')+ord('a'));
+    if (c >= 'A') and (c<= 'Z') then c := chr(ord(c)-ord('A')+ord('a'));
     lcase := c
   end { lcase };
 
@@ -3108,8 +3108,19 @@ var
                                  gen2(51(*ldc*),5,cstptrix)
                              end;
                 varbl: case access of
-                         drct:   if vlevel<=1 then gen1t(39(*ldo*),dplmt,typtr)
-                                 else gen2t(54(*lod*),level-vlevel,dplmt,typtr);
+                         drct:   if vlevel<=1 then begin
+                                   gen1t(39(*ldo*),dplmt,typtr);
+                                 end else begin
+                                   if level-vlevel=0 then begin
+                                     if dplmt < 256 then begin
+                                       gen1t(77(*sld*), dplmt, typtr);
+                                     end else begin
+                                       gen1t(75(*ldz*), dplmt, typtr);
+                                     end;
+                                   end else begin
+                                     gen2t(54(*lod*),level-vlevel,dplmt,typtr);
+                                   end;
+                                 end;
                          indrct: gen1t(35(*ind*),idplmt,typtr);
                          inxd:   error(400)
                        end;
@@ -3124,8 +3135,19 @@ var
         with fattr do
           if typtr <> nil then
             case access of
-              drct:   if vlevel <= 1 then gen1t(43(*sro*),dplmt,typtr)
-                      else gen2t(56(*str*),level-vlevel,dplmt,typtr);
+              drct:   if vlevel <= 1 then begin
+                        gen1t(43(*sro*),dplmt,typtr);
+                      end else begin
+                        if level-vlevel=0 then begin
+                          if dplmt < 256 then begin
+                            gen1t(78(*sst*), dplmt, typtr);
+                          end else begin
+                            gen1t(76(*stz*), dplmt, typtr);
+                          end;
+                        end else begin
+                          gen2t(56(*str*),level-vlevel,dplmt,typtr);
+                        end;
+                      end;
               indrct: if idplmt <> 0 then error(400)
                       else gen0t(26(*sto*),typtr);
               inxd:   error(400)
@@ -3244,19 +3266,35 @@ var
                       dplmt := vaddr
                     end
                   else
-                    begin gen2t(54(*lod*),level-vlev,vaddr,nilptr);
+                    begin
+                      if level-vlev=0 then begin
+                        if vaddr < 256 then begin
+                          gen1t(77(*sld*), vaddr, nilptr);
+                        end else begin
+                          gen1t(75(*ldz*), vaddr, nilptr);
+                        end;
+                      end else begin
+                        gen2t(54(*lod*),level-vlev,vaddr,nilptr);
+                      end;
                       access := indrct; idplmt := 0
                     end;
                 field:
                   with display[disx] do
                     if occur = crec then
                       begin access := drct; vlevel := clev;
-                        dplmt := cdspl + fldaddr
+                        dplmt := cdspl + fldaddr;
                       end
                     else
                       begin
-                        if level = 1 then gen1t(39(*ldo*),vdspl,nilptr)
-                        else gen2t(54(*lod*),0,vdspl,nilptr);
+                        if level = 1 then begin
+                          gen1t(39(*ldo*),vdspl,nilptr);
+                        end else begin
+                          if vdspl < 256 then begin
+                            gen1t(77(*sld*),vdspl,nilptr);
+                          end else begin
+                            gen1t(75(*ldz*),vdspl,nilptr);
+                          end;
+                        end;
                         access := indrct; idplmt := fldaddr
                       end;
                 func:
@@ -4723,7 +4761,8 @@ var
                     if comptypes(lattr.typtr,gattr.typtr) then begin
                       load; align(intptr,lc);
                       { store start to temp }
-                      gen2t(56(*str*),0,lc,intptr);
+                      if lc < 256 then gen1t(78(*sst*), lc, intptr)
+                      else gen1t(76(*stz*),lc,intptr);
                     end else error(145)
             end
           else
@@ -4738,15 +4777,18 @@ var
                       load; align(intptr,lc);
                       if not comptypes(lattr.typtr,intptr) then
                         gen0t(58(*ord*),gattr.typtr);
-                      gen2t(56(*str*),0,lc+intsize,intptr);
+                      if lc+intsize < 256 then gen1t(78(*sst*), lc+intsize, intptr)
+                      else gen1t(76(*stz*),lc+intsize,intptr);
                       { set initial value of index }
-                      gen2t(54(*lod*),0,lc,intptr);
+                      if lc < 256 then gen1t(77(*sld*), lc, intptr)
+                      else gen1t(75(*ldz*),lc,intptr);
                       store(lattr);
                       genlabel(laddr); putlabel(laddr);
                       gattr := lattr; load;
                       if not comptypes(gattr.typtr,intptr) then
                         gen0t(58(*ord*),gattr.typtr);
-                      gen2t(54(*lod*),0,lc+intsize,intptr);
+                      if lc+intsize < 256 then gen1t(77(*sld*), lc+intsize, intptr)
+                      else gen1t(75(*ldz*),lc+intsize,intptr);
                       lcs := lc;
                       lc := lc + intsize + intsize;
                       if lc > lcmax then lcmax := lc;
@@ -4764,7 +4806,8 @@ var
           gattr := lattr; load;
           if not comptypes(gattr.typtr,intptr) then
             gen0t(58(*ord*),gattr.typtr);
-          gen2t(54(*lod*),0,lcs+intsize,intptr);
+          if lcs+intsize<256 then gen1t(77(*sld*), lcs+intsize, intptr)
+          else gen1t(75(*ldz*),lcs+intsize,intptr);
           gen2(47(*equ*),ord(typind),1);
           genujpxjp(73(*tjp*),lcix);
           gattr := lattr; load;
@@ -4802,7 +4845,8 @@ var
                     else
                       begin loadaddress;
                         align(nilptr,lc);
-                        gen2t(56(*str*),0,lc,nilptr);
+                        if lc < 256 then gen1t(78(*sst*), lc, nilptr)
+                        else gen1t(76(*stz*),lc,nilptr);
                         with display[top] do
                           begin occur := vrec; vdspl := lc end;
                         lc := lc+ptrsize;
@@ -4892,7 +4936,8 @@ var
                         if vkind = actual then
                           begin
                             gen2(50(*lda*),0,vaddr);
-                            gen2t(54(*lod*),0,llc1,nilptr);
+                            if llc1 < 256 then gen1t(77(*sld*), llc1, nilptr)
+                            else gen1t(75(*ldz*),llc1,nilptr);
                             gen1(40(*mov*),idtype^.size);
                           end;
                         llc1 := llc1 + ptrsize
@@ -5389,6 +5434,9 @@ var
       mn[65] :=' fbv'; mn[66] :=' ipj'; mn[67] :=' cip'; mn[68] :=' lpa';
       mn[69] :=' efb'; mn[70] :=' fvb'; mn[71] :=' dmp'; mn[72] :=' swp';
       mn[73] :=' tjp'; mn[74] :=' lip'; 
+      { added instruction mnemonics }
+      mn[75] :=' ldz'; mn[76] :=' stz';
+      mn[77] :=' sld'; mn[78] :=' sst';
     end (*instrmnemonics*) ;
 
     procedure chartypes;
