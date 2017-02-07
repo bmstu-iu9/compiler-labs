@@ -278,11 +278,19 @@ pcom2.pas
 \series bold
 pcom.pas
 \series default
- в 
+ в
+\begin_inset space ~
+\end_inset
+
+
 \series bold
 pcom2.pas
 \series default
-, а потом вносить в него правки);
+, а потом вносить в
+\begin_inset space ~
+\end_inset
+
+него правки);
 \end_layout
 
 \begin_layout Enumerate
@@ -325,7 +333,11 @@ pcom3.pas
 \series bold
 pcom3.pas
 \series default
- с помощью полученного на этапе 2 псевдокода компилятора;
+ с помощью полученного на
+\begin_inset space ~
+\end_inset
+
+этапе 2 псевдокода компилятора;
 \end_layout
 
 \begin_layout Enumerate

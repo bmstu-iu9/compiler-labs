@@ -338,7 +338,11 @@ btpc3.pas
 \series bold
 btpc3.pas
 \series default
- с помощью полученного на этапе 2 файла 
+ с помощью полученного на
+\begin_inset space ~
+\end_inset
+
+этапе 2 файла 
 \series bold
 btpc2.exe
 \series default
