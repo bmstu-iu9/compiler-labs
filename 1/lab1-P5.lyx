@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
@@ -9,16 +11,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -130,8 +132,8 @@ key "key-1"
 
 .
  Входным языком компилятора является язык Pascal, соответствующий стандарту
- ISO 7185, а целевым языком -- псевдокод, который может быть исполнен специальны
-м интерпретатором.
+ ISO 7185, а целевым языком – псевдокод, который может быть исполнен специальным
+ интерпретатором.
 \end_layout
 
 \begin_layout Standard
@@ -146,20 +148,20 @@ key "key-1"
 \end_layout
 
 \begin_layout Description
-pcom.pas --- исходный текст компилятора P5;
+pcom.pas — исходный текст компилятора P5;
 \end_layout
 
 \begin_layout Description
-pcom --- бинарная версия компилятора P5, полученная путём компиляции исходного
+pcom — бинарная версия компилятора P5, полученная путём компиляции исходного
  текста компилятора с помощью gpc (GNU Pascal Compiler);
 \end_layout
 
 \begin_layout Description
-pint --- интерпретатор псевдокода, предназначенный для выполнения программ;
+pint — интерпретатор псевдокода, предназначенный для выполнения программ;
 \end_layout
 
 \begin_layout Description
-iso7185.pdf --- текст стандарта ISO 7185:1990 
+iso7185.pdf — текст стандарта ISO 7185:1990 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "key-2"
@@ -170,8 +172,7 @@ key "key-2"
 \end_layout
 
 \begin_layout Description
-hello.pas --- программа, предназначенная для проверки работоспособности компилято
-ра.
+hello.pas — программа, предназначенная для проверки работоспособности компилятора.
 \end_layout
 
 \begin_layout Section
@@ -245,844 +246,16 @@ mv prr prd
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
+\begin_inset CommandInset include
+LatexCommand input
+filename "variants.lyx"
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Варианты-изменений-входного"
-
-\end_inset
-
-Варианты изменений входного языка компиляторов P5 и BeRo Tiny Pascal
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="14" columns="2">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="90line%">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Обеспечить возможность использования символа 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-@
-\end_layout
-
-\end_inset
-
- в
-\begin_inset space ~
-\end_inset
-
-идентификаторах.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-P5:
-\series default
- не разрешать комментариям, начинающимся с 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-(*
-\end_layout
-
-\end_inset
-
-, заканчиваться на 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-, а
-\begin_inset space ~
-\end_inset
-
-комметариям, начинающимся с 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-, заканчиваться на 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-*)
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-BeRo Tiny Pascal:
-\series default
- Разрешать комментариям, начинающимся с 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-(*
-\end_layout
-
-\end_inset
-
-, заканчиваться на 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-, а
-\begin_inset space ~
-\end_inset
-
-комметариям, начинающимся с 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-, заканчиваться на 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-*)
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-P5:
-\series default
- Сделать так, чтобы можно было использовать идентификаторы любой длины,
- но
-\begin_inset space ~
-\end_inset
-
-при этом символы идентификатора, начиная с одиннадцатого, не учитывались.
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-BeRo Tiny Pascal:
-\series default
- Выводить сообщение об ошибке при превышении длины идентификатора 40
-\begin_inset space ~
-\end_inset
-
-символов.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Добавить однострочный комментарий, начинающийся с символа 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-?
-\end_layout
-
-\end_inset
-
-.
- Т.
-\begin_inset space \thinspace{}
-\end_inset
-
-е.
- суффикс строки программы, расположенный после символа 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-?
-\end_layout
-
-\end_inset
-
-, должен считаться комментарием.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-5
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Сделать так, чтобы целочисленные константы, выходящие за границы допустимого
- интервала, считались равными нулю.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-6
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Заменить запись оператора присваивания на 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-::=
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-7
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Заменить запись операции 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-<>
-\end_layout
-
-\end_inset
-
- на 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-!=
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-8
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-P5:
-\series default
- Сделать так, чтобы символы в строке программы, расположенные справа от
-\begin_inset space ~
-\end_inset
-
-80-й позиции, не учитывались.
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-BeRo Tiny Pascal:
-\series default
- Сделать так, чтобы символы в строке программы, расположенные справа от
-\begin_inset space ~
-\end_inset
-
-120-й позиции, не учитывались.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-9
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Разрешить использовать знак 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-..
-\end_layout
-
-\end_inset
-
- вместо ключевого слова 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-to
-\end_layout
-
-\end_inset
-
- при записи цикла 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-for
-\end_layout
-
-\end_inset
-
-.
- При этом использование слова 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-to
-\end_layout
-
-\end_inset
-
- не запрещается.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-10
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Добавить в строковые литералы Escape-последовательности 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-a
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-b
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-t
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-11
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Добавить в
-\begin_inset space ~
-\end_inset
-
-язык шестнадцатиричные константы вида 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-0x12ABcd
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-12
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Добавить синонимы 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-~
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-&
-\end_layout
-
-\end_inset
-
- и
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-|
-\end_layout
-
-\end_inset
-
- для операторов 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-not
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-and
-\end_layout
-
-\end_inset
-
- и
-\begin_inset space ~
 \end_inset
 
 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-or
-\end_layout
-
-\end_inset
-
- соответственно.
- При этом операторы 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-not
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-and
-\end_layout
-
-\end_inset
-
- и
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-or
 \end_layout
-
-\end_inset
-
- остаются допустимыми.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-13
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Сделать идентификаторы чувствительными к
-\begin_inset space ~
-\end_inset
-
-регистру.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
 
+\begin_layout Standard
 Выполнение лабораторной работы заключается в осуществлении одного шага раскрутки
  самоприменимого компилятора P5 и состоит из нескольких этапов:
 \end_layout
@@ -1118,7 +291,7 @@ pcom2.pas
 pcom2.pas
 \series default
 , которая может осуществляться как бинарной версией компилятора, так и версией,
- представленной в псевдокоде (бинарная --- быстрее);
+ представленной в псевдокоде (бинарная — быстрее);
 \end_layout
 
 \begin_layout Enumerate
@@ -1213,7 +386,7 @@ Scott A.
 The P5 compiler
 \emph default
 .
- -- URL: 
+ – URL: 
 \begin_inset Flex URL
 status open
 
@@ -1236,10 +409,10 @@ key "key-2"
 
 
 \emph on
-ISO 7185:1990: Information technology -- Programming languages -- Pascal
+ISO 7185:1990: Information technology – Programming languages – Pascal
 \emph default
 .
- -- Geneva, Switzerland: International Organization for Standardization,
+ – Geneva, Switzerland: International Organization for Standardization,
  1990.
 \end_layout
 
