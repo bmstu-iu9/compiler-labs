@@ -1319,7 +1319,7 @@ status open
 
 \begin_layout Plain Layout
 
-println
+fmt.Println
 \end_layout
 
 \end_inset
@@ -2000,7 +2000,7 @@ status open
 
 \begin_layout Plain Layout
 
-if ! (expr) { println("filename.go:NN:assertion failed"); }
+if ! (expr) { fmt.Println("filename.go:NN:assertion failed"); }
 \end_layout
 
 \end_inset
@@ -2468,7 +2468,7 @@ status open
 
 \begin_layout Plain Layout
 
-for println("init"); expr; println("next") {...}
+for fmt.Println("init"); expr; fmt.Println("next") {...}
 \end_layout
 
 \end_inset
