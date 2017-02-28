@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
 \begin_preamble
 \usepackage{indentfirst}
@@ -12,16 +14,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -67,6 +69,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\listings_params "basicstyle={\ttfamily}"
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -438,7 +441,10 @@ public class IdentVsNumber
 Тег (координаты): значение
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -458,7 +464,10 @@ ASSIGN (1, 8): :=
 NUMBER (1, 11): 100
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -510,7 +519,10 @@ NUMBER (1, 11): 100
 syntax error (10,2)
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -528,10 +540,21 @@ reference "tab:Краткое-описание-лексики"
 
 \end_inset
 
- и 
+, 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Краткое-описание-лексики-2"
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Краткое-описание-лексики-3"
 
 \end_inset
 
@@ -565,7 +588,7 @@ name "tab:Краткое-описание-лексики"
 \begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="10" columns="2">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="90line%">
 <row>
@@ -680,6 +703,7 @@ status open
 
 
 \begin_inset listings
+lstparams "basicstyle={\ttfamily}"
 inline true
 status open
 
@@ -700,6 +724,7 @@ status open
 
 
 \begin_inset listings
+lstparams "basicstyle={\ttfamily}"
 inline true
 status open
 
@@ -1139,7 +1164,7 @@ n
 \begin_inset Quotes frd
 \end_inset
 
- и 
+, 
 \begin_inset Quotes fld
 \end_inset
 
@@ -1153,6 +1178,34 @@ status open
 
 \backslash
 t
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
 \end_layout
 
 \end_inset
@@ -1816,7 +1869,7 @@ name "tab:Краткое-описание-лексики-2"
 \begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="9" columns="2">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="90line%">
 <row>
@@ -2039,7 +2092,7 @@ dodo
 Строковые литералы: ограничены обратными кавычками, могут занимать несколько
  строчек текста, для включения обратной кавычки она удваивается.
  Числовые литералы: десятичные литералы представляют собой последовательности
- десятичных цифр, двоичные --- последовательности нулей и
+ десятичных цифр, двоичные — последовательности нулей и
 \begin_inset space ~
 \end_inset
 
@@ -2273,7 +2326,35 @@ n
 \begin_inset Quotes frd
 \end_inset
 
- и 
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset Quotes fld
 \end_inset
 
@@ -2316,8 +2397,8 @@ x
 \end_inset
 
  обозначают шестнадцатеричные цифры).
- Идентификаторы: последовательности символов Unicode длиной от 2 до 10 символов,
- начинающиеся и заканчивающиеся буквой.
+ Идентификаторы: последовательности буквенных символов Unicode длиной от
+ 2 до 10 символов, начинающиеся и заканчивающиеся буквой.
  Ключевые слова: 
 \begin_inset Quotes fld
 \end_inset
@@ -2649,7 +2730,7 @@ status open
 \begin_inset space ~
 \end_inset
 
-обратных кавычках (например, 
+обратных кавычках (например, «
 \begin_inset listings
 inline true
 status open
@@ -2661,8 +2742,8 @@ status open
 
 \end_inset
 
-).
- Ключевые слова 
+»).
+ Ключевые слова «
 \begin_inset listings
 inline true
 status open
@@ -2674,7 +2755,7 @@ where
 
 \end_inset
 
-, 
+», «
 \begin_inset listings
 inline true
 status open
@@ -2686,7 +2767,7 @@ status open
 
 \end_inset
 
-, 
+», «
 \begin_inset listings
 inline true
 status open
@@ -2698,7 +2779,7 @@ status open
 
 \end_inset
 
-.
+».
 \end_layout
 
 \end_inset
@@ -2722,7 +2803,7 @@ status open
 \begin_inset space ~
 \end_inset
 
-
+«
 \begin_inset listings
 inline true
 status open
@@ -2734,7 +2815,7 @@ status open
 
 \end_inset
 
- и
+» и
 \begin_inset space ~
 \end_inset
 
@@ -2746,7 +2827,7 @@ status open
 \begin_inset space ~
 \end_inset
 
-
+«
 \begin_inset listings
 inline true
 status open
@@ -2758,7 +2839,7 @@ status open
 
 \end_inset
 
- и
+» и
 \begin_inset space ~
 \end_inset
 
@@ -2766,7 +2847,7 @@ status open
 \begin_inset space ~
 \end_inset
 
-
+«
 \begin_inset listings
 inline true
 status open
@@ -2778,7 +2859,7 @@ status open
 
 \end_inset
 
-, могут занимать несколько строк текста.
+», могут занимать несколько строк текста.
  Целочисленные литералы: последовательности десятичных цифр.
  Вещественные литералы: последовательности десятичных цифр, за
 \begin_inset space ~
@@ -2789,7 +2870,7 @@ status open
 \end_inset
 
 последовательность десятичных цифр, возможно, пустая), либо показатель степени
- (буква 
+ (буква «
 \begin_inset listings
 inline true
 status open
@@ -2801,7 +2882,7 @@ e
 
 \end_inset
 
- или 
+» или «
 \begin_inset listings
 inline true
 status open
@@ -2813,7 +2894,7 @@ E
 
 \end_inset
 
-, за
+», за
 \begin_inset space ~
 \end_inset
 
@@ -2851,7 +2932,7 @@ E
 \end_inset
 
 буквы.Числовые литералы: десятичные литералы представляют собой последовательност
-и десятичных цифр, шестнадцатиричные --- начинаются на
+и десятичных цифр, шестнадцатиричные — начинаются на
 \begin_inset space ~
 \end_inset
 
@@ -2859,7 +2940,7 @@ E
 \begin_inset space ~
 \end_inset
 
-заканчиваются символом 
+заканчиваются символом «
 \begin_inset listings
 inline true
 status open
@@ -2871,8 +2952,8 @@ h
 
 \end_inset
 
-.
- Ключевые слова 
+».
+ Ключевые слова «
 \begin_inset listings
 inline true
 status open
@@ -2884,7 +2965,7 @@ mov
 
 \end_inset
 
-, 
+», «
 \begin_inset listings
 inline true
 status open
@@ -2896,7 +2977,7 @@ eax
 
 \end_inset
 
-.
+».
 \end_layout
 
 \end_inset
@@ -2916,7 +2997,7 @@ eax
 \begin_inset Text
 
 \begin_layout Plain Layout
-Числовые литералы: знак 
+Числовые литералы: знак «
 \begin_inset listings
 inline true
 status open
@@ -2928,7 +3009,7 @@ status open
 
 \end_inset
 
- либо последовательности знаков 
+» либо последовательности знаков «
 \begin_inset listings
 inline true
 status open
@@ -2940,9 +3021,9 @@ status open
 
 \end_inset
 
-.
- Строковые литералы: регулярные строки --- ограничены двойными кавычками,
- могут содержать escape-последовательности 
+».
+ Строковые литералы: регулярные строки — ограничены двойными кавычками,
+ могут содержать escape-последовательности «
 \begin_inset listings
 inline true
 status open
@@ -2956,7 +3037,7 @@ status open
 
 \end_inset
 
-, 
+», «
 \begin_inset listings
 inline true
 status open
@@ -2970,7 +3051,7 @@ t
 
 \end_inset
 
-, 
+», «
 \begin_inset listings
 inline true
 status open
@@ -2984,15 +3065,15 @@ n
 
 \end_inset
 
-, не
+», не
 \begin_inset space ~
 \end_inset
 
-пересекают границы строк текста; буквальные строки --- начинаются на
+пересекают границы строк текста; буквальные строки — начинаются на
 \begin_inset space ~
 \end_inset
 
-
+«
 \begin_inset listings
 inline true
 status open
@@ -3004,7 +3085,7 @@ status open
 
 \end_inset
 
-, заканчиваются на
+», заканчиваются на
 \begin_inset space ~
 \end_inset
 
@@ -3030,7 +3111,7 @@ status open
 
 \begin_layout Plain Layout
 Идентификаторы: последовательности десятичных цифр.
- Числовые литералы: римские цифры или ключевое слово 
+ Числовые литералы: римские цифры или ключевое слово «
 \begin_inset listings
 inline true
 status open
@@ -3042,7 +3123,7 @@ NIHIL
 
 \end_inset
 
-, не
+», не
 \begin_inset space ~
 \end_inset
 
@@ -3051,7 +3132,7 @@ NIHIL
 \end_inset
 
 регистру.
- Принцип вычитания (числа вида 
+ Принцип вычитания (числа вида «
 \begin_inset listings
 inline true
 status open
@@ -3063,7 +3144,7 @@ IV
 
 \end_inset
 
-, 
+», «
 \begin_inset listings
 inline true
 status open
@@ -3075,7 +3156,7 @@ IX
 
 \end_inset
 
-, 
+», «
 \begin_inset listings
 inline true
 status open
@@ -3087,7 +3168,7 @@ XL
 
 \end_inset
 
- и
+» и
 \begin_inset space ~
 \end_inset
 
@@ -3096,6 +3177,1409 @@ XL
 \end_inset
 
 реализовывать.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Краткое-описание-лексики-3"
+
+\end_inset
+
+Краткое описание лексики вариантов языков (продолжение)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="90line%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Идентификаторы: последовательности буквенных символов Unicode и
+\begin_inset space ~
+\end_inset
+
+цифр, начинающиеся с
+\begin_inset space ~
+\end_inset
+
+буквы.
+ Целочисленные константы: десятичные
+\begin_inset space ~
+\end_inset
+
+— последовательности десятичных цифр, шестнадцатеричные
+\begin_inset space ~
+\end_inset
+
+— последовательности шестнадцатиричных цифр, начинающиеся на
+\begin_inset space ~
+\end_inset
+
+«
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+&H
+\end_layout
+
+\end_inset
+
+».
+ Ключевые слова
+\begin_inset space ~
+\end_inset
+
+— «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PRINT
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+GOTO
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+GOSUB
+\end_layout
+
+\end_inset
+
+» без учёта регистра.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Идентификаторы переменных: последовательности буквенных символов Unicode
+ и
+\begin_inset space ~
+\end_inset
+
+цифр, начинающиеся на
+\begin_inset space ~
+\end_inset
+
+знаки «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+$
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\end_inset
+
+».
+ Имена функций: последовательности буквенных символов Unicode и
+\begin_inset space ~
+\end_inset
+
+цифр, начинающиеся на
+\begin_inset space ~
+\end_inset
+
+букву.
+ Ключевые слова «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+sub
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+if
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+unless
+\end_layout
+
+\end_inset
+
+».
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Регулярные выражения: ограничены знаками 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+/
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, не
+\begin_inset space ~
+\end_inset
+
+могут пересекать границы текста, содержат escape-последовательности 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+n
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+/
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Строковые литералы: ограничены тремя кавычками (
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+"""
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+), могут занимать несколько строчек текста, не
+\begin_inset space ~
+\end_inset
+
+могут содержать внутри более трёх кавычек подряд.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Идентификаторы: последовательности буквенных символов Unicode и
+\begin_inset space ~
+\end_inset
+
+цифр, начинающиеся с
+\begin_inset space ~
+\end_inset
+
+буквы.
+ Имена переменных: начинаются с
+\begin_inset space ~
+\end_inset
+
+префикса 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+s
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+t
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ или 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+e
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, после которого может располагаться одна буква, одна цифра или точка (
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+), за
+\begin_inset space ~
+\end_inset
+
+которой следует непустая последовательность буквенных символов Unicode и
+\begin_inset space ~
+\end_inset
+
+цифр.
+ Примеры имён переменных: 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+s1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+tx
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+e.FileName
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+t.666
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Идентификаторы: последовательности буквенных символов Unicode и
+\begin_inset space ~
+\end_inset
+
+цифр, которые начинаются с
+\begin_inset space ~
+\end_inset
+
+буквы и
+\begin_inset space ~
+\end_inset
+
+могут заканчиваться на
+\begin_inset space ~
+\end_inset
+
+один из
+\begin_inset space ~
+\end_inset
+
+знаков 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+$
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+#
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+&
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ или 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+&
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Комментарии
+\begin_inset space ~
+\end_inset
+
+— любой текст, следующий за
+\begin_inset space ~
+\end_inset
+
+словом 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+REM
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+продолжающийся до
+\begin_inset space ~
+\end_inset
+
+конца строки (то
+\begin_inset space ~
+\end_inset
+
+есть после буквы 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+M
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ в
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+REM
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ не
+\begin_inset space ~
+\end_inset
+
+может следовать буква или цифра).
+ Операции: 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
++
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+-
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+/
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Идентификаторы: последовательности буквенных символов Unicode и
+\begin_inset space ~
+\end_inset
+
+цифр, начинающиеся с
+\begin_inset space ~
+\end_inset
+
+буквы.
+ Строковые константы: последовательности строковых фрагментов, записанных
+ слитно.
+ Строковой фрагмент: либо последовательность символов, начинающиеся и
+\begin_inset space ~
+\end_inset
+
+заканчивающиеся на
+\begin_inset space ~
+\end_inset
+
+апостроф, кавычка внутри строки описывается как два апострофа подряд, не
+\begin_inset space ~
+\end_inset
+
+пересекают границы строк текста, либо знак «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+#
+\end_layout
+
+\end_inset
+
+», за
+\begin_inset space ~
+\end_inset
+
+которым следует десятичная константа (код символа).
+ Пример строковой константы: «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+'hello'#10#13'world'
+\end_layout
+
+\end_inset
+
+».
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Строковые литералы: ограничены двойными кавычками, не
+\begin_inset space ~
+\end_inset
+
+могут пересекать границы текста, содержат escape-последовательности «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+n
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+"
+\end_layout
+
+\end_inset
+
+», 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+t
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Числовые литералы: последовательности десятичных знаков и
+\begin_inset space ~
+\end_inset
+
+знаков 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+_
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+, начинающиеся с
+\begin_inset space ~
+\end_inset
+
+цифры.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+27
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Слова: последовательности непробельных символов, которые не
+\begin_inset space ~
+\end_inset
+
+могут начинаться на
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+:
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ либо любой текст, окружённый кавычками (сами содержать кавычки не
+\begin_inset space ~
+\end_inset
+
+могут), не
+\begin_inset space ~
+\end_inset
+
+могут пересекать границы текста.
+ Метки
+\begin_inset space ~
+\end_inset
+
+— последовательности из
+\begin_inset space ~
+\end_inset
+
+букв и
+\begin_inset space ~
+\end_inset
+
+цифр, начинающиеся со
+\begin_inset space ~
+\end_inset
+
+знака 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+:
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Комментарии: начинаются с
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+::
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+продолжаются до
+\begin_inset space ~
+\end_inset
+
+окончания строки текста.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+28
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Идентификаторы: последовательности буквенных символов Unicode, цифр и
+\begin_inset space ~
+\end_inset
+
+дефисов, начинающиеся с
+\begin_inset space ~
+\end_inset
+
+заглавной буквы.
+ Директивы: любой знак валюты (
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+$
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+…), после которого следует непустая последовательность заглавных букв.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+29
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Целочисленные константы: последовательности десятичных цифр, предваряемые
+ символом 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+#
+\end_layout
+
+\end_inset
+
+.
+ Имена переменных: последовательности десятичных цифр, начинающиеся со
+\begin_inset space ~
+\end_inset
+
+знаков «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\end_inset
+
+» или «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+:
+\end_layout
+
+\end_inset
+
+», имена массивов: последовательности десятичных цифр, начинающиеся с
+\begin_inset space ~
+\end_inset
+
+«
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+,
+\end_layout
+
+\end_inset
+
+» или «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\end_inset
+
+».
+ Ключевые слова «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+PLEASE
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+DO
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+FORGET
+\end_layout
+
+\end_inset
+
+».
 \end_layout
 
 \end_inset
