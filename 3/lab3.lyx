@@ -274,6 +274,20 @@ import java.util.regex.Pattern;
 
 \begin_layout Plain Layout
 
+// Компиляция для Windows:
+\end_layout
+
+\begin_layout Plain Layout
+
+// javac -encoding utf8 IdentVsNumber.java
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 public class IdentVsNumber
 \end_layout
 
@@ -294,16 +308,31 @@ public class IdentVsNumber
 
 \begin_layout Plain Layout
 
-		// Текст для сопоставления
+		test_match("Альфа123");
 \end_layout
 
 \begin_layout Plain Layout
 
-		String text = "Alpha123";
+		test_match("42");
 \end_layout
 
 \begin_layout Plain Layout
 
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	public static void test_match(String text)
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
 \end_layout
 
 \begin_layout Plain Layout
@@ -313,7 +342,15 @@ public class IdentVsNumber
 
 \begin_layout Plain Layout
 
-		String ident = "[A-Za-z][A-Za-z0-9]*";
+		String ident = "
+\backslash
+
+\backslash
+p{L}[
+\backslash
+
+\backslash
+p{L}0-9]*";
 \end_layout
 
 \begin_layout Plain Layout
@@ -328,20 +365,12 @@ public class IdentVsNumber
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 		// Компиляция регулярного выражения
 \end_layout
 
 \begin_layout Plain Layout
 
 		Pattern p = Pattern.compile(pattern);
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -407,10 +436,6 @@ public class IdentVsNumber
 \begin_layout Plain Layout
 
 }
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset

@@ -1,15 +1,21 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// Компиляция для Windows:
+// javac -encoding utf8 IdentVsNumber.java
+
 public class IdentVsNumber
 {
 	public static void main(String args[])
 	{
-		// Текст для сопоставления
-		String text = "Alpha123";
+		test_match("Альфа123");
+		test_match("42");
+	}
 
+	public static void test_match(String text)
+	{
 		// Регулярные выражения
-		String ident = "[A-Za-z][A-Za-z0-9]*";
+		String ident = "\\p{L}[\\p{L}0-9]*";
 		String number = "[0-9]+";
 		String pattern = "(^"+ident+")|(^"+number+")";
 
