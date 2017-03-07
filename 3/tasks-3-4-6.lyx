@@ -380,9 +380,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -844,9 +844,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -1183,9 +1183,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -1816,9 +1816,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -2032,9 +2032,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -2130,9 +2130,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -2590,9 +2590,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -2610,7 +2610,11 @@ taskcp
 \begin_inset space ~
 \end_inset
 
-десятичную цифру и
+десятичную цифру, содержат шестнадцатеричные цифры (в
+\begin_inset space ~
+\end_inset
+
+любом регистре) и
 \begin_inset space ~
 \end_inset
 
@@ -2893,9 +2897,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -3004,9 +3008,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -3062,9 +3066,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -3285,9 +3289,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -3395,9 +3399,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -3517,9 +3521,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -3846,9 +3850,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
@@ -4192,9 +4196,9 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-taskcp
+taskcp}
 \end_layout
 
 \end_inset
