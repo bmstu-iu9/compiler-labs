@@ -2005,7 +2005,7 @@ xxxx
 \begin_inset Quotes frd
 \end_inset
 
- (в последней Escape-последовательности буквы 
+ (здесь буквы 
 \begin_inset Quotes fld
 \end_inset
 
@@ -2026,7 +2026,11 @@ x
 \end_inset
 
  обозначают шестнадцатеричные цифры).
- Идентификаторы: последовательности буквенных символов 
+ Идентификаторы: последовательности печатных (не-пробельных и
+\begin_inset space ~
+\end_inset
+
+не-управляющих) символов 
 \begin_inset ERT
 status open
 
