@@ -13,7 +13,7 @@ struct Extra {
 	int cur_column;
 };
 
-void init_scanner(char *program, yyscan_t *scanner, struct Extra *extra);
+void init_scanner(const char *program, yyscan_t *scanner, struct Extra *extra);
 void destroy_scanner(yyscan_t scanner);
 
 #endif

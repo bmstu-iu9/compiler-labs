@@ -33,7 +33,7 @@
 		yylloc->last_column = extra->cur_column;           \
 	}
 
-void yyerror(YYLTYPE *loc, yyscan_t scanner, long env[26], char *msg)
+void yyerror(YYLTYPE *loc, yyscan_t scanner, long env[26], const char *msg)
 {
 	printf("Error (%d,%d): %s\n", loc->first_line, loc->first_column, msg);
 }
@@ -76,7 +76,7 @@ print		return PRINT;
 
 %%
 
-void init_scanner(char *program, yyscan_t *scanner, struct Extra *extra)
+void init_scanner(const char *program, yyscan_t *scanner, struct Extra *extra)
 {
 	extra->continued = 0;
 	extra->cur_line = 1;

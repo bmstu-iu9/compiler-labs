@@ -28,7 +28,7 @@
 
 %{
 int yylex(YYSTYPE * yylval_param, YYLTYPE * yylloc_param , yyscan_t scanner);
-void yyerror(YYLTYPE *yylloc, yyscan_t scanner, long env[26], char *msg);
+void yyerror(YYLTYPE *yylloc, yyscan_t scanner, long env[26], const char *msg);
 %}
 
 %%
