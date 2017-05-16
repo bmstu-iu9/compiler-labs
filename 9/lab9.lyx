@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
 \begin_preamble
 \usepackage{indentfirst}
@@ -12,16 +14,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -126,7 +128,7 @@
 \emph on
 Форматтер исходных текстов
 \emph default
- --- это инструментальное средство, выполняющее вставку пробельных символов
+ — это инструментальное средство, выполняющее вставку пробельных символов
  в исходные тескты программ, записанных на некотором языке, для улучшения
  удобочитаемости этих исходных текстов.
 \end_layout
@@ -436,11 +438,19 @@ switch
 \end_layout
 
 \begin_layout Enumerate
-объявление класса в языке Java (тела методов --- пустые);
+объявление класса в языке Java (со
+\begin_inset space ~
+\end_inset
+
+вложенными классами, тела методов — пустые);
 \end_layout
 
 \begin_layout Enumerate
-объявление структуры в языке C (с вложенными структурами);
+объявление структуры в языке C (с вложенными структурами и
+\begin_inset space ~
+\end_inset
+
+объединениями);
 \end_layout
 
 \begin_layout Enumerate
@@ -476,7 +486,23 @@ Bison (в
 \begin_inset space ~
 \end_inset
 
-вложенные фигурные скобки).
+вложенные фигурные скобки);
+\end_layout
+
+\begin_layout Enumerate
+РЕФАЛ-5;
+\end_layout
+
+\begin_layout Enumerate
+Go (с
+\begin_inset space ~
+\end_inset
+
+опциональными точками с
+\begin_inset space ~
+\end_inset
+
+запятой).
 \end_layout
 
 \begin_layout Standard
@@ -501,7 +527,10 @@ Bison (в
 Тестирование работоспособности получившегося форматтера на наборе примеров.
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
