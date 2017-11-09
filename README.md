@@ -1,7 +1,13 @@
 # Лабораторные работы по курсу «Конструирование компиляторов»
 
 * **Лабораторная работа № 1 «Раскрутка самоприменимого компилятора».**
-  * [Вариант с BeRo](1/lab1-BeRo.pdf), [вариант с P5](1/lab1-P5.pdf).
+  * [Вариант с BeRo](1/lab1-BeRo.pdf).
+    * Файлы [btpc.exe](1/BeRo/btpc.exe), [btpc.pas](1/BeRo/btpc.pas),
+      [hello.pas](1/BeRo/hello.pas), всё **[одним архивом](1/lab1-bero.zip)**.
+  * [Вариант с P5](1/lab1-P5.pdf).
+    * Файлы [hello.pas](1/P5/hello.pas), [iso7185.pdf](1/P5/iso7185.pdf),
+      [pcom](1/P5/pcom), [pcom.pas](1/P5/pcom.pas), [pint](1/P5/pint),
+      всё **[одним архивом](1/lab1-p5.zip)**.
 * **[Лабораторная работа № 2 «Синтаксические деревья»](2/lab2.pdf).**
   * Файлы [astprint.go](2/astprint.go) и [demo.go](2/demo.go),
     всё **[одним архивом](2/lab2-examples.zip)**.
