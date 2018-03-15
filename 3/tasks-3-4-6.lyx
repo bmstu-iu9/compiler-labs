@@ -838,20 +838,8 @@ status open
 \end_inset
 
 ).
- Идентификаторы: последовательности буквенных символов 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-{
-\backslash
-taskcp}
-\end_layout
-
-\end_inset
-
-, знаков подчёркивания и цифр, начинающиеся с буквы или подчёркивания.
+ Идентификаторы: последовательности латинских букв, знаков подчёркивания
+ и цифр, начинающиеся с буквы или подчёркивания.
 \end_layout
 
 \end_inset
@@ -3287,20 +3275,7 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-Идентификаторы: последовательности буквенных символов 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-{
-\backslash
-taskcp}
-\end_layout
-
-\end_inset
-
- и
+Идентификаторы: последовательности латинских букв и
 \begin_inset space ~
 \end_inset
 
@@ -3397,20 +3372,7 @@ status open
 \begin_inset space ~
 \end_inset
 
-которой следует непустая последовательность буквенных символов 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-{
-\backslash
-taskcp}
-\end_layout
-
-\end_inset
-
- и
+которой следует непустая последовательность латинских букв и
 \begin_inset space ~
 \end_inset
 
@@ -3848,20 +3810,7 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-Идентификаторы: последовательности буквенных символов 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-{
-\backslash
-taskcp}
-\end_layout
-
-\end_inset
-
- и
+Идентификаторы: последовательности латинских букв и
 \begin_inset space ~
 \end_inset
 
@@ -4344,6 +4293,1336 @@ status open
 \begin_layout Plain Layout
 
 FORGET
+\end_layout
+
+\end_inset
+
+».
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang russian
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang russian
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Краткое-описание-лексики-4"
+
+\end_inset
+
+Краткое описание лексики вариантов языков (продолжение)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang russian
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="90line%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+Химические вещества: последовательности латинских букв и
+\begin_inset space ~
+\end_inset
+
+цифр, начинающиеся с
+\begin_inset space ~
+\end_inset
+
+заглавной буквы, при этом после цифры не
+\begin_inset space ~
+\end_inset
+
+может следовать строчная буква.
+ Примеры: «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+CuSO4
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+CH3CH2OH
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+Fe2O3
+\end_layout
+
+\end_inset
+
+».
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang russian
+Коэффициенты: последовательности десятичных цифр.
+ Операторы: «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
++
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+->
+\end_layout
+
+\end_inset
+
+».
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+31
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+Фибоначчивы числа: последовательности знаков «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+0
+\end_layout
+
+\end_inset
+
+» и
+\begin_inset space ~
+\end_inset
+
+«
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+1
+\end_layout
+
+\end_inset
+
+», причём две единицы не
+\begin_inset space ~
+\end_inset
+
+могут соседствовать друг с
+\begin_inset space ~
+\end_inset
+
+другом.
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang russian
+Идентификаторы: последовательности латинских букв, в
+\begin_inset space ~
+\end_inset
+
+которых гласные и
+\begin_inset space ~
+\end_inset
+
+согласные чередуются.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+32
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+Параметры: целые десятичные числа, предварённые знаком «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+%
+\end_layout
+
+\end_inset
+
+».
+ Переменные: последовательности букв, цифр, знаков подчёркивания и
+\begin_inset space ~
+\end_inset
+
+дефисов, окружённые знаками «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+%
+\end_layout
+
+\end_inset
+
+».
+ Ключевое слово «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+%%
+\end_layout
+
+\end_inset
+
+».
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+33
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+Слова искусственного языка Токипона конструируются из
+\begin_inset space ~
+\end_inset
+
+слогов.
+ Если слог находится в
+\begin_inset space ~
+\end_inset
+
+начале слова, то
+\begin_inset space ~
+\end_inset
+
+он может не
+\begin_inset space ~
+\end_inset
+
+содержать первую согласную, в
+\begin_inset space ~
+\end_inset
+
+остальных случаях слог
+\begin_inset space ~
+\end_inset
+
+— это согласная + гласная + опциональная 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+n
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+n
+\end_layout
+
+\end_inset
+
+ не
+\begin_inset space ~
+\end_inset
+
+ставится, если за ней идут 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+n
+\end_layout
+
+\end_inset
+
+ или 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+m
+\end_layout
+
+\end_inset
+
+.
+ Из всех вариантов слогов в токипоне запрещены слоги: 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+ji
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+ti
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+wo
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+wu
+\end_layout
+
+\end_inset
+
+ (как труднопроизносимые).
+ Гласные: 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+a
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+e
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+i
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+o
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+u
+\end_layout
+
+\end_inset
+
+.
+ Согласные: 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+j
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+k
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+l
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+m
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+n
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+p
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+s
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+t
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+w
+\end_layout
+
+\end_inset
+
+.
+ Необходимо написать лексический анализатор, определяющий слова языка Токипона.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+34
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+Географические координаты: начинаются с
+\begin_inset space ~
+\end_inset
+
+одного из
+\begin_inset space ~
+\end_inset
+
+знаков «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+S
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+E
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+N
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+W
+\end_layout
+
+\end_inset
+
+», после которых располагается целое десятичное число от
+\begin_inset space ~
+\end_inset
+
+0 до
+\begin_inset space ~
+\end_inset
+
+90, за
+\begin_inset space ~
+\end_inset
+
+которым может следовать либо точка и
+\begin_inset space ~
+\end_inset
+
+последовательность десятичных цифр, либо знак «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+D
+\end_layout
+
+\end_inset
+
+», за
+\begin_inset space ~
+\end_inset
+
+которым следует необязательная запись угловых минут (число от
+\begin_inset space ~
+\end_inset
+
+0 до
+\begin_inset space ~
+\end_inset
+
+59, за
+\begin_inset space ~
+\end_inset
+
+которым пишется апостроф) и
+\begin_inset space ~
+\end_inset
+
+угловых секунд (число от
+\begin_inset space ~
+\end_inset
+
+0 до
+\begin_inset space ~
+\end_inset
+
+59, за
+\begin_inset space ~
+\end_inset
+
+которым следует двойная кавычка).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+Числа: последовательности десятичных цифр.
+ Знаки операций: «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
++
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+-
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+*
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+/
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+(
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+)
+\end_layout
+
+\end_inset
+
+».
+ Комментарии начинаются на
+\begin_inset space ~
+\end_inset
+
+«
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+(*
+\end_layout
+
+\end_inset
+
+», заканчиваются на
+\begin_inset space ~
+\end_inset
+
+«
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+*)
+\end_layout
+
+\end_inset
+
+», не
+\begin_inset space ~
+\end_inset
+
+могут быть вложенными.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+36
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+Целочисленные переменные: начинаются с
+\begin_inset space ~
+\end_inset
+
+буквы «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+I
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+J
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+K
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+L
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+M
+\end_layout
+
+\end_inset
+
+» или «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+N
+\end_layout
+
+\end_inset
+
+», за
+\begin_inset space ~
+\end_inset
+
+которой может следовать не
+\begin_inset space ~
+\end_inset
+
+более пяти латинских букв и
+\begin_inset space ~
+\end_inset
+
+цифр.
+ Вещественные переменные начинаются с
+\begin_inset space ~
+\end_inset
+
+любой другой буквы, за
+\begin_inset space ~
+\end_inset
+
+которой может следовать не
+\begin_inset space ~
+\end_inset
+
+более пяти латинских букв и
+\begin_inset space ~
+\end_inset
+
+цифр.
+ Знаки: «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
++
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+,
+\end_layout
+
+\end_inset
+
+».
+ Целые числа
+\begin_inset space ~
+\end_inset
+
+— последовательности десятичных цифр.
+ Пробелы и
+\begin_inset space ~
+\end_inset
+
+табуляции игнорируются (т.е.
+ могут встречаться внутри переменных и
+\begin_inset space ~
+\end_inset
+
+чисел, не
+\begin_inset space ~
+\end_inset
+
+меняя их смысл).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+37
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+Целые числа одинарной длины: последовательности десятичных цифр.
+ Целые числа двойной длины: последовательности десятичных чисел с
+\begin_inset space ~
+\end_inset
+
+точкой на
+\begin_inset space ~
+\end_inset
+
+конце.
+ Слова: любые последовательности непробельных символов, не
+\begin_inset space ~
+\end_inset
+
+являющиеся числами.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+38
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+Открывающий тег: последовательность букв и
+\begin_inset space ~
+\end_inset
+
+цифр, окружённая «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+<
+\end_layout
+
+\end_inset
+
+» и
+\begin_inset space ~
+\end_inset
+
+«
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+>
+\end_layout
+
+\end_inset
+
+».
+ Закрывающий тег: последовательность букв и
+\begin_inset space ~
+\end_inset
+
+цифр, окружённая «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+</
+\end_layout
+
+\end_inset
+
+» и
+\begin_inset space ~
+\end_inset
+
+«
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+>
+\end_layout
+
+\end_inset
+
+».
+ Пробел: любая последовательность пробельных символов, Ключевое слово: «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+&lt;
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+&gt;
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+&amp;
+\end_layout
+
+\end_inset
+
+», символ: любой печатный символ, кроме «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+<
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+>
+\end_layout
+
+\end_inset
+
+» и
+\begin_inset space ~
+\end_inset
+
+«
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+&
 \end_layout
 
 \end_inset
