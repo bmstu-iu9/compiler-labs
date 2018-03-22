@@ -242,6 +242,13 @@ reference "tab:Краткое-описание-лексики-2"
 
 \end_inset
 
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Краткое-описание-лексики-3"
+
+\end_inset
+
  и
 \begin_inset space ~
 \end_inset
@@ -249,7 +256,7 @@ reference "tab:Краткое-описание-лексики-2"
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Краткое-описание-лексики-3"
+reference "tab:Краткое-описание-лексики-4"
 
 \end_inset
 
