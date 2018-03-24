@@ -3342,7 +3342,11 @@ x
 
 \end_inset
 
- — любой символ, не могут пересекать границы строк текста.
+ — любой символ, не
+\begin_inset space ~
+\end_inset
+
+могут пересекать границы строк текста.
 \end_layout
 
 \end_inset
@@ -3557,7 +3561,11 @@ $
 
 \end_inset
 
-, строковые литералы начинаются со знака 
+, строковые литералы начинаются со
+\begin_inset space ~
+\end_inset
+
+знака 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -3570,7 +3578,11 @@ status open
 
 \end_inset
 
- и оканчиваются знаком 
+ и
+\begin_inset space ~
+\end_inset
+
+оканчиваются знаком 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -3583,7 +3595,11 @@ h
 
 \end_inset
 
-, не могут пересекать границы строк текста.
+, не
+\begin_inset space ~
+\end_inset
+
+могут пересекать границы строк текста.
 \end_layout
 
 \end_inset
@@ -3964,7 +3980,11 @@ status open
 
 \end_inset
 
-, строковые литералы начинаются со знака 
+, строковые литералы начинаются со
+\begin_inset space ~
+\end_inset
+
+знака 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -3977,8 +3997,23 @@ status open
 
 \end_inset
 
- и продолжаются до конца строки, и если последним символом в строке является
- знак 
+ и
+\begin_inset space ~
+\end_inset
+
+продолжаются до
+\begin_inset space ~
+\end_inset
+
+конца строки, и
+\begin_inset space ~
+\end_inset
+
+если последним символом в
+\begin_inset space ~
+\end_inset
+
+строке является знак 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -3993,8 +4028,12 @@ status open
 
 \end_inset
 
-, то следующая строка также считается частью строкового литерала, иначе
- строковый литерал заканчивается.
+, то
+\begin_inset space ~
+\end_inset
+
+следующая строка также считается частью строкового литерала, иначе строковый
+ литерал заканчивается.
  
 \end_layout
 
@@ -4178,7 +4217,11 @@ status open
 
 \end_inset
 
-, строковые литералы начинаются со знака 
+, строковые литералы начинаются со
+\begin_inset space ~
+\end_inset
+
+знака 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -4193,8 +4236,23 @@ status open
 
 \end_inset
 
- и продолжаются до конца строки, и если последним символом в строке является
- знак 
+ и
+\begin_inset space ~
+\end_inset
+
+продолжаются до
+\begin_inset space ~
+\end_inset
+
+конца строки, и
+\begin_inset space ~
+\end_inset
+
+если последним символом в
+\begin_inset space ~
+\end_inset
+
+строке является знак 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -4209,8 +4267,12 @@ status open
 
 \end_inset
 
-, то следующая строка также считается частью строкового литерала, иначе
- строковый литерал заканчивается.
+, то
+\begin_inset space ~
+\end_inset
+
+следующая строка также считается частью строкового литерала, иначе строковый
+ литерал заканчивается.
  
 \end_layout
 
