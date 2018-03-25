@@ -169,11 +169,7 @@ reference "tab:Варианты-наборов-ключевых-1"
 
 \end_inset
 
- и
-\begin_inset space ~
-\end_inset
-
-
+ и 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Варианты-наборов-ключевых-2"
@@ -206,11 +202,7 @@ reference "tab:Варианты-наборов-ключевых-1"
 
 \end_inset
 
- и
-\begin_inset space ~
-\end_inset
-
-
+ и 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Варианты-наборов-ключевых-2"
@@ -243,11 +235,7 @@ reference "tab:Варианты-наборов-ключевых-1"
 
 \end_inset
 
- и
-\begin_inset space ~
-\end_inset
-
-
+ и 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Варианты-наборов-ключевых-2"
