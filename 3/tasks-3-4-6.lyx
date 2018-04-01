@@ -5631,5 +5631,325 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+
+\lang russian
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang russian
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Краткое-описание-лексики-5"
+
+\end_inset
+
+Краткое описание лексики вариантов языков (продолжение)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang russian
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="90line%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+39
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Целые числа: последовательности цифр определенной системы счисления, не
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+
+\lang english
+начинающиеся с
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+
+\lang english
+нуля, предваренные соответствующим идентификатором, определяющим систему
+ счисления (для десятичных чисел - пустой идентификатор, для двоичных чисел
+ - 
+\lang russian
+«
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+0b
+\end_layout
+
+\end_inset
+
+»
+\lang english
+, для восьмиричных чисел - 
+\lang russian
+«
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+0o
+\end_layout
+
+\end_inset
+
+»
+\lang english
+, для шестнадцатиричных чисел - 
+\lang russian
+«
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+0x
+\end_layout
+
+\end_inset
+
+»
+\lang english
+).
+
+\lang russian
+ Ключевые слова: «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+and
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+or
+\end_layout
+
+\end_inset
+
+».
+ Знаки операций: «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+(
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+».
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang russian
+Строковые литералы: последовательности буквенных символов 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+taskcp}
+\end_layout
+
+\end_inset
+
+, цифр и
+\begin_inset space ~
+\end_inset
+
+символов «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+/
+\end_layout
+
+\end_inset
+
+», которые не
+\begin_inset space ~
+\end_inset
+
+могут содержать два подряд идущих символа 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+/
+\end_layout
+
+\end_inset
+
+» и
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+могут оканчиваться символом 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+/
+\end_layout
+
+\end_inset
+
+».
+ Ключевые слова: 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+cd
+\end_layout
+
+\end_inset
+
+», 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+ls
+\end_layout
+
+\end_inset
+
+».
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
