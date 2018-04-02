@@ -5702,10 +5702,21 @@ name "tab:Краткое-описание-лексики-5"
 
 \lang english
 нуля, предваренные соответствующим идентификатором, определяющим систему
- счисления (для десятичных чисел - пустой идентификатор, для двоичных чисел
- - 
+ счисления (для десятичных чисел
 \lang russian
-«
+
+\begin_inset space ~
+\end_inset
+
+— 
+\lang english
+пустой идентификатор, для двоичных чисел
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+— «
 \begin_inset listings
 inline true
 status open
@@ -5719,9 +5730,13 @@ status open
 
 »
 \lang english
-, для восьмиричных чисел - 
+, для восьмиричных чисел
 \lang russian
-«
+
+\begin_inset space ~
+\end_inset
+
+— «
 \begin_inset listings
 inline true
 status open
@@ -5735,9 +5750,13 @@ status open
 
 »
 \lang english
-, для шестнадцатиричных чисел - 
+, для шестнадцатиричных чисел
 \lang russian
-«
+
+\begin_inset space ~
+\end_inset
+
+— «
 \begin_inset listings
 inline true
 status open
