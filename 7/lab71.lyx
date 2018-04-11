@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
 \begin_preamble
 \usepackage{indentfirst}
@@ -12,16 +14,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -208,8 +210,8 @@ name "tab:Варианты-рабочего-языка"
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="4">
-<features rotate="0" tabularvalignment="middle">
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0.5cm">
 <column alignment="left" valignment="top" width="42line%">
 <column alignment="center" valignment="top" width="0.5cm">
@@ -501,7 +503,7 @@ status open
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -513,7 +515,7 @@ status open
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -594,7 +596,7 @@ start <E>.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -606,7 +608,7 @@ start <E>.
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -653,6 +655,153 @@ status open
 \begin_layout Plain Layout
 
 ]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+<axiom <E>>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<E    <T E'>>
+\end_layout
+
+\begin_layout Plain Layout
+
+<E'   <+ T E'>
+\end_layout
+
+\begin_layout Plain Layout
+
+      <>> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<T    <F T'>>
+\end_layout
+
+\begin_layout Plain Layout
+
+<T'   <* F T'>
+\end_layout
+
+\begin_layout Plain Layout
+
+      <>>
+\end_layout
+
+\begin_layout Plain Layout
+
+<F    <n>
+\end_layout
+
+\begin_layout Plain Layout
+
+      <( E )>>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+'axiom E  -> T E1 'end
+\end_layout
+
+\begin_layout Plain Layout
+
+E1 -> "+" T E1 'or
+\end_layout
+
+\begin_layout Plain Layout
+
+      'epsilon 'end
+\end_layout
+
+\begin_layout Plain Layout
+
+T  -> F T1 'end
+\end_layout
+
+\begin_layout Plain Layout
+
+T1 -> "*" F T1 'or 
+\end_layout
+
+\begin_layout Plain Layout
+
+      'epsilon 'end
+\end_layout
+
+\begin_layout Plain Layout
+
+F  -> "n" 'or 
+\end_layout
+
+\begin_layout Plain Layout
+
+      "(" E ")" 'end
 \end_layout
 
 \end_inset
@@ -731,7 +880,10 @@ reference "tab:Варианты-рабочего-языка"
  Реализация этого алгоритма.
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
