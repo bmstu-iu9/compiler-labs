@@ -849,7 +849,11 @@ name "enu:Переписывание-грамматики-входног"
 \end_layout
 
 \begin_layout Enumerate
-Добавление в программу, написанную на
+Добавление в
+\begin_inset space ~
+\end_inset
+
+программу, написанную на
 \begin_inset space ~
 \end_inset
 
