@@ -446,7 +446,11 @@ switch
 \end_layout
 
 \begin_layout Enumerate
-объявление структуры в языке C (с вложенными структурами и
+объявление структуры в языке C (со
+\begin_inset space ~
+\end_inset
+
+вложенными структурами и
 \begin_inset space ~
 \end_inset
 
@@ -502,7 +506,135 @@ Go (с
 \begin_inset space ~
 \end_inset
 
-запятой).
+запятой);
+\end_layout
+
+\begin_layout Enumerate
+язык XML;
+\end_layout
+
+\begin_layout Enumerate
+объявление класса в
+\begin_inset space ~
+\end_inset
+
+языке C++ (со
+\begin_inset space ~
+\end_inset
+
+вложенными классами, тела методов — пустые);
+\end_layout
+
+\begin_layout Enumerate
+создание таблицы в
+\begin_inset space ~
+\end_inset
+
+языке SQL;
+\end_layout
+
+\begin_layout Enumerate
+циклы 
+\begin_inset listings
+lstparams "language=Pascal"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+for
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "language=Pascal"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+while
+\end_layout
+
+\end_inset
+
+ в
+\begin_inset space ~
+\end_inset
+
+языке С, оператор 
+\begin_inset listings
+lstparams "language=Pascal"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+switch
+\end_layout
+
+\end_inset
+
+ в
+\begin_inset space ~
+\end_inset
+
+языке C;
+\end_layout
+
+\begin_layout Enumerate
+язык HTML;
+\end_layout
+
+\begin_layout Enumerate
+объявление класса в
+\begin_inset space ~
+\end_inset
+
+языке JavaScript (со
+\begin_inset space ~
+\end_inset
+
+вложенными классами, тела методов — пустые);
+\end_layout
+
+\begin_layout Enumerate
+объявление структуры в
+\begin_inset space ~
+\end_inset
+
+языке Rust (со
+\begin_inset space ~
+\end_inset
+
+вложенными структурами и
+\begin_inset space ~
+\end_inset
+
+объединениями);
+\end_layout
+
+\begin_layout Enumerate
+язык DOT;
+\end_layout
+
+\begin_layout Enumerate
+таблицы LaTeX (окружение 
+\begin_inset listings
+lstparams "language=Pascal"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+tabular
+\end_layout
+
+\end_inset
+
+, только обязательные параметры).
 \end_layout
 
 \begin_layout Standard
