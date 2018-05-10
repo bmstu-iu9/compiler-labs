@@ -518,7 +518,7 @@ Go (с
 \begin_inset space ~
 \end_inset
 
-языке C++ (со
+языке C++98 (со
 \begin_inset space ~
 \end_inset
 
@@ -526,17 +526,9 @@ Go (с
 \end_layout
 
 \begin_layout Enumerate
-создание таблицы в
-\begin_inset space ~
-\end_inset
-
-языке SQL;
-\end_layout
-
-\begin_layout Enumerate
 циклы 
 \begin_inset listings
-lstparams "language=Pascal"
+lstparams "language=Java"
 inline true
 status open
 
@@ -549,7 +541,7 @@ for
 
 , 
 \begin_inset listings
-lstparams "language=Pascal"
+lstparams "language=Java"
 inline true
 status open
 
@@ -566,7 +558,7 @@ while
 
 языке С, оператор 
 \begin_inset listings
-lstparams "language=Pascal"
+lstparams "language=Java"
 inline true
 status open
 
@@ -585,10 +577,6 @@ switch
 \end_layout
 
 \begin_layout Enumerate
-язык HTML;
-\end_layout
-
-\begin_layout Enumerate
 объявление класса в
 \begin_inset space ~
 \end_inset
@@ -597,7 +585,20 @@ switch
 \begin_inset space ~
 \end_inset
 
-вложенными классами, тела методов — пустые);
+вложенными классами, тела методов — выражения 
+\begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+return
+\end_layout
+
+\end_inset
+
+);
 \end_layout
 
 \begin_layout Enumerate
@@ -613,28 +614,7 @@ switch
 \begin_inset space ~
 \end_inset
 
-объединениями);
-\end_layout
-
-\begin_layout Enumerate
-язык DOT;
-\end_layout
-
-\begin_layout Enumerate
-таблицы LaTeX (окружение 
-\begin_inset listings
-lstparams "language=Pascal"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-tabular
-\end_layout
-
-\end_inset
-
-, только обязательные параметры).
+объединениями).
 \end_layout
 
 \begin_layout Standard
