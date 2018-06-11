@@ -1460,15 +1460,7 @@ status open
 
 \end_inset
 
- не
-\begin_inset space ~
-\end_inset
-
-различались во
-\begin_inset space ~
-\end_inset
-
-внутреннем представлении компилятора.
+ были взаимозаменяемыми.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1507,11 +1499,7 @@ status open
 
 \end_inset
 
- различались во
-\begin_inset space ~
-\end_inset
-
-внутреннем представлении компилятора.
+ перестали быть взаимозаменяемыми.
 \end_layout
 
 \end_inset

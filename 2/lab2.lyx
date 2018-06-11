@@ -2682,7 +2682,8 @@ name "tab:Дополнительные-возможности-2"
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Подсчет времени выполнения каждой глобальной функции относительно времени
+ выполнения всей программы.
 \end_layout
 
 \end_inset
@@ -2702,7 +2703,38 @@ name "tab:Дополнительные-возможности-2"
 \begin_inset Text
 
 \begin_layout Plain Layout
+Для каждого оператора 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
 
+\begin_layout Plain Layout
+
+if
+\end_layout
+
+\end_inset
+
+ подсчитать количество переходов по
+\begin_inset space ~
+\end_inset
+
+положительной ветке относительно общего количества вызова конкретного оператора
+ 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+if
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -2722,7 +2754,41 @@ name "tab:Дополнительные-возможности-2"
 \begin_inset Text
 
 \begin_layout Plain Layout
+Заменить все операторы 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
 
+\begin_layout Plain Layout
+
+switch
+\end_layout
+
+\end_inset
+
+ стандартного (C-образного) вида на
+\begin_inset space ~
+\end_inset
+
+аналогичные по
+\begin_inset space ~
+\end_inset
+
+логике работы операторы 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+switch
+\end_layout
+
+\end_inset
+
+ без выражения.
 \end_layout
 
 \end_inset
@@ -2742,7 +2808,28 @@ name "tab:Дополнительные-возможности-2"
 \begin_inset Text
 
 \begin_layout Plain Layout
+Поставить символ 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
 
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\end_inset
+
+ в
+\begin_inset space ~
+\end_inset
+
+конце каждой строки, которая оканчивается на
+\begin_inset space ~
+\end_inset
+
+целый чётный числовой литерал.
 \end_layout
 
 \end_inset
@@ -2762,7 +2849,84 @@ name "tab:Дополнительные-возможности-2"
 \begin_inset Text
 
 \begin_layout Plain Layout
+Во
+\begin_inset space ~
+\end_inset
 
+всех вызовах функции 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+fmt.Println
+\end_layout
+
+\end_inset
+
+ добавить в
+\begin_inset space ~
+\end_inset
+
+форматную строку префикс вида 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+LINE(FUNC_NAME): 
+\end_layout
+
+\end_inset
+
+, где 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+LINE
+\end_layout
+
+\end_inset
+
+ - текущий номер строки, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+FUNC_NAME
+\end_layout
+
+\end_inset
+
+ - имя функции, из
+\begin_inset space ~
+\end_inset
+
+которой происходит вызов 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+fmt.Println
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -2782,7 +2946,19 @@ name "tab:Дополнительные-возможности-2"
 \begin_inset Text
 
 \begin_layout Plain Layout
+Заменить все умножения и
+\begin_inset space ~
+\end_inset
 
+деления на
+\begin_inset space ~
+\end_inset
+
+число, являющееся степенью двойки, на
+\begin_inset space ~
+\end_inset
+
+соответствующий побитовый сдвиг.
 \end_layout
 
 \end_inset
@@ -2802,7 +2978,41 @@ name "tab:Дополнительные-возможности-2"
 \begin_inset Text
 
 \begin_layout Plain Layout
+Заменить все операторы 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
 
+\begin_layout Plain Layout
+
+if
+\end_layout
+
+\end_inset
+
+ без отрицательной ветки на
+\begin_inset space ~
+\end_inset
+
+аналогичный по
+\begin_inset space ~
+\end_inset
+
+логике работы оператор 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+switch
+\end_layout
+
+\end_inset
+
+ без выражения.
 \end_layout
 
 \end_inset
@@ -2822,7 +3032,38 @@ name "tab:Дополнительные-возможности-2"
 \begin_inset Text
 
 \begin_layout Plain Layout
+Если у функции используется сокращенное указание типа для нескольких аргументов
+ (например 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
 
+\begin_layout Plain Layout
+
+func f(a, b int)
+\end_layout
+
+\end_inset
+
+), то
+\begin_inset space ~
+\end_inset
+
+явно указать тип для каждого аргумента отдельно (например 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+func f(a int, b int)
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \end_inset
