@@ -614,7 +614,117 @@ return
 \begin_inset space ~
 \end_inset
 
-объединениями).
+объединениями);
+\end_layout
+
+\begin_layout Enumerate
+РБНФ;
+\end_layout
+
+\begin_layout Enumerate
+Flex (в
+\begin_inset space ~
+\end_inset
+
+семантических действиях могут быть присваивания, вызовы функций и
+\begin_inset space ~
+\end_inset
+
+вложенные фигурные скобки);
+\end_layout
+
+\begin_layout Enumerate
+Операторы 
+\begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+if
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+for
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+while
+\end_layout
+
+\end_inset
+
+ в
+\begin_inset space ~
+\end_inset
+
+языке Pascal;
+\end_layout
+
+\begin_layout Enumerate
+язык Dot (только ориентированный граф, из
+\begin_inset space ~
+\end_inset
+
+атрибутов доступны только 
+\begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+rankdir
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+label
+\end_layout
+
+\end_inset
+
+ и 
+\begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+color
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
