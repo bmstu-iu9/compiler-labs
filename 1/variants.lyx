@@ -1104,7 +1104,11 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-Обеспечить возможность использования символа 
+Обеспечить возможность использования в числовых литералах незначимый знак
+\lang english
+ 
+\lang russian
+
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -1112,16 +1116,12 @@ status open
 
 \begin_layout Plain Layout
 
-#
+_
 \end_layout
 
 \end_inset
 
- в
-\begin_inset space ~
-\end_inset
-
-идентификаторах.
+.
 \end_layout
 
 \end_inset

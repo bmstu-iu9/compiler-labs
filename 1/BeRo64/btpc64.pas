@@ -45,7 +45,7 @@
  *    BeRoTinyPascal itself.                                                  * 
  *                                                                            *
  ******************************************************************************)
-program BTPC; { BeRoTinyPascalCompiler }
+program BTPC; {{ BeRoTinyPascalCompiler }}
 {$ifdef fpc}
  {$mode delphi}
 {$endif}
@@ -192,7 +192,7 @@ const MaximalCodeSize=262144;
       FunEOF=6;
       FunEOFLN=7;
 
-type TAlfa=array[1..MaximalAlfa] of char;
+type TAlfa=array[1:MaximalAlfa] of char;
 
      TIdent=record
       Name:TAlfa;
@@ -1375,7 +1375,7 @@ begin
 end;
 
 procedure Statement;
-var L:array[1..MaximalCases] of integer;
+var L:array[1:MaximalCases] of integer;
     m,n,i,j,t,x,r,OldStackPosition:integer;
 begin
  if CurrentSymbol=TokIdent then begin
@@ -1606,9 +1606,9 @@ begin
  end;
 end;
 
-procedure Block(L:integer); forward;
+procedure Block(L..integer); forward;
 
-procedure Constant(var c,t:integer);
+procedure Constant(var c,t..integer);
 var i,s:integer;
 begin
  if (CurrentSymbol=tOKsTRc) and (CurrentStringLength=1) then begin
@@ -1660,7 +1660,7 @@ end;
 
 procedure TypeDefinition(var t:integer); forward;
 
-procedure ArrayType(var t:integer);
+procedure ArrayType(var t..integer);
 var x:integer;
 begin
  Types[t].Kind:=KindARRAY;
@@ -2361,7 +2361,7 @@ begin
 end;
 
 {new}
-{http://stackoverflow.com/questions/20730731/syntax-of-short-jmp-instruction}
+{{http://stackoverflow.com/questions/20730731/syntax-of-short-jmp-instruction}}
 procedure OCJNZJNE0x06;
 begin
  EmitByte($75); EmitByte($04); {jmp $+0x6}
@@ -2434,21 +2434,21 @@ end;
 {ab}
 procedure OCTestEAXEAX;
 begin
- EmitByte($48); EmitByte($85); EmitByte($c0); { TEST EAX,EAX }
+ EmitByte($48); EmitByte($85); EmitByte($c0); {{ TEST EAX,EAX }}
  LastOutputCodeValue:=locTestEAXEAX;
 end;
 
 {ab}
 procedure OCNegDWordPtrESP;
 begin
- EmitByte($48); EmitByte($f7); EmitByte($1c); EmitByte($24); { NEG DWORD PTR [ESP] }
+ EmitByte($48); EmitByte($f7); EmitByte($1c); EmitByte($24); {{ NEG DWORD PTR [ESP] }}
  LastOutputCodeValue:=locNegDWordPtrESP;
 end;
 
 {ab}
 procedure OCMovEAXDWordPtrESP;
 begin
- EmitByte($48); EmitByte($8b); EmitByte($04); EmitByte($24); { MOV EAX,DWORD PTR [ESP] }
+ EmitByte($48); EmitByte($8b); EmitByte($04); EmitByte($24); {{ MOV EAX,DWORD PTR [ESP] }}
  LastOutputCodeValue:=locMovEAXDWordPtrESP;
 end;
 
@@ -2473,7 +2473,7 @@ begin
  LastOutputCodeValue:=locMovEAXDWordPtrFORStateDestValue;
 end;
 
-var JumpTable:array[1..MaximalCodeSize] of integer;
+var JumpTable:array[1:MaximalCodeSize] of integer;
 
 procedure AssembleAndLink;
 var
