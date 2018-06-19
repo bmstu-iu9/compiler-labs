@@ -262,15 +262,15 @@ const
 
    }
 
-   intsize     =        4;  {{ size of integer }}
-   intal       =        4;  {{ memory alignment of integer }}
+   intsize     =        4;  {{ size of integer }
+   intal       =        4;  {{ memory alignment of integer }
    realsize    =        8;  { size of real }
-   realal      =        4;  {{ memory alignment of real }}
+   realal      =        4;  {{ memory alignment of real }
    charsize    =        1;  { size of char }
    charal      =        1;  { memory alignment of char }
    charmax     =        1;
-   boolsize    =        1;  {{ size of boolean }}
-   boolal      =        1;  {{ alignment of boolean }}
+   boolsize    =        1;  {{ size of boolean }
+   boolal      =        1;  {{ alignment of boolean }
    ptrsize     =        4;  { size of pointer }
    adrsize     =        4;  { size of address }
    adral       =        4;  { alignment of address }
@@ -342,7 +342,7 @@ const
    dodmplex   = false; { dump lexical }
    doprtryc   = false; { dump recycling tracker counts }
 
-   {{ version numbers }}
+   {{ version numbers }
 
    majorver   = 1; { major version number }
    minorver   = 0; { minor version number }
@@ -688,7 +688,7 @@ var
      stpcnt := stpcnt-1
   end;
 
-  {{ initialize and register identifier entry }}
+  {{ initialize and register identifier entry }
   procedure ininam(p: ctp);
   begin
      ctpcnt := ctpcnt+1; { count entry }
