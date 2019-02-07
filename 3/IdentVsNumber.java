@@ -17,7 +17,7 @@ public class IdentVsNumber
 		// Регулярные выражения
 		String ident = "\\p{L}[\\p{L}0-9]*";
 		String number = "[0-9]+";
-		String pattern = "(^"+ident+")|(^"+number+")";
+		String pattern = "(?<ident>^"+ident+")|(?<number>^"+number+")";
 
 		// Компиляция регулярного выражения
 		Pattern p = Pattern.compile(pattern);
@@ -25,10 +25,10 @@ public class IdentVsNumber
 		// Сопоставление текста с регулярным выражением
 		Matcher m = p.matcher(text);
 		if (m.find()) {
-			if (m.group(1) != null) {
-				System.out.println("Идентификатор " + m.group(1));
+			if (m.group("ident") != null) {
+				System.out.println("Идентификатор " + m.group("ident"));
 			} else {
-				System.out.println("Число " + m.group(2));
+				System.out.println("Число " + m.group("number"));
 			}
 		} else {
 			System.out.println("Ошибка");

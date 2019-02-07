@@ -337,6 +337,30 @@ reference "tab:Варианты-наборов-ключевых-2"
 \end_layout
 
 \begin_layout Standard
+Лексический анализатор должен иметь программный интерфейс для взаимодействия
+ с
+\begin_inset space ~
+\end_inset
+
+парсером.
+ Рекомендуется реализовывать его как метод 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+nextToken()
+\end_layout
+
+\end_inset
+
+ для императивных языков или функцию, возвращающую список лексем, для функционал
+ьных языков.
+\end_layout
+
+\begin_layout Standard
 Входной файл может содержать ошибки, при обнаружении которых лексический
  анализатор должен выдавать сообщение с указанием координаты, восстанавливаться
  и продолжать работу.
@@ -348,7 +372,7 @@ reference "tab:Варианты-наборов-ключевых-2"
  за константное время.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false

@@ -360,7 +360,7 @@ p{L}0-9]*";
 
 \begin_layout Plain Layout
 
-		String pattern = "(^"+ident+")|(^"+number+")";
+		String pattern = "(?<ident>^"+ident+")|(?<number>^"+number+")";
 \end_layout
 
 \begin_layout Plain Layout
@@ -390,12 +390,12 @@ p{L}0-9]*";
 
 \begin_layout Plain Layout
 
-			if (m.group(1) != null) {
+			if (m.group("ident") != null) {
 \end_layout
 
 \begin_layout Plain Layout
 
-				System.out.println("Идентификатор " + m.group(1));
+				System.out.println("Идентификатор " + m.group("ident"));
 \end_layout
 
 \begin_layout Plain Layout
@@ -405,7 +405,7 @@ p{L}0-9]*";
 
 \begin_layout Plain Layout
 
-				System.out.println("Число " + m.group(2));
+				System.out.println("Число " + m.group("number"));
 \end_layout
 
 \begin_layout Plain Layout
@@ -552,9 +552,90 @@ syntax error (10,2)
 \end_layout
 
 \begin_layout Standard
+Лексический анализатор должен иметь программный интерфейс для взаимодействия
+ с
+\begin_inset space ~
+\end_inset
+
+парсером.
+ Рекомендуется реализовывать его как метод 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+nextToken()
+\end_layout
+
+\end_inset
+
+ для императивных языков или функцию, возвращающую список лексем, для функционал
+ьных языков.
+\end_layout
+
+\begin_layout Standard
 После обнаружения ошибки лексический анализатор должен восстанавливаться
  по следующей схеме: из входного потока пропускаются все подряд идущие символы
  до нахождения следующей лексемы.
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+регулярных выражениях рекомендуется использовать классы символов Unicode
+ для обозначения букв, чисел и
+\begin_inset space ~
+\end_inset
+
+других подобных множеств.
+ Многие движки регулярных выражений для задания классов используют синтаксис
+ 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+p{класс}
+\end_layout
+
+\end_inset
+
+.
+ Вместо нумерованных групп рекомендуется использовать именованные 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+(?<имя>regexp)
+\end_layout
+
+\end_inset
+
+, при использовании нумерованных групп ненумеруемые обозначаются как 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+(?:regexp)
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard

@@ -222,6 +222,30 @@ STRING (1, 11)-(1, 16): qwerty
 \end_layout
 
 \begin_layout Standard
+Лексический анализатор должен иметь программный интерфейс для взаимодействия
+ с
+\begin_inset space ~
+\end_inset
+
+парсером.
+ Рекомендуется реализовывать его как метод 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+nextToken()
+\end_layout
+
+\end_inset
+
+ для императивных языков или функцию, возвращающую список лексем, для функционал
+ьных языков.
+\end_layout
+
+\begin_layout Standard
 Входной файл может содержать ошибки, при обнаружении которых лексический
  анализатор должен выдавать сообщение с указанием координаты, восстанавливаться
  и продолжать работу.
