@@ -384,7 +384,7 @@ fc btpc.pas btpc2.pas
 
 Linux: 
 \family typewriter
-diff btpc64.pas btpc64-2.pas
+diff -u btpc64.pas btpc64-2.pas
 \family default
 ) должна демонстрировать изменения, внесённые в
 \begin_inset space ~
@@ -416,7 +416,7 @@ fc btpc2.pas btpc3.pas
 
 Linux: 
 \family typewriter
-diff btpc64-2.pas btpc64-3.pas
+diff -u btpc64-2.pas btpc64-3.pas
 \family default
 ) должна демонстрировать новые возможности языка.
 \end_layout
