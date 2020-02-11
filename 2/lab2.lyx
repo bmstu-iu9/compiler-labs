@@ -2641,7 +2641,11 @@ status open
 
 \begin_layout Plain Layout
 Подсчет общего количества операций сложения, вычитания, умножения и деления
- (подсчет каждой операции вести отдельно).
+ во
+\begin_inset space ~
+\end_inset
+
+время выполнения программы (подсчет каждой операции вести отдельно).
 \end_layout
 
 \end_inset
@@ -2734,7 +2738,11 @@ if
 
 \end_inset
 
-.
+ (во
+\begin_inset space ~
+\end_inset
+
+время выполнения программы).
 \end_layout
 
 \end_inset
