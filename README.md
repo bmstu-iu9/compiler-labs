@@ -2,14 +2,10 @@
 
 1. **Раскрутка самоприменимого компилятора**
    * [Вариант с BeRo](1/lab1-BeRo.pdf)
-     * **Windows x32:** [btpc.exe](1/BeRo/btpc.exe), [btpc.pas](1/BeRo/btpc.pas),
-       [hello.pas](1/BeRo/hello.pas), все файлы **[одним архивом](1/lab1-bero.zip)**
-     * **Linux x64:** [btpc64](1/BeRo64/btpc64), [btpc64.pas](1/BeRo64/btpc64.pas),
-       все файлы **[одним архивом](1/lab1-bero64.zip)**
+     * **Windows x32:** [lab1-btpc.zip](1/lab1-btpc.zip)
+     * **Linux x64:** [lab1-btpc64.zip](1/lab1-btpc64.zip)
    * [Вариант с P5](1/lab1-P5.pdf)
-     * **Linux x32:** [hello.pas](1/P5/hello.pas), [iso7185.pdf](1/P5/iso7185.pdf),
-       [pcom](1/P5/pcom), [pcom.pas](1/P5/pcom.pas), [pint](1/P5/pint),
-       все файлы **[одним архивом](1/lab1-p5.zip)**
+     * **Linux x32:** [lab1-p5.zip](1/lab1-p5.zip)
 2. **[Синтаксические деревья](2/lab2.pdf)**
    * Файлы [astprint.go](2/astprint.go) и [demo.go](2/demo.go),
      оба файла **[одним архивом](2/lab2-examples.zip)**
