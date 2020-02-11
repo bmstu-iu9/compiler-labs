@@ -22,3 +22,10 @@
    * Файлы [lexer.h](9/parser_bison/lexer.h), [lexer.l](9/parser_bison/lexer.l),
      [parser.y](9/parser_bison/parser.y), [run.bat](9/parser_bison/run.bat),
      [run.sh](9/parser_bison/run.sh), все файлы **[одним архивом](9/lab7-parser_bison.zip)**
+
+## Отчёт по лабораторной работе
+
+* [Шаблон отчёта (титульный лист)](compilers-lab-template.dotx)
+* Образцы отчёта по лабораторной работе:
+  - [Lab_4_compiler-sample.pdf](Lab_4_compiler-sample.pdf)
+  - [Lab_7_2_compiler-sample.pdf](Lab_7_2_compiler-sample.pdf)
