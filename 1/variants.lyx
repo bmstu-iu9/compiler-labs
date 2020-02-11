@@ -951,7 +951,11 @@ or
 \begin_layout Plain Layout
 
 \lang russian
-Сделать идентификаторы чувствительными к
+Сделать идентификаторы и
+\begin_inset space ~
+\end_inset
+
+ключевые слова чувствительными к
 \begin_inset space ~
 \end_inset
 

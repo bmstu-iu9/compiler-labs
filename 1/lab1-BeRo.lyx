@@ -296,7 +296,19 @@ btpc.pas
 \series bold
 btpc2.pas
 \series default
-, а потом вносить в него правки);
+ (на
+\begin_inset space ~
+\end_inset
+
+Linux: 
+\series bold
+btpc64.pas
+\series default
+ в 
+\series bold
+btpc64-2.pas
+\series default
+), а потом вносить в него правки);
 \end_layout
 
 \begin_layout Enumerate
@@ -366,6 +378,14 @@ btpc2.pas
 \family typewriter
 fc btpc.pas btpc2.pas
 \family default
+, на
+\begin_inset space ~
+\end_inset
+
+Linux: 
+\family typewriter
+diff btpc64.pas btpc64-2.pas
+\family default
 ) должна демонстрировать изменения, внесённые в
 \begin_inset space ~
 \end_inset
@@ -389,6 +409,14 @@ btpc3.pas
  (отображаемая командой 
 \family typewriter
 fc btpc2.pas btpc3.pas
+\family default
+, на
+\begin_inset space ~
+\end_inset
+
+Linux: 
+\family typewriter
+diff btpc64-2.pas btpc64-3.pas
 \family default
 ) должна демонстрировать новые возможности языка.
 \end_layout
