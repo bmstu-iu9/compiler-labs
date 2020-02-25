@@ -2014,11 +2014,7 @@ x
 \end_inset
 
  обозначают шестнадцатеричные цифры).
- Идентификаторы: последовательности печатных (не-пробельных и
-\begin_inset space ~
-\end_inset
-
-не-управляющих) символов 
+ Идентификаторы: последовательности буквенных символов 
 \begin_inset ERT
 status open
 
@@ -2116,20 +2112,7 @@ forward
 \begin_layout Plain Layout
 
 \lang russian
-Идентификаторы: последовательности буквенных символов 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-{
-\backslash
-taskcp}
-\end_layout
-
-\end_inset
-
- и
+Идентификаторы: последовательности латинских букв и
 \begin_inset space ~
 \end_inset
 
@@ -3251,7 +3234,7 @@ status open
 \begin_inset space ~
 \end_inset
 
-могут содержать внутри более трёх кавычек подряд.
+могут содержать внутри более двух кавычек подряд.
 \end_layout
 
 \end_inset
@@ -3648,7 +3631,7 @@ NEXT
 \begin_inset space ~
 \end_inset
 
-словом 
+ключевым словом 
 \begin_inset Quotes fld
 \end_inset
 
@@ -3876,7 +3859,7 @@ name "tab:Краткое-описание-лексики-4"
 
 \lang russian
 \begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="2">
+<lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="90line%">
@@ -4101,136 +4084,6 @@ _
 \begin_layout Plain Layout
 
 \lang russian
-Слова: последовательности непробельных символов, которые не
-\begin_inset space ~
-\end_inset
-
-могут начинаться на
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Quotes fld
-\end_inset
-
-
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-:
-\end_layout
-
-\end_inset
-
-
-\begin_inset Quotes frd
-\end_inset
-
- либо любой текст, окружённый кавычками (сами содержать кавычки не
-\begin_inset space ~
-\end_inset
-
-могут), не
-\begin_inset space ~
-\end_inset
-
-могут пересекать границы текста.
- Метки
-\begin_inset space ~
-\end_inset
-
-— последовательности из
-\begin_inset space ~
-\end_inset
-
-букв и
-\begin_inset space ~
-\end_inset
-
-цифр, начинающиеся со
-\begin_inset space ~
-\end_inset
-
-знака 
-\begin_inset Quotes fld
-\end_inset
-
-
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-:
-\end_layout
-
-\end_inset
-
-
-\begin_inset Quotes frd
-\end_inset
-
-.
- Комментарии: начинаются с
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Quotes fld
-\end_inset
-
-
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-::
-\end_layout
-
-\end_inset
-
-
-\begin_inset Quotes frd
-\end_inset
-
- и
-\begin_inset space ~
-\end_inset
-
-продолжаются до
-\begin_inset space ~
-\end_inset
-
-окончания строки текста.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang russian
-28
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang russian
 Идентификаторы: последовательности буквенных символов 
 \begin_inset ERT
 status open
@@ -4267,7 +4120,7 @@ taskcp}
 \begin_layout Plain Layout
 
 \lang russian
-29
+28
 \end_layout
 
 \end_inset
@@ -4398,7 +4251,7 @@ FORGET
 \begin_layout Plain Layout
 
 \lang russian
-30
+29
 \end_layout
 
 \end_inset
@@ -4502,7 +4355,7 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-31
+30
 \end_layout
 
 \end_inset
@@ -4576,128 +4429,12 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-32
+31
 \end_layout
 
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang russian
-Параметры: целые десятичные числа, предварённые знаком «
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\end_inset
-
-».
- Переменные: последовательности букв, цифр, знаков подчёркивания и
-\begin_inset space ~
-\end_inset
-
-дефисов, окружённые знаками «
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-%
-\end_layout
-
-\end_inset
-
-».
- Ключевое слово «
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-%%
-\end_layout
-
-\end_inset
-
-».
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang russian
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\lang russian
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\lang russian
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Краткое-описание-лексики-5"
-
-\end_inset
-
-Краткое описание лексики вариантов языков (продолжение)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\lang russian
-\begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="90line%">
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang russian
-33
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5056,14 +4793,62 @@ status open
 \end_inset
 </cell>
 </row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang russian
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang russian
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang russian
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Краткое-описание-лексики-5"
+
+\end_inset
+
+Краткое описание лексики вариантов языков (продолжение)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang russian
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="90line%">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang russian
-34
+32
 \end_layout
 
 \end_inset
@@ -5203,7 +4988,7 @@ D
 \begin_layout Plain Layout
 
 \lang russian
-35
+33
 \end_layout
 
 \end_inset
@@ -5337,7 +5122,7 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-36
+34
 \end_layout
 
 \end_inset
@@ -5510,7 +5295,7 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-37
+35
 \end_layout
 
 \end_inset
@@ -5548,7 +5333,7 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-38
+36
 \end_layout
 
 \end_inset
@@ -5625,7 +5410,8 @@ status open
 \end_inset
 
 ».
- Пробел: любая последовательность пробельных символов, Ключевое слово: «
+ Пробел (значимый токен): любая последовательность пробельных символов,
+ Ключевое слово: «
 \begin_inset listings
 inline true
 status open
@@ -5714,7 +5500,7 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-39
+37
 \end_layout
 
 \end_inset
@@ -5781,7 +5567,7 @@ status open
 
 \begin_layout Plain Layout
 
-0o
+0t
 \end_layout
 
 \end_inset
@@ -5873,7 +5659,7 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-40
+38
 \end_layout
 
 \end_inset
