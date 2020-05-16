@@ -29,3 +29,7 @@
 * Образцы отчёта по лабораторной работе:
   - [Lab_4_compiler-sample.pdf](Lab_4_compiler-sample.pdf)
   - [Lab_7_2_compiler-sample.pdf](Lab_7_2_compiler-sample.pdf)
+
+## Рубежный контроль
+
+1. [Первый рубежный контроль](1-rk-compilers.pdf)
