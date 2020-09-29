@@ -240,6 +240,11 @@ status open
 
 \begin_layout Plain Layout
 
+# объявления
+\end_layout
+
+\begin_layout Plain Layout
+
 non-terminal E, E1, T, T1, F;
 \end_layout
 
@@ -250,6 +255,11 @@ terminal '+', '*', '(', ')', n;
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+# правила грамматики
 \end_layout
 
 \begin_layout Plain Layout
@@ -335,6 +345,11 @@ $TERM  "+"  "*"  "("  ")"  "n"
 
 \begin_layout Plain Layout
 
+* правила грамматики
+\end_layout
+
+\begin_layout Plain Layout
+
 $RULE  E  = T E'
 \end_layout
 
@@ -405,6 +420,15 @@ status open
 
 \begin_layout Plain Layout
 
+;; только правила грамматики
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 (F)  = n | 
 \backslash
 ( (E) 
@@ -459,6 +483,11 @@ status open
 lstparams "basicstyle={\footnotesize\ttfamily}"
 inline false
 status open
+
+\begin_layout Plain Layout
+
+/* а здесь комментарий как в Си */
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -566,7 +595,7 @@ tokens <plus sign>, <star>, <n>.
 
 \begin_layout Plain Layout
 
-tokens <left paren>, 
+tokens <left paren>,
 \end_layout
 
 \begin_layout Plain Layout
@@ -582,6 +611,11 @@ tokens <left paren>,
 \begin_layout Plain Layout
 
          <right paren>.
+\end_layout
+
+\begin_layout Plain Layout
+
+<!-- аксиома -->
 \end_layout
 
 \begin_layout Plain Layout
@@ -616,6 +650,16 @@ start <E>.
 lstparams "basicstyle={\footnotesize\ttfamily}"
 inline false
 status open
+
+\begin_layout Plain Layout
+
+-- аксиома заключена
+\end_layout
+
+\begin_layout Plain Layout
+
+-- в фигурные скобки
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -689,11 +733,21 @@ status open
 
 \begin_layout Plain Layout
 
+' аксиома
+\end_layout
+
+\begin_layout Plain Layout
+
 <axiom <E>>
 \end_layout
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+' правила грамматики
 \end_layout
 
 \begin_layout Plain Layout
@@ -763,6 +817,20 @@ status open
 lstparams "basicstyle={\footnotesize\ttfamily}"
 inline false
 status open
+
+\begin_layout Plain Layout
+
+# ключевые слова
+\end_layout
+
+\begin_layout Plain Layout
+
+# начинаются с кавычки
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \begin_layout Plain Layout
 

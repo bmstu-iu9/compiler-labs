@@ -556,7 +556,7 @@ P5:
 \begin_inset space ~
 \end_inset
 
-80-й позиции, не учитывались.
+80-й позиции, не учитывались (считались комментарием).
 \end_layout
 
 \begin_layout Plain Layout

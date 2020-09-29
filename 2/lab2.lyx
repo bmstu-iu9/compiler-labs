@@ -1612,6 +1612,19 @@ time.Since()
 
 \end_inset
 
+, можно использовать 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+defer
+\end_layout
+
+\end_inset
+
 ).
 \end_layout
 
@@ -2869,7 +2882,7 @@ status open
 
 \begin_layout Plain Layout
 
-fmt.Println
+fmt.Printf
 \end_layout
 
 \end_inset
@@ -2929,7 +2942,7 @@ status open
 
 \begin_layout Plain Layout
 
-fmt.Println
+fmt.Printf
 \end_layout
 
 \end_inset
