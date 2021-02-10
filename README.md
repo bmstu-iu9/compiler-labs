@@ -3,7 +3,8 @@
 1. **Раскрутка самоприменимого компилятора**
    * [Вариант с BeRo](1/lab1-BeRo.pdf)
      * **Windows x32:** [lab1-btpc.zip](1/lab1-btpc.zip)
-     * **Linux x64:** [lab1-btpc64.zip](1/lab1-btpc64.zip)
+     * **Linux x64:** [lab1-btpc64.zip](1/lab1-btpc64-linux.zip)
+     * **macOS x64:** [lab1-btpc64.zip](1/lab1-btpc64-macos.zip)
    * [Вариант с P5](1/lab1-P5.pdf)
      * **Linux x32:** [lab1-p5.zip](1/lab1-p5.zip)
 2. **[Синтаксические деревья](2/lab2.pdf)**
