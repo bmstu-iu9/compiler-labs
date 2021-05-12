@@ -24,6 +24,8 @@
      [parser.y](9/parser_bison/parser.y), [run.bat](9/parser_bison/run.bat),
      [run.sh](9/parser_bison/run.sh), все файлы **[одним архивом](9/parser_bison.zip)**
 
+     [Исходники Скоробогатова 2017-03-24](9/skor-origin-lab7-parser_bison.zip)
+
 ## Отчёт по лабораторной работе
 
 * [Шаблон отчёта (титульный лист)](compilers-lab-template.dotx)
