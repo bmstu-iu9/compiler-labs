@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -21,6 +21,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -49,6 +51,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -57,7 +60,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -145,9 +151,9 @@ name "tab:Варианты-изменений-входного"
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Заменить операторы 
 \lang russian
-Обеспечить возможность использования символа 
+
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -155,16 +161,69 @@ status open
 
 \begin_layout Plain Layout
 
-@
+div
 \end_layout
 
 \end_inset
 
- в
+ и
 \begin_inset space ~
 \end_inset
 
-идентификаторах.
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+mod
+\end_layout
+
+\end_inset
+
+
+\lang english
+ на 
+\lang russian
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+//
+\end_layout
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+%
+\end_layout
+
+\end_inset
+
+ соответственно (
+\series bold
+BeRo Tiny Pascal:
+\series default
+ однострочные комментарии перестанут поддерживаться).
 \end_layout
 
 \end_inset
@@ -381,7 +440,11 @@ BeRo Tiny Pascal:
 \begin_layout Plain Layout
 
 \lang russian
-Добавить однострочный комментарий, начинающийся с символа 
+Добавить в
+\begin_inset space ~
+\end_inset
+
+язык шестнадцатиричные константы вида 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -389,31 +452,12 @@ status open
 
 \begin_layout Plain Layout
 
-?
+0x12ABcd
 \end_layout
 
 \end_inset
 
 .
- Т.
-\begin_inset space \thinspace{}
-\end_inset
-
-е.
- суффикс строки программы, расположенный после символа 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-?
-\end_layout
-
-\end_inset
-
-, должен считаться комментарием.
 \end_layout
 
 \end_inset
@@ -437,8 +481,69 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-Сделать так, чтобы целочисленные константы, выходящие за границы допустимого
- интервала, считались равными нулю.
+Добавить в строковые литералы Escape-последовательности 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+a
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+b
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+t
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -461,8 +566,11 @@ status open
 
 \begin_layout Plain Layout
 
+\series bold
 \lang russian
-Заменить запись оператора присваивания на 
+P5:
+\series default
+ Сделать так, чтобы символы 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -470,12 +578,68 @@ status open
 
 \begin_layout Plain Layout
 
-::=
+..
 \end_layout
 
 \end_inset
 
-.
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+:
+\end_layout
+
+\end_inset
+
+ были взаимозаменяемыми.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\lang russian
+BeRo Tiny Pascal:
+\series default
+ Сделать так, чтобы символы 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+..
+\end_layout
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+:
+\end_layout
+
+\end_inset
+
+ перестали быть взаимозаменяемыми.
 \end_layout
 
 \end_inset
@@ -499,7 +663,11 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-Заменить запись операции 
+Обеспечить возможность использования в числовых литералах незначимый знак
+\lang english
+ 
+\lang russian
+
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -507,12 +675,20 @@ status open
 
 \begin_layout Plain Layout
 
-<>
+_
 \end_layout
 
 \end_inset
 
- на 
+ (например, число 10
+\begin_inset space ~
+\end_inset
+
+000 можно записать и
+\begin_inset space ~
+\end_inset
+
+как 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -520,12 +696,46 @@ status open
 
 \begin_layout Plain Layout
 
-!=
+10000
 \end_layout
 
 \end_inset
 
-.
+, и
+\begin_inset space ~
+\end_inset
+
+как 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+10_000
+\end_layout
+
+\end_inset
+
+, и
+\begin_inset space ~
+\end_inset
+
+как 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+100__00
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \end_inset
@@ -670,69 +880,15 @@ to
 \begin_layout Plain Layout
 
 \lang russian
-Добавить в строковые литералы Escape-последовательности 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-a
-\end_layout
-
+Сделать идентификаторы и
+\begin_inset space ~
 \end_inset
 
-, 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-b
-\end_layout
-
+ключевые слова чувствительными к
+\begin_inset space ~
 \end_inset
 
-, 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-t
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-.
+регистру.
 \end_layout
 
 \end_inset
@@ -756,11 +912,7 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-Добавить в
-\begin_inset space ~
-\end_inset
-
-язык шестнадцатиричные константы вида 
+Добавить однострочный комментарий, начинающийся с символа 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -768,12 +920,31 @@ status open
 
 \begin_layout Plain Layout
 
-0x12ABcd
+?
 \end_layout
 
 \end_inset
 
 .
+ Т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+ суффикс строки программы, расположенный после символа 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+?
+\end_layout
+
+\end_inset
+
+, должен считаться комментарием.
 \end_layout
 
 \end_inset
@@ -951,15 +1122,8 @@ or
 \begin_layout Plain Layout
 
 \lang russian
-Сделать идентификаторы и
-\begin_inset space ~
-\end_inset
-
-ключевые слова чувствительными к
-\begin_inset space ~
-\end_inset
-
-регистру.
+Сделать так, чтобы целочисленные константы, выходящие за границы допустимого
+ интервала, считались равными нулю.
 \end_layout
 
 \end_inset
@@ -979,9 +1143,9 @@ or
 \begin_inset Text
 
 \begin_layout Plain Layout
-Заменить операторы 
-\lang russian
 
+\lang russian
+Обеспечить возможность использования символа 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -989,65 +1153,16 @@ status open
 
 \begin_layout Plain Layout
 
-div
+@
 \end_layout
 
 \end_inset
 
- и
+ в
 \begin_inset space ~
 \end_inset
 
-
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-mod
-\end_layout
-
-\end_inset
-
-
-\lang english
- на 
-\lang russian
-
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-//
-\end_layout
-
-\end_inset
-
- и
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-%
-\end_layout
-
-\end_inset
-
- соответственно.
+идентификаторах.
 \end_layout
 
 \end_inset
@@ -1108,11 +1223,7 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-Обеспечить возможность использования в числовых литералах незначимый знак
-\lang english
- 
-\lang russian
-
+Заменить запись операции 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -1120,7 +1231,20 @@ status open
 
 \begin_layout Plain Layout
 
-_
+<>
+\end_layout
+
+\end_inset
+
+ на 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+!=
 \end_layout
 
 \end_inset
@@ -1430,11 +1554,8 @@ status open
 
 \begin_layout Plain Layout
 
-\series bold
 \lang russian
-P5:
-\series default
- Сделать так, чтобы символы 
+Заменить запись оператора присваивания на 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -1442,68 +1563,12 @@ status open
 
 \begin_layout Plain Layout
 
-..
+::=
 \end_layout
 
 \end_inset
 
- и
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-:
-\end_layout
-
-\end_inset
-
- были взаимозаменяемыми.
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-\lang russian
-BeRo Tiny Pascal:
-\series default
- Сделать так, чтобы символы 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-..
-\end_layout
-
-\end_inset
-
- и
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-:
-\end_layout
-
-\end_inset
-
- перестали быть взаимозаменяемыми.
+.
 \end_layout
 
 \end_inset
