@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -24,6 +24,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -53,6 +55,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -65,7 +68,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language french
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -84,11 +90,11 @@
 \end_inset
 
 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Синтаксические деревья
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 
@@ -159,11 +165,11 @@ status open
 \end_inset
 
  из стандартной библиотеки этого языка содержат готовый 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 front-end
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  компилятора языка Go, а пакет 
@@ -906,13 +912,6 @@ reference "tab:Дополнительные-возможности"
 
 \end_inset
 
-, 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Дополнительные-возможности-1"
-
-\end_inset
-
  и
 \begin_inset space ~
 \end_inset
@@ -920,7 +919,7 @@ reference "tab:Дополнительные-возможности-1"
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Дополнительные-возможности-2"
+reference "tab:Дополнительные-возможности-1"
 
 \end_inset
 
@@ -953,7 +952,7 @@ name "tab:Дополнительные-возможности"
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="14" columns="2">
+<lyxtabular version="3" rows="17" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="90line%">
@@ -1085,8 +1084,11 @@ var
 \begin_inset Text
 
 \begin_layout Plain Layout
-Объявления глобальных функций должны располагаться в конце программы в алфавитно
-м порядке.
+Объявления глобальных функций должны располагаться в конце программы в
+\begin_inset space ~
+\end_inset
+
+алфавитном порядке.
 \end_layout
 
 \end_inset
@@ -1098,39 +1100,6 @@ var
 
 \begin_layout Plain Layout
 7
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Любая неанонимная функция, имеющая ровно один параметр типа 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-int
-\end_layout
-
-\end_inset
-
-, должна выводить своё имя и значение параметра.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-8
 \end_layout
 
 \end_inset
@@ -1163,7 +1132,7 @@ int
 \begin_inset Text
 
 \begin_layout Plain Layout
-9
+8
 \end_layout
 
 \end_inset
@@ -1183,66 +1152,7 @@ int
 \begin_inset Text
 
 \begin_layout Plain Layout
-10
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-В каждый оператор 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-switch
-\end_layout
-
-\end_inset
-
-, не имеющий 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-default
-\end_layout
-
-\end_inset
-
--секции, добавляется 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-default
-\end_layout
-
-\end_inset
-
--секция, содержащая печать какого-нибудь сообщения.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-11
+9
 \end_layout
 
 \end_inset
@@ -1265,7 +1175,11 @@ make
 \end_inset
 
 , должны иметь в два раза большую вместимость, чем в исходной программе
- (при этом их длина меняться не должна).
+ (при этом их длина меняться не
+\begin_inset space ~
+\end_inset
+
+должна).
 \end_layout
 
 \end_inset
@@ -1276,7 +1190,7 @@ make
 \begin_inset Text
 
 \begin_layout Plain Layout
-12
+10
 \end_layout
 
 \end_inset
@@ -1309,7 +1223,7 @@ make
 \begin_inset Text
 
 \begin_layout Plain Layout
-13
+11
 \end_layout
 
 \end_inset
@@ -1318,110 +1232,32 @@ make
 \begin_inset Text
 
 \begin_layout Plain Layout
-Во всех вызовах функции 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-fmt.Println
-\end_layout
-
-\end_inset
-
-, имеющих несколько фактических параметров, вставить между параметрами строку
- 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-", "
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-14
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 Каждое вхождение строкового литерала в текст программы должно быть заменено
- идентификатором константы, добавленной в начало программы и имеющей соответству
-ющее значение (при этом значения добавляемых констант не должны дублироваться).
+ идентификатором константы, добавленной в
+\begin_inset space ~
+\end_inset
+
+начало программы и
+\begin_inset space ~
+\end_inset
+
+имеющей соответствующее значение (при этом значения добавляемых констант
+ не
+\begin_inset space ~
+\end_inset
+
+должны дублироваться).
 \end_layout
 
 \end_inset
 </cell>
 </row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Дополнительные-возможности-1"
-
-\end_inset
-
-Дополнительные возможности, приобретаемые преобразованной программой (продолжени
-е)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="13" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="90line%">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-15
+12
 \end_layout
 
 \end_inset
@@ -1458,35 +1294,7 @@ iota
 \begin_inset Text
 
 \begin_layout Plain Layout
-16
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Заменить в
-\begin_inset space ~
-\end_inset
-
-программе все десятичные числа на
-\begin_inset space ~
-\end_inset
-
-шестнадцатиричные.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-17
+13
 \end_layout
 
 \end_inset
@@ -1510,7 +1318,7 @@ iota
 \begin_inset Text
 
 \begin_layout Plain Layout
-18
+14
 \end_layout
 
 \end_inset
@@ -1636,7 +1444,7 @@ defer
 \begin_inset Text
 
 \begin_layout Plain Layout
-19
+15
 \end_layout
 
 \end_inset
@@ -1742,7 +1550,7 @@ string
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+16
 \end_layout
 
 \end_inset
@@ -1839,16 +1647,16 @@ string
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-21
+17
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1888,12 +1696,55 @@ var x = expr
 \end_inset
 </cell>
 </row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Дополнительные-возможности-1"
+
+\end_inset
+
+Дополнительные возможности, приобретаемые преобразованной программой (продолжени
+е)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="16" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="90line%">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-22
+18
 \end_layout
 
 \end_inset
@@ -1966,7 +1817,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-23
+19
 \end_layout
 
 \end_inset
@@ -2067,7 +1918,7 @@ assert
 \begin_inset Text
 
 \begin_layout Plain Layout
-24
+20
 \end_layout
 
 \end_inset
@@ -2151,7 +2002,7 @@ x = x - 1
 \begin_inset Text
 
 \begin_layout Plain Layout
-25
+21
 \end_layout
 
 \end_inset
@@ -2358,75 +2209,12 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-26
+22
 \end_layout
 
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Каждому оператору 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-if
-\end_layout
-
-\end_inset
-
-, у
-\begin_inset space ~
-\end_inset
-
-которого нет ветки 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-else
-\end_layout
-
-\end_inset
-
-, добавить ветку 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-else
-\end_layout
-
-\end_inset
-
-, содержащую печать какого-нибудь сообщения.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-27
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2479,52 +2267,12 @@ for fmt.Println("init"); expr; fmt.Println("next") {...}
 \end_inset
 </cell>
 </row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Дополнительные-возможности-2"
-
-\end_inset
-
-Дополнительные возможности, приобретаемые преобразованной программой (продолжени
-е)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="13" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="90line%">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-28
+23
 \end_layout
 
 \end_inset
@@ -2561,66 +2309,7 @@ _
 \begin_inset Text
 
 \begin_layout Plain Layout
-29
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Каждое целое положительное чётное число заменить на
-\begin_inset space ~
-\end_inset
-
-сумму двух нечётных чисел в
-\begin_inset space ~
-\end_inset
-
-скобках.
- Например, 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-30
-\end_layout
-
-\end_inset
-
- можно заменить на
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-(9+21)
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-30
+24
 \end_layout
 
 \end_inset
@@ -2644,7 +2333,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-31
+25
 \end_layout
 
 \end_inset
@@ -2669,7 +2358,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-32
+26
 \end_layout
 
 \end_inset
@@ -2690,7 +2379,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-33
+27
 \end_layout
 
 \end_inset
@@ -2711,7 +2400,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-34
+28
 \end_layout
 
 \end_inset
@@ -2766,7 +2455,7 @@ if
 \begin_inset Text
 
 \begin_layout Plain Layout
-35
+29
 \end_layout
 
 \end_inset
@@ -2820,48 +2509,7 @@ switch
 \begin_inset Text
 
 \begin_layout Plain Layout
-36
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Поставить символ 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-;
-\end_layout
-
-\end_inset
-
- в
-\begin_inset space ~
-\end_inset
-
-конце каждой строки, которая оканчивается на
-\begin_inset space ~
-\end_inset
-
-целый чётный числовой литерал.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-37
+30
 \end_layout
 
 \end_inset
@@ -2917,7 +2565,7 @@ LINE
 
 \end_inset
 
- - текущий номер строки, 
+ — текущий номер строки, 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -2930,7 +2578,7 @@ FUNC_NAME
 
 \end_inset
 
- - имя функции, из
+ — имя функции, из
 \begin_inset space ~
 \end_inset
 
@@ -2958,7 +2606,7 @@ fmt.Printf
 \begin_inset Text
 
 \begin_layout Plain Layout
-38
+31
 \end_layout
 
 \end_inset
@@ -2990,7 +2638,7 @@ fmt.Printf
 \begin_inset Text
 
 \begin_layout Plain Layout
-39
+32
 \end_layout
 
 \end_inset
@@ -3044,7 +2692,7 @@ switch
 \begin_inset Text
 
 \begin_layout Plain Layout
-40
+33
 \end_layout
 
 \end_inset
