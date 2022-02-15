@@ -952,7 +952,7 @@ name "tab:Дополнительные-возможности"
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="17" columns="2">
+<lyxtabular version="3" rows="16" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="90line%">
@@ -1453,7 +1453,7 @@ defer
 \begin_inset Text
 
 \begin_layout Plain Layout
-Заменить вхождения глобальной переменной 
+Заменить вхождения глобальной константы 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -1492,7 +1492,7 @@ FILE
 \begin_inset space ~
 \end_inset
 
-исходной программе эти переменные должны быть объявлены в
+исходной программе эти константы должны быть объявлены в
 \begin_inset space ~
 \end_inset
 
@@ -1546,7 +1546,7 @@ string
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1555,11 +1555,11 @@ string
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Заменить вхождения глобальной переменной 
+Заменить вхождения глобальной константы 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -1580,7 +1580,7 @@ FUNCNAME
 \begin_inset space ~
 \end_inset
 
-которой переменная упоминается, либо на
+которой константы упоминается, либо на
 \begin_inset space ~
 \end_inset
 
@@ -1597,7 +1597,7 @@ status open
 
 \end_inset
 
-, если переменная упоминается в
+, если константа упоминается в
 \begin_inset space ~
 \end_inset
 
@@ -1606,7 +1606,7 @@ status open
 \begin_inset space ~
 \end_inset
 
-исходной программе переменная 
+исходной программе константа 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -1636,61 +1636,15 @@ string
 
 \end_inset
 
-, в
+ (в
+\begin_inset space ~
+\end_inset
+
+противном случае следует выдать ошибку), в
 \begin_inset space ~
 \end_inset
 
 новой программе она должна отсутстовать.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-17
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Заменить запись 
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-x := expr
-\end_layout
-
-\end_inset
-
- на
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset listings
-lstparams "basicstyle={\ttfamily}"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-var x = expr
-\end_layout
-
-\end_inset
-
-.
 \end_layout
 
 \end_inset
@@ -1735,10 +1689,60 @@ name "tab:Дополнительные-возможности-1"
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="16" columns="2">
+<lyxtabular version="3" rows="17" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="90line%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Заменить запись 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+x := expr
+\end_layout
+
+\end_inset
+
+ на
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+var x = expr
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
