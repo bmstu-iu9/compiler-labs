@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -21,6 +21,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -49,6 +51,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -57,7 +60,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -130,16 +136,16 @@ name "tab:Краткое-описание-лексики"
  буквы.
  Числовые литералы: последовательности десятичных цифр, перед которыми может
  стоять знак 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 минус
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
  Операции: 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -155,11 +161,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -175,11 +181,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -195,7 +201,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -223,7 +229,7 @@ status open
 
 \lang russian
 Комментарии: начинаются с 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -240,11 +246,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , заканчиваются на 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -261,14 +267,14 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  и могут пересекать границы строк текста.
  Идентификаторы: последовательности латинских букв и десятичных цифр, в
  которых буквы и цифры чередуются.
  Ключевые слова: 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -284,11 +290,11 @@ for
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -304,11 +310,11 @@ if
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -324,7 +330,7 @@ m1
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -366,11 +372,11 @@ m1
 \end_inset
 
 предваряться знаком 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 минус
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -422,7 +428,7 @@ taskcp}
 \end_inset
 
 нуля, либо 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -438,12 +444,12 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
  Операции: 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -459,11 +465,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -479,11 +485,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -499,7 +505,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -527,7 +533,7 @@ status open
 
 \lang russian
 Комментарии: начинаются с 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -543,12 +549,12 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  и продолжаются до окончания строки текста.
  Идентификаторы: любой текст, не содержащий 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -564,11 +570,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  и ограниченный символами 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -584,12 +590,12 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
  Ключевые слова: 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -605,11 +611,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -625,11 +631,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -645,7 +651,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -674,7 +680,7 @@ status open
 \lang russian
 Строковые литералы: ограничены двойными кавычками, могут содержать Escape-послед
 овательности 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -692,11 +698,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -714,11 +720,11 @@ n
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -736,7 +742,7 @@ t
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  и
@@ -744,7 +750,7 @@ t
 \end_inset
 
 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -764,7 +770,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , не пересекают границы строк текста.
@@ -778,7 +784,7 @@ status open
 \end_inset
 
 три цифры (
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -794,11 +800,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -814,11 +820,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -834,7 +840,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 ).
@@ -867,7 +873,7 @@ status open
 еся на цифру.
  Числовые литералы: непустые последовательности десятичных цифр, органиченные
  знаками 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -883,11 +889,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  и 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -903,12 +909,12 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
  Операции: 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -924,11 +930,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -944,11 +950,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -964,7 +970,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -992,7 +998,7 @@ status open
 
 \lang russian
 Комментарии: целиком строка текста, начинающаяся с 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1008,13 +1014,13 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
  Идентификаторы: либо последовательности латинских букв нечётной длины,
  либо последовательности символов 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1030,12 +1036,12 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
  Ключевые слова: 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1051,11 +1057,11 @@ with
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1071,11 +1077,11 @@ end
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1091,7 +1097,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -1171,7 +1177,7 @@ name "tab:Краткое-описание-лексики-2"
 Строковые литералы: органичены двойными кавычками, для включения двойной
  кавычки она удваивается, для продолжения литерала на следующей строчке
  текста в конце текущей строчки ставится знак 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1189,13 +1195,13 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
  Числовые литералы: либо последовательности десятичных цифр, либо последовательн
 ости шестнадцатеричных цифр, начинающиеся с 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1211,7 +1217,7 @@ $
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -1229,7 +1235,7 @@ taskcp}
 \end_inset
 
 , цифр и знаков 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1245,7 +1251,7 @@ $
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , начинающиеся с буквы.
@@ -1274,7 +1280,7 @@ $
 \lang russian
 Идентификаторы: последовательности заглавных латинских букв, за которыми
  могут располагаться последовательности знаков 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1290,11 +1296,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1310,11 +1316,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  и 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1330,12 +1336,12 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
  Числовые литералы: знак 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1351,11 +1357,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  или последовательности, состоящие целиком либо из знаков 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1371,11 +1377,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , либо из знаков 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1391,12 +1397,12 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
  Ключевые слова: 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1412,11 +1418,11 @@ ON
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1432,11 +1438,11 @@ OFF
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1452,7 +1458,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -1480,7 +1486,7 @@ status open
 
 \lang russian
 Комментарии: начинаются с 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1496,11 +1502,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  или 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1516,11 +1522,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , заканчиваются на 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1536,11 +1542,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  или 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1556,13 +1562,13 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  и могут пересекать границы строк текста.
- Идентификаторы: последовательности латинских букв, представляющие собой
- конкатенации двух одинаковых слов (
-\begin_inset Quotes fld
+ Целочисленные литералы: последовательности десятичных цифр.
+ Дробные литералы: строки вида 
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1572,17 +1578,17 @@ status open
 
 \begin_layout Plain Layout
 
-zz
+digits/digits
 \end_layout
 
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
-, 
-\begin_inset Quotes fld
+, где 
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1592,77 +1598,20 @@ status open
 
 \begin_layout Plain Layout
 
-abab
+digits
 \end_layout
 
 \end_inset
 
 
-\begin_inset Quotes frd
-\end_inset
-
-).
- Ключевые слова: 
-\begin_inset Quotes fld
+\begin_inset Quotes crd
 \end_inset
 
 
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-ifif
-\end_layout
-
+\begin_inset space ~
 \end_inset
 
-
-\begin_inset Quotes frd
-\end_inset
-
-, 
-\begin_inset Quotes fld
-\end_inset
-
-
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-do
-\end_layout
-
-\end_inset
-
-
-\begin_inset Quotes frd
-\end_inset
-
-, 
-\begin_inset Quotes fld
-\end_inset
-
-
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-dodo
-\end_layout
-
-\end_inset
-
-
-\begin_inset Quotes frd
-\end_inset
-
-.
+— последовательность десятичных цифр.
 \end_layout
 
 \end_inset
@@ -1694,7 +1643,7 @@ dodo
 \end_inset
 
 единиц, оканчивающиеся буквой 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1710,12 +1659,12 @@ b
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
  Идентификаторы: последовательности десятичных цифр и знаков 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1731,11 +1680,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1751,11 +1700,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  и 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1771,7 +1720,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , не начинающиеся с цифры.
@@ -1811,11 +1760,15 @@ taskcp}
 
 \end_inset
 
- и десятичных цифр, начинающиеся и заканчивающиеся на одну и ту же букву.
+ и десятичных цифр, начинающиеся и заканчивающиеся на
+\begin_inset space ~
+\end_inset
+
+букву.
  Числовые литералы: последовательности шестнадцатеричных цифр (чтобы литерал
  не был похож на идентификатор, его можно предварять нулём).
  Ключевые слова: 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1831,11 +1784,11 @@ qeq
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1851,11 +1804,11 @@ xx
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1871,7 +1824,7 @@ xxx
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -1900,7 +1853,7 @@ xxx
 \lang russian
 Символьные литералы: ограничены апострофами, могут содержать Escape-последовател
 ьности 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1918,11 +1871,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1940,11 +1893,11 @@ n
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1964,7 +1917,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  и
@@ -1972,7 +1925,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -1990,11 +1943,11 @@ xxxx
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  (здесь буквы 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -2010,7 +1963,7 @@ x
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  обозначают шестнадцатеричные цифры).
@@ -2029,7 +1982,7 @@ taskcp}
 
  длиной от 2 до 10 символов, начинающиеся и заканчивающиеся буквой.
  Ключевые слова: 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -2045,11 +1998,11 @@ z
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -2065,11 +2018,11 @@ for
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -2085,7 +2038,7 @@ forward
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -2887,7 +2840,15 @@ taskcp}
 \begin_inset space ~
 \end_inset
 
-буквы.
+буквы, не
+\begin_inset space ~
+\end_inset
+
+чувствительны к
+\begin_inset space ~
+\end_inset
+
+регистру.
  Целочисленные константы: десятичные
 \begin_inset space ~
 \end_inset
@@ -3118,7 +3079,7 @@ unless
 
 \lang russian
 Регулярные выражения: ограничены знаками 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3134,7 +3095,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , не
@@ -3142,7 +3103,7 @@ status open
 \end_inset
 
 могут пересекать границы текста, содержат escape-последовательности 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3160,11 +3121,11 @@ n
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3182,11 +3143,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3206,12 +3167,12 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
  Строковые литералы: ограничены тремя кавычками (
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3227,7 +3188,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 ), могут занимать несколько строчек текста, не
@@ -3272,7 +3233,7 @@ status open
 \end_inset
 
 префикса 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3288,11 +3249,11 @@ s
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3308,11 +3269,11 @@ t
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  или 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3328,11 +3289,11 @@ e
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , после которого может располагаться одна буква, одна цифра или точка (
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3348,7 +3309,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 ), за
@@ -3361,7 +3322,7 @@ status open
 
 цифр.
  Примеры имён переменных: 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3377,11 +3338,11 @@ s1
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3397,11 +3358,11 @@ tx
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3417,11 +3378,11 @@ e.FileName
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3437,7 +3398,7 @@ t.666
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -3499,7 +3460,7 @@ taskcp}
 \end_inset
 
 знаков 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3515,11 +3476,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3535,11 +3496,11 @@ $
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3555,11 +3516,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3575,11 +3536,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  или 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3595,7 +3556,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -3633,7 +3594,7 @@ NEXT
 \end_inset
 
 ключевым словом 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3649,7 +3610,7 @@ REM
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  и
@@ -3665,7 +3626,7 @@ REM
 \end_inset
 
 есть после буквы 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3681,7 +3642,7 @@ M
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  в
@@ -3689,7 +3650,7 @@ M
 \end_inset
 
 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3705,7 +3666,7 @@ REM
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  не
@@ -3714,7 +3675,7 @@ REM
 
 может следовать буква или цифра).
  Операции: 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3730,11 +3691,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3750,11 +3711,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3770,11 +3731,11 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -3792,7 +3753,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -3891,8 +3852,13 @@ name "tab:Краткое-описание-лексики-4"
 \end_inset
 
 буквы.
- Строковые константы: либо последовательность символов, ограниченных апострофами
-, апостроф внутри строки описывается как два апострофа подряд, не
+ Строковые константы
+\begin_inset space ~
+\end_inset
+
+— последовательности строковых секций, записанных слитно.
+ Строковые секции: либо последовательность символов, ограниченных апострофами,
+ апостроф внутри строки описывается как два апострофа подряд, не
 \begin_inset space ~
 \end_inset
 
@@ -3913,8 +3879,7 @@ status open
 \end_inset
 
 которым следует десятичная константа (код символа).
- Несколько строковых констант могут быть записаны слитно.
- Пример: «
+ Пример строковой константы: «
 \begin_inset listings
 inline true
 status open
@@ -3926,7 +3891,15 @@ status open
 
 \end_inset
 
-».
+» (эта строковая константа состоит из
+\begin_inset space ~
+\end_inset
+
+4
+\begin_inset space ~
+\end_inset
+
+строковых секций, однако является единым токеном).
 \end_layout
 
 \end_inset
@@ -3983,7 +3956,7 @@ status open
 \end_inset
 
 », 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -4001,7 +3974,7 @@ t
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  и
@@ -4009,7 +3982,7 @@ t
 \end_inset
 
 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -4029,7 +4002,7 @@ status open
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -4038,7 +4011,7 @@ status open
 \end_inset
 
 знаков 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 
@@ -4054,14 +4027,22 @@ _
 \end_inset
 
 
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , начинающиеся с
 \begin_inset space ~
 \end_inset
 
-цифры.
+цифры (прочерк не
+\begin_inset space ~
+\end_inset
+
+влияет на
+\begin_inset space ~
+\end_inset
+
+значение числа).
 \end_layout
 
 \end_inset
@@ -4319,6 +4300,11 @@ Fe2O3
 
 \lang russian
 Коэффициенты: последовательности десятичных цифр.
+ Между коэффициентом и
+\begin_inset space ~
+\end_inset
+
+веществом пробел может отсутствовать.
  Операторы: «
 \begin_inset listings
 inline true
@@ -4840,7 +4826,7 @@ name "tab:Краткое-описание-лексики-5"
 
 \lang russian
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="2">
+<lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="90line%">
@@ -4916,15 +4902,7 @@ W
 
 \end_inset
 
-», после которых располагается целое десятичное число от
-\begin_inset space ~
-\end_inset
-
-0 до
-\begin_inset space ~
-\end_inset
-
-180, за
+», после которых располагается целое десятичное число, за
 \begin_inset space ~
 \end_inset
 
@@ -4977,6 +4955,76 @@ D
 \end_inset
 
 которым следует двойная кавычка).
+ Атрибут лексемы (для лабораторных работ №
+\begin_inset space ~
+\end_inset
+
+4 и
+\begin_inset space ~
+\end_inset
+
+№
+\begin_inset space ~
+\end_inset
+
+6): вещественное число, соответствующее широте или долготе.
+ Широта («
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+S
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+N
+\end_layout
+
+\end_inset
+
+») не
+\begin_inset space ~
+\end_inset
+
+может превышать 90, долгота («
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+E
+\end_layout
+
+\end_inset
+
+», «
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+W
+\end_layout
+
+\end_inset
+
+»)
+\begin_inset space ~
+\end_inset
+
+— 180.
 \end_layout
 
 \end_inset
@@ -5495,7 +5543,7 @@ status open
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5506,28 +5554,13 @@ status open
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Целые числа: последовательности цифр определенной системы счисления, не
-\lang russian
-
-\begin_inset space ~
-\end_inset
-
-
-\lang english
-начинающиеся с
-\lang russian
-
-\begin_inset space ~
-\end_inset
-
-
-\lang english
-нуля, предваренные соответствующим идентификатором, определяющим систему
- счисления (для десятичных чисел
+Целые числа: последовательности цифр определенной системы счисления, предваренны
+е соответствующим индикатором, определяющим систему счисления (для десятичных
+ чисел
 \lang russian
 
 \begin_inset space ~
@@ -5535,7 +5568,7 @@ status open
 
 — 
 \lang english
-пустой идентификатор, для двоичных чисел
+пустой индикатор, для двоичных чисел
 \lang russian
 
 \begin_inset space ~
@@ -5555,7 +5588,7 @@ status open
 
 »
 \lang english
-, для восьмиричных чисел
+, для восьмеричных чисел
 \lang russian
 
 \begin_inset space ~
@@ -5575,7 +5608,7 @@ status open
 
 »
 \lang english
-, для шестнадцатиричных чисел
+, для шестнадцатеричных чисел
 \lang russian
 
 \begin_inset space ~
@@ -5643,136 +5676,6 @@ status open
 \begin_layout Plain Layout
 
 )
-\end_layout
-
-\end_inset
-
-».
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang russian
-38
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang russian
-Строковые литералы: последовательности буквенных символов 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-{
-\backslash
-taskcp}
-\end_layout
-
-\end_inset
-
-, цифр и
-\begin_inset space ~
-\end_inset
-
-символов «
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-/
-\end_layout
-
-\end_inset
-
-», которые не
-\begin_inset space ~
-\end_inset
-
-могут содержать два подряд идущих символа 
-\begin_inset Quotes fld
-\end_inset
-
-
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-/
-\end_layout
-
-\end_inset
-
-» и
-\begin_inset space ~
-\end_inset
-
-не
-\begin_inset space ~
-\end_inset
-
-могут оканчиваться символом 
-\begin_inset Quotes fld
-\end_inset
-
-
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-/
-\end_layout
-
-\end_inset
-
-».
- Ключевые слова: 
-\begin_inset Quotes fld
-\end_inset
-
-
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-cd
-\end_layout
-
-\end_inset
-
-», 
-\begin_inset Quotes fld
-\end_inset
-
-
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-ls
 \end_layout
 
 \end_inset
