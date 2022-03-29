@@ -2749,7 +2749,7 @@ status open
 \begin_layout Plain Layout
 
 \lang russian
-Идентификаторы: последовательности латинских букв и
+Имена функций: последовательности латинских букв и
 \begin_inset space ~
 \end_inset
 
@@ -2950,7 +2950,7 @@ t.666
 \begin_inset space ~
 \end_inset
 
-6) идентификаторов и
+6) имён функций и
 \begin_inset space ~
 \end_inset
 
@@ -2963,7 +2963,7 @@ t.666
 \end_inset
 
 таблицах.
- Таблицы идентификаторов и
+ Таблицы имён функций и
 \begin_inset space ~
 \end_inset
 
