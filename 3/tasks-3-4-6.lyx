@@ -3574,7 +3574,15 @@ status open
 \end_inset
 
 .
- Числовые литералы: знак 
+ Числовые литералы
+\begin_inset space ~
+\end_inset
+
+— числа в
+\begin_inset space ~
+\end_inset
+
+унарной системе счисления: знак 
 \begin_inset Quotes cld
 \end_inset
 
@@ -3594,7 +3602,8 @@ status open
 \begin_inset Quotes crd
 \end_inset
 
- или последовательности, состоящие целиком либо из знаков 
+ (представляющий 0) или последовательности, состоящие целиком либо из знаков
+ 
 \begin_inset Quotes cld
 \end_inset
 
