@@ -33,11 +33,6 @@
   - [Lab_4_compiler-sample.pdf](Lab_4_compiler-sample.pdf)
   - [Lab_7_2_compiler-sample.pdf](Lab_7_2_compiler-sample.pdf)
 
-## Рубежный контроль
-
-1. [Первый рубежный контроль](1-rk-compilers.pdf)
-2. [Второй рубежный контроль](2-rk-compilers.pdf)
-
 ## Экзамен
 
 * [Список вопросов для подготовки к экзамену](exam.md)
