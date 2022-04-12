@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -24,6 +24,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -53,6 +55,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -65,7 +68,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language french
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -88,7 +94,7 @@
 \end_inset
 
 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Самоприменимый генератор компиляторов
@@ -96,7 +102,7 @@
 \end_inset
 
 на основе предсказывающего анализа
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 
@@ -413,7 +419,7 @@ status open
 
 \begin_layout Plain Layout
 
-;; только правила грамматики
+; только правила грамматики
 \end_layout
 
 \begin_layout Plain Layout
@@ -479,7 +485,7 @@ status open
 
 \begin_layout Plain Layout
 
-/* а здесь комментарий как в Си */
+/* аксиома помечена звёздочкой */
 \end_layout
 
 \begin_layout Plain Layout
@@ -656,7 +662,7 @@ status open
 
 \begin_layout Plain Layout
 
-{ E }, E', T, T', F
+T, T', { E }, E', F
 \end_layout
 
 \begin_layout Plain Layout
@@ -732,10 +738,6 @@ status open
 \begin_layout Plain Layout
 
 <axiom <E>>
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -827,6 +829,31 @@ status open
 
 \begin_layout Plain Layout
 
+F  -> "n" 'or
+\end_layout
+
+\begin_layout Plain Layout
+
+      "(" E ")" 'end
+\end_layout
+
+\begin_layout Plain Layout
+
+T  -> F T1 'end
+\end_layout
+
+\begin_layout Plain Layout
+
+T1 -> "*" F T1 'or
+\end_layout
+
+\begin_layout Plain Layout
+
+      'epsilon 'end
+\end_layout
+
+\begin_layout Plain Layout
+
 'axiom E  -> T E1 'end
 \end_layout
 
@@ -838,31 +865,6 @@ E1 -> "+" T E1 'or
 \begin_layout Plain Layout
 
       'epsilon 'end
-\end_layout
-
-\begin_layout Plain Layout
-
-T  -> F T1 'end
-\end_layout
-
-\begin_layout Plain Layout
-
-T1 -> "*" F T1 'or 
-\end_layout
-
-\begin_layout Plain Layout
-
-      'epsilon 'end
-\end_layout
-
-\begin_layout Plain Layout
-
-F  -> "n" 'or 
-\end_layout
-
-\begin_layout Plain Layout
-
-      "(" E ")" 'end
 \end_layout
 
 \end_inset
