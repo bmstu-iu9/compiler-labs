@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -24,6 +24,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -53,6 +55,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -65,7 +68,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language french
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -84,11 +90,11 @@
 \end_inset
 
 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Множества FIRST для РБНФ
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 
@@ -118,7 +124,7 @@
 \begin_layout Standard
 В данной лабораторной работе требуется разработать программу, которая по
  описанию грамматики, записанному на входном языке в РБНФ, строит множества
- FIRST для всех нетерминалов грамматика.
+ FIRST для всех нетерминалов грамматики.
 \end_layout
 
 \begin_layout Standard
@@ -190,6 +196,11 @@ name "tab:Варианты-рабочего-языка"
 lstparams "basicstyle={\footnotesize\ttfamily}"
 inline false
 status open
+
+\begin_layout Plain Layout
+
+# объявления тоже надо проверять
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -270,6 +281,15 @@ $TERM  "("  ")"  "n"
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+* правила грамматики
+\end_layout
+
+\begin_layout Plain Layout
+
 $RULE  E = T { ("+" | "-") T }
 \end_layout
 
@@ -315,6 +335,11 @@ status open
 
 \begin_layout Plain Layout
 
+; правила грамматики
+\end_layout
+
+\begin_layout Plain Layout
+
 (E) = (T) [ [
 \backslash
 +|-] (T) ]*.
@@ -324,7 +349,7 @@ status open
 
 (T) = (F) [ [
 \backslash
-*|/] ]*.
+*|/] (F) ]*.
 \end_layout
 
 \begin_layout Plain Layout
@@ -363,6 +388,11 @@ status open
 lstparams "basicstyle={\footnotesize\ttfamily}"
 inline false
 status open
+
+\begin_layout Plain Layout
+
+/* варианты разделяются запятыми */
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -416,6 +446,11 @@ status open
 
 \begin_layout Plain Layout
 
+<!-- должны быть объявлены -->
+\end_layout
+
+\begin_layout Plain Layout
+
 tokens <plus>, <minus>, 
 \end_layout
 
@@ -436,17 +471,12 @@ tokens <plus>, <minus>,
 
 \begin_layout Plain Layout
 
-             alt(
+             alt(<plus>, <minus>)
 \end_layout
 
 \begin_layout Plain Layout
 
-               <plus>, <minus>
-\end_layout
-
-\begin_layout Plain Layout
-
-             ) <T>
+             <T>
 \end_layout
 
 \begin_layout Plain Layout
@@ -461,17 +491,12 @@ tokens <plus>, <minus>,
 
 \begin_layout Plain Layout
 
-             alt(
+             alt(<star>, <slash>)
 \end_layout
 
 \begin_layout Plain Layout
 
-               <star>, <slash>
-\end_layout
-
-\begin_layout Plain Layout
-
-             ) <F>
+             <F>
 \end_layout
 
 \begin_layout Plain Layout
@@ -534,6 +559,11 @@ status open
 
 \begin_layout Plain Layout
 
+-- а в этом варианте объявлений нет
+\end_layout
+
+\begin_layout Plain Layout
+
 [ E  : T [ ["+" : "-"] T ]* ]
 \end_layout
 
@@ -591,6 +621,20 @@ status open
 lstparams "basicstyle={\footnotesize\ttfamily}"
 inline false
 status open
+
+\begin_layout Plain Layout
+
+' здесь очень интересный
+\end_layout
+
+\begin_layout Plain Layout
+
+' синтаксис для альтернатив
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -677,57 +721,71 @@ status open
 
 \begin_layout Plain Layout
 
-E  -> T 'repeat
+# ключевые слова
 \end_layout
 
 \begin_layout Plain Layout
 
-            ("+" 'or "-") T
+# начинаются с кавычки
 \end_layout
 
 \begin_layout Plain Layout
 
-        'end 
 \end_layout
 
 \begin_layout Plain Layout
 
-      'end
+E -> T 'repeat
 \end_layout
 
 \begin_layout Plain Layout
 
-T  -> F 'repeat
+         'group "+" 'or "-" 'end T
 \end_layout
 
 \begin_layout Plain Layout
 
-            ("*" 'or "/") F
+       'end 
 \end_layout
 
 \begin_layout Plain Layout
 
-        'end
+     'end
 \end_layout
 
 \begin_layout Plain Layout
 
-      'end
+T -> F 'repeat
 \end_layout
 
 \begin_layout Plain Layout
 
-F  -> "n" 'or 
+         'group "*" 'or "/" 'end F
 \end_layout
 
 \begin_layout Plain Layout
 
-      "-" F 'or 
+       'end
 \end_layout
 
 \begin_layout Plain Layout
 
-      "(" E ")" 'end
+     'end
+\end_layout
+
+\begin_layout Plain Layout
+
+F -> "n" 'or 
+\end_layout
+
+\begin_layout Plain Layout
+
+     "-" F 'or 
+\end_layout
+
+\begin_layout Plain Layout
+
+     "(" E ")" 'end
 \end_layout
 
 \end_inset
@@ -802,8 +860,11 @@ reference "tab:Варианты-рабочего-языка"
 \end_layout
 
 \begin_layout Standard
-В качестве языков реализации разрешается использовать C++, Java, Go, Ruby
- или Python.
+В качестве языков реализации разрешается использовать любой язык с
+\begin_inset space ~
+\end_inset
+
+поддержкой рекурсии.
 \end_layout
 
 \end_body
