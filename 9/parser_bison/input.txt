@@ -1,0 +1,2 @@
+input a, b;
+print m = a - b ? (a, a, b), a + b - m, (a + b) / 2.

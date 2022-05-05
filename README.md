@@ -22,7 +22,8 @@
 9. **[Форматтер исходных текстов](9/lab9.pdf)** (Bison)
    * Файлы [lexer.h](9/parser_bison/lexer.h), [lexer.l](9/parser_bison/lexer.l),
      [parser.y](9/parser_bison/parser.y), [run.bat](9/parser_bison/run.bat),
-     [run.sh](9/parser_bison/run.sh), все файлы **[одним архивом](9/parser_bison.zip)**
+     [run.sh](9/parser_bison/run.sh), [input.txt](9/parser_bison/input.txt),
+     все файлы **[одним архивом](9/parser_bison.zip)**
 
      [Исходники Скоробогатова 2017-03-24](9/skor-origin-lab7-parser_bison.zip)
 
