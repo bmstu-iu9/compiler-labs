@@ -41,16 +41,15 @@ myGetStr = myGetChar >>= read []
     
 runIOTerm :: IOTerm -> IO ()
 
-runIOTerm (PutChar ch cont) = do
-  putChar ch
-  runIOTerm cont
+runIOTerm (PutChar ch cont) =
+  do putChar ch
+     runIOTerm cont
 
-runIOTerm (GetChar fn) = do
-  c <- getChar
-  runIOTerm (fn c)
+runIOTerm (GetChar fn) =
+  do c <- getChar
+     runIOTerm (fn c)
 
 runIOTerm Exit = return ()
 
 
-main = do
-  runIOTerm (runMyIO myMain $ \_ -> Exit)
+main = do runIOTerm (runMyIO myMain (\_ -> Exit))

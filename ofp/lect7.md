@@ -284,7 +284,7 @@ put s = State \_ -> ((), s)
 runState :: State s a -> s -> (a, s)
 runState (State f) s = f s
 ```
-Используя эта-конверсию, функцию можно упростить:
+Используя η-конверсию, функцию можно упростить:
 ```haskell
 runState :: State s a -> s -> (a, s)
 runState State f = f
@@ -304,7 +304,7 @@ enumTreeRec Leaf x =
   do num <- get
      put (num + 1)
      return (Leaf (num, x))
-enumTreeRec (Node t1 t2) n0 =
+enumTreeRec (Node t1 t2) =
   do t1' <- enumTreeRec t1
      t2' <- enumTreeRec t2
      return (Node t1' t2')
@@ -337,6 +337,19 @@ data IOTerm = PutChar Char IOTerm
             | Exit
 ```
 Третья ветка `Exit` служит для завершения цепочки операций ввода-вывода.
+
+Пример цепочки вычислений, которая читает символ и его же выводит:
+
+```haskell
+GetChar (\ch -> PutChar ch Exit)
+```
+
+Бесконечное эхо:
+
+```haskell
+echo :: IOTerm
+echo = GetChar (\ch -> PutChar ch echo)
+```
 
 Чистая программа должна формировать это значение `IOTerm`, одну сплошную
 цепочку, завершающуюся `Exit`’ом на конце. Но каким образом тогда программу
@@ -375,7 +388,22 @@ getString1 k = GetChar \ch ->
     ch   -> getString1 (\str -> k (ch : str))
 ```
 
-Для единообразия в этом же духе можно переписать и функцию чтения, в этом
+(Можно применить η-конверсию и упростить `getChar1`:
+
+```haskell
+getChar1 :: (Char -> IOTerm) -> IOTerm
+getChar1 k = GetChar k
+```
+
+Повторное применение η-конверсии даст
+
+```haskell
+getChar1 :: (Char -> IOTerm) -> IOTerm
+getChar1 = GetChar
+```
+)
+
+Для единообразия в этом же духе можно переписать и функцию записи, в этом
 случае мы будем получать не продолжение, а функцию, которая принимает _что-то_
 и возвращает продолжение:
 
@@ -385,10 +413,15 @@ putChar2 ch k = PutChar ch (k ())
 
 putString1 :: [Char] -> (() -> IOTerm) -> IOTerm
 putString1 (x:xs) k = PutChar x (putString1 xs k)
-putString1 [] k = PutChar '\n' k
+putString1 [] k = PutChar '\n' (k ())
 ```
 
-Видим общий паттерн: функции возвращают значение типа `(a -> IOTerm) -> IOTerm`.
+Видим общий паттерн: функции возвращают значение типа
+
+```haskell
+(a -> IOTerm) -> IOTerm
+```
+
 Это ни что иное, как монада `Cont`. Поэтому связывание вычислений можно
 организовать также, как и в монаде `Cont`.
 
