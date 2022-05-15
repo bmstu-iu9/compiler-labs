@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -24,6 +24,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -53,6 +55,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -65,7 +68,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language french
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -84,11 +90,11 @@
 \end_inset
 
 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Форматтер исходных текстов
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 
@@ -403,7 +409,7 @@ var
 
 \end_inset
 
--блок языка Pascal;
+-блок языка Pascal (включая безымянные записи);
 \end_layout
 
 \begin_layout Enumerate
@@ -438,31 +444,7 @@ switch
 \end_layout
 
 \begin_layout Enumerate
-объявление класса в языке Java (со
-\begin_inset space ~
-\end_inset
-
-вложенными классами, тела методов — пустые);
-\end_layout
-
-\begin_layout Enumerate
-объявление структуры в языке C (со
-\begin_inset space ~
-\end_inset
-
-вложенными структурами и
-\begin_inset space ~
-\end_inset
-
-объединениями);
-\end_layout
-
-\begin_layout Enumerate
 XML;
-\end_layout
-
-\begin_layout Enumerate
-JSON (язык создания объектов JavaScript);
 \end_layout
 
 \begin_layout Enumerate
@@ -482,23 +464,11 @@ JSON (язык создания объектов JavaScript);
 \end_layout
 
 \begin_layout Enumerate
-Bison (в
-\begin_inset space ~
-\end_inset
-
-семантических действиях могут быть присваивания, вызовы функций и
-\begin_inset space ~
-\end_inset
-
-вложенные фигурные скобки);
-\end_layout
-
-\begin_layout Enumerate
 РЕФАЛ-5;
 \end_layout
 
 \begin_layout Enumerate
-Go (с
+составной оператор языка Go (с
 \begin_inset space ~
 \end_inset
 
@@ -510,50 +480,7 @@ Go (с
 \end_layout
 
 \begin_layout Enumerate
-операторы 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-if
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-for
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-while
-\end_layout
-
-\end_inset
-
- в
-\begin_inset space ~
-\end_inset
-
-языке Rust;
+составной оператор языка Pascal;
 \end_layout
 
 \begin_layout Enumerate
@@ -569,209 +496,7 @@ while
 \end_layout
 
 \begin_layout Enumerate
-циклы 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-for
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-while
-\end_layout
-
-\end_inset
-
- в
-\begin_inset space ~
-\end_inset
-
-языке С, оператор 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-switch
-\end_layout
-
-\end_inset
-
- в
-\begin_inset space ~
-\end_inset
-
-языке C;
-\end_layout
-
-\begin_layout Enumerate
-объявление класса в
-\begin_inset space ~
-\end_inset
-
-языке JavaScript (со
-\begin_inset space ~
-\end_inset
-
-вложенными классами, тела методов — выражения 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-return
-\end_layout
-
-\end_inset
-
-);
-\end_layout
-
-\begin_layout Enumerate
-объявление структуры в
-\begin_inset space ~
-\end_inset
-
-языке Rust (со
-\begin_inset space ~
-\end_inset
-
-вложенными структурами и
-\begin_inset space ~
-\end_inset
-
-объединениями);
-\end_layout
-
-\begin_layout Enumerate
 РБНФ;
-\end_layout
-
-\begin_layout Enumerate
-Flex (в
-\begin_inset space ~
-\end_inset
-
-семантических действиях могут быть присваивания, вызовы функций и
-\begin_inset space ~
-\end_inset
-
-вложенные фигурные скобки);
-\end_layout
-
-\begin_layout Enumerate
-операторы 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-if
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-for
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-while
-\end_layout
-
-\end_inset
-
- в
-\begin_inset space ~
-\end_inset
-
-языке Pascal;
-\end_layout
-
-\begin_layout Enumerate
-язык Dot (только ориентированный граф со
-\begin_inset space ~
-\end_inset
-
-вложенными подграфами, из
-\begin_inset space ~
-\end_inset
-
-атрибутов доступны только 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-rankdir
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-label
-\end_layout
-
-\end_inset
-
- и 
-\begin_inset listings
-lstparams "language=Java"
-inline true
-status open
-
-\begin_layout Plain Layout
-
-color
-\end_layout
-
-\end_inset
-
-).
 \end_layout
 
 \begin_layout Standard
@@ -810,6 +535,79 @@ color
 
 \begin_layout Standard
 Слабый форматтер должен сохранять комментарии в тексте программы.
+\end_layout
+
+\begin_layout Standard
+Сильный форматтер должен принимать 
+\series bold
+параметр командной строки
+\series default
+, ограничивающий длину строчек отформатированной программы.
+ Например, если указано значение 
+\begin_inset listings
+lstparams "language=Java"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+80
+\end_layout
+
+\end_inset
+
+, то
+\begin_inset space ~
+\end_inset
+
+длины строчек на
+\begin_inset space ~
+\end_inset
+
+выходе не
+\begin_inset space ~
+\end_inset
+
+должны превышать в
+\begin_inset space ~
+\end_inset
+
+длину 80
+\begin_inset space ~
+\end_inset
+
+символов.
+ Единственной причиной выхода за
+\begin_inset space ~
+\end_inset
+
+пределы ограничения может быть только наличие токена, длина которого плюс
+ текущий отступ в
+\begin_inset space ~
+\end_inset
+
+сумме превышает указанное ограничение.
+\end_layout
+
+\begin_layout Standard
+Форматирование должно осуществляться в
+\begin_inset space ~
+\end_inset
+
+соответствии с
+\begin_inset space ~
+\end_inset
+
+традициями соответствующего языка программирования.
+ Если таких традиций несколько (как, например, для языков с
+\begin_inset space ~
+\end_inset
+
+Си-подобным синтаксисом), то
+\begin_inset space ~
+\end_inset
+
+можно выбрать любую.
 \end_layout
 
 \end_body
