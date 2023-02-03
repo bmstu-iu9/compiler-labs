@@ -439,12 +439,51 @@ BeRo Tiny Pascal:
 
 \begin_layout Plain Layout
 
+\series bold
 \lang russian
-Добавить в
+P5:
+\series default
+ Добавить в
 \begin_inset space ~
 \end_inset
 
-язык шестнадцатиричные константы вида 
+язык шестнадцатеричные константы вида 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+0x12ABcd
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang russian
+BeRo Tiny Pascal: Заменить шестнадцатеричные константы вида 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+$12ABcd
+\end_layout
+
+\end_inset
+
+ на
+\begin_inset space ~
+\end_inset
+
+константы вида 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true

@@ -934,7 +934,11 @@ status open
 
 »
 \lang english
-).
+, шестнадцатеричные цифры могут быть записаны в
+\begin_inset space ~
+\end_inset
+
+любом регистре).
 
 \lang russian
  Ключевые слова: «
@@ -987,7 +991,7 @@ status open
 \end_inset
 
 ».
- Идентификаторы: последовательности латинских цифр.
+ Идентификаторы: последовательности латинских букв.
 \end_layout
 
 \end_inset
@@ -1011,7 +1015,7 @@ status open
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1330,115 +1334,9 @@ taskcp}
 
 \begin_layout Plain Layout
 
+\series bold
 \lang russian
-Целочисленные константы: последовательности десятичных цифр, предваряемые
- символом 
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-#
-\end_layout
-
-\end_inset
-
-.
- Имена переменных: последовательности десятичных цифр, начинающиеся со
-\begin_inset space ~
-\end_inset
-
-знаков «
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-.
-\end_layout
-
-\end_inset
-
-» или «
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-:
-\end_layout
-
-\end_inset
-
-», имена массивов: последовательности десятичных цифр, начинающиеся с
-\begin_inset space ~
-\end_inset
-
-«
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-,
-\end_layout
-
-\end_inset
-
-» или «
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-;
-\end_layout
-
-\end_inset
-
-».
- Ключевые слова «
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-PLEASE
-\end_layout
-
-\end_inset
-
-», «
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-DO
-\end_layout
-
-\end_inset
-
-», «
-\begin_inset listings
-inline true
-status open
-
-\begin_layout Plain Layout
-
-FORGET
-\end_layout
-
-\end_inset
-
-».
+удалён
 \end_layout
 
 \end_inset
@@ -2403,7 +2301,15 @@ status open
 
 \end_inset
 
-».
+», тоже не
+\begin_inset space ~
+\end_inset
+
+чувствительны к
+\begin_inset space ~
+\end_inset
+
+регистру.
  Ключевые слова
 \begin_inset space ~
 \end_inset
@@ -2822,7 +2728,13 @@ e
 \begin_inset Quotes crd
 \end_inset
 
-, после которого может располагаться одна буква, одна цифра или точка (
+, после которого располагается индекс переменной.
+ Индекс может либо состоять из одной буквы или одной цифры, или может начинаться
+ с
+\begin_inset space ~
+\end_inset
+
+точки (
 \begin_inset Quotes cld
 \end_inset
 
@@ -3433,8 +3345,12 @@ status open
 \end_inset
 
 .
- Числовые литералы: либо последовательности десятичных цифр, либо последовательн
-ости шестнадцатеричных цифр, начинающиеся с 
+ Целочисленные литералы: либо последовательности десятичных цифр, либо последова
+тельности шестнадцатеричных цифр (в
+\begin_inset space ~
+\end_inset
+
+любом регистре), начинающиеся с 
 \begin_inset Quotes cld
 \end_inset
 
@@ -3574,7 +3490,7 @@ status open
 \end_inset
 
 .
- Числовые литералы
+ Целочисленные литералы
 \begin_inset space ~
 \end_inset
 
@@ -4035,7 +3951,11 @@ taskcp}
 
 букву.
  Числовые литералы: последовательности шестнадцатеричных цифр (чтобы литерал
- не был похож на идентификатор, его можно предварять нулём).
+ не был похож на идентификатор, его можно предварять нулём, цифры в
+\begin_inset space ~
+\end_inset
+
+любом регистре).
  Ключевые слова: 
 \begin_inset Quotes cld
 \end_inset
@@ -4235,7 +4155,11 @@ x
 \begin_inset Quotes crd
 \end_inset
 
- обозначают шестнадцатеричные цифры).
+ обозначают шестнадцатеричные цифры, в
+\begin_inset space ~
+\end_inset
+
+любом регистре).
  Идентификаторы: последовательности буквенно-цифровых символов 
 \begin_inset ERT
 status open
@@ -5065,8 +4989,8 @@ m1
 \end_inset
 
 пересекают границы строк текста.
- Числовые литералы: последовательности десятичных цифр, которые могут включать
- точку и
+ Вещественные литералы: последовательности десятичных цифр, которые могут
+ включать точку и
 \begin_inset space ~
 \end_inset
 

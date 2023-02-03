@@ -258,7 +258,12 @@ nextToken()
 \end_layout
 
 \begin_layout Standard
-Для лексических доменов должны вычисляться их атрибуты:
+Для лексических доменов должны вычисляться их атрибуты (если указанный лексическ
+ий домен есть в
+\begin_inset space ~
+\end_inset
+
+варианте задания):
 \end_layout
 
 \begin_layout Itemize
@@ -339,7 +344,11 @@ Java или C++),
 \begin_inset space ~
 \end_inset
 
-интерпретацией escape-последовательностей),
+интерпретацией escape-последовательностей, если они есть в
+\begin_inset space ~
+\end_inset
+
+варианте задания),
 \end_layout
 
 \begin_layout Itemize

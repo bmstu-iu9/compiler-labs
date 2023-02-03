@@ -379,6 +379,14 @@ nextToken()
 \end_layout
 
 \begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+реализации запрещается использование регулярных выражений.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false

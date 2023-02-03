@@ -476,7 +476,7 @@ XML;
 \begin_inset space ~
 \end_inset
 
-запятой);
+запятой, без вложенных функций);
 \end_layout
 
 \begin_layout Enumerate
